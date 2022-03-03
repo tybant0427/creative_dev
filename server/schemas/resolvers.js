@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Project } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -11,6 +11,9 @@ const resolvers = {
     singleUser: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
     },
+    projects: async () => {
+      return Project.find();
+    }
   },
 
   Mutation: {
@@ -53,13 +56,11 @@ const resolvers = {
     removeUser: async (parent, { userId }) => {
       return User.findOneAndDelete({ _id: userId });
     },
-//     removeSkill: async (parent, { profileId, skill }) => {
-//       return Profile.findOneAndUpdate(
-//         { _id: profileId },
-//         { $pull: { skills: skill } },
-//         { new: true }
-//       );
-//     },
+    addProject: async (parent, args) => {
+      const project = await Project.create(args);
+      return project;
+    },
+
   },
 };
   

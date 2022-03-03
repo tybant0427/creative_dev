@@ -1,27 +1,32 @@
 const { Schema, model } = require('mongoose');
 
-const PostSchema = new Schema(
+const ProjectSchema = new Schema(
     {
       title: {
         type: String,
         required: true,
-        max_length: 50,
+        maxlength: 20,
       },
       description:{
-
-      }
+        type: String,
+        required: true,
+        minlength: 5,
+      },
       respitoryLink: {
         type: String,
         required: true,
-        max_length: 50,
-        unique: true,
+        
+        
       },
       liveLink: {
           type: String,
           requried: true,
-         min_length: 2,
-         unique: true,
+         
+         
         },
+        image: {
+            type: String
+        }
      
     },
     {
@@ -35,6 +40,6 @@ const PostSchema = new Schema(
  
   
   
-  const User = model('User', UserSchema);
+  const Project = model('project', ProjectSchema);
   
-  module.exports = User;
+  module.exports = Project;
