@@ -20,7 +20,7 @@ const typeDefs = gql`
   }
 
  
-  type Auth {
+  type Auth { 
     token: ID!
     users: User
   }
