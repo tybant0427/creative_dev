@@ -1,4 +1,4 @@
 const User = require('./User');
-// const Matchup = require('./Matchup');
+const Project = require('./Project');
 
-module.exports = { User };
+module.exports = { Project, User };
