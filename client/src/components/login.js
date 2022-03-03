@@ -5,8 +5,12 @@ export default class Login extends Component {
             <form>
                 <h3>Sign In</h3>
                 <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <label>Name</label>
+                    <input type="text" className="form-control" placeholder="Enter Name" />
+                </div>
+                <div className="form-group">
+                    <label>Github Username</label>
+                    <input type="text" className="form-control" placeholder="Enter Username" />
                 </div>
                 <div className="form-group">
                     <label>Password</label>
