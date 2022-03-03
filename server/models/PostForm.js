@@ -7,7 +7,10 @@ const PostSchema = new Schema(
         required: true,
         max_length: 50,
       },
-      respitory: {
+      description:{
+
+      }
+      respitoryLink: {
         type: String,
         required: true,
         max_length: 50,
