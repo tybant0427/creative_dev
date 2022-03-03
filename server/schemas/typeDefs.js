@@ -38,7 +38,7 @@ const typeDefs = gql`
     removeUser(userId: ID!): User
     addProject(title: String!,description: String!, respitoryLink: String!,liveLink: String!,
       image: String!  ): Project
-  }
+  } 
 `;
 
 module.exports = typeDefs;
