@@ -8,6 +8,7 @@ const typeDefs = gql`
     name: String
     github: String
     password: String
+    projects: [Project]
   }
   type Project {
     _id: ID
