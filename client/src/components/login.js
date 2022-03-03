@@ -3,9 +3,7 @@ import Auth from "../utils/auth"
 export default class Login extends Component {
 
     render() {
-        const logout = () => {
-            Auth.logout();
-        }
+       
         return (
             <>
                 <form>
@@ -34,7 +32,7 @@ export default class Login extends Component {
                     </p>
 
                 </form>
-                <button onClick={logout}>logout</button>
+                
             </>
         );
     }

@@ -12,6 +12,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import Auth from "./utils/auth"
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -36,6 +38,10 @@ const client = new ApolloClient({
 });
 
 function App() {
+
+  const logout = () => {
+    Auth.logout();
+}
   return (
     <ApolloProvider client={client}>
   <Router>
@@ -50,6 +56,9 @@ function App() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
+              </li>
+              <li className="nav-item">
+              <p className='nav-link' onClick={logout}>logout</p>
               </li>
             </ul>
           </div>
