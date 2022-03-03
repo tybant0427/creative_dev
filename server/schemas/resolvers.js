@@ -42,7 +42,9 @@ const resolvers = {
     },
 
 
+
     removeUser: async (parent, { userId }) => {
+
       return User.findOneAndDelete({ _id: userId });
     },
     addProject: async (parent, args) => {
