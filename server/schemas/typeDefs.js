@@ -8,7 +8,7 @@ const typeDefs = gql`
     name: String
     github: String
     password: String
-    projects: [Project]
+    projects: [Project]!
   }
   type Project {
     _id: ID
@@ -27,9 +27,9 @@ const typeDefs = gql`
 
   type Query {
     
-    users: [User]!
-    singleUser(userId: ID!): User
-    projects: [Project]!
+    users: [User]
+    singleUser(name: String!): User
+    projects: [Project]
   }
 
   type Mutation {
@@ -37,7 +37,7 @@ const typeDefs = gql`
     addUser(name: String!, github: String!, password: String!): Auth
     login(github: String!, password: String!): Auth
     logout(userId: ID!): User
-    addProject(title: String!,description: String!, respitoryLink: String!,liveLink: String!,
+    addProject(author: String!,title: String!,description: String!, respitoryLink: String!,liveLink: String!,
       image: String!  ): Project
   } 
 `;

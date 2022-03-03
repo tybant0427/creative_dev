@@ -2,6 +2,10 @@ const { Schema, model } = require('mongoose');
 
 const ProjectSchema = new Schema(
     {
+      author: {
+        type: String,
+        required: true
+      },
       title: {
         type: String,
         required: true,

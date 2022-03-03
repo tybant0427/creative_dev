@@ -5,11 +5,11 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate(Project);
+      return User.find();
     },
 
-    singleUser: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+    singleUser: async (parent, { name }) => {
+      return User.findOne({ name }).populate("projects");
     },
     projects: async () => {
       return Project.find();
@@ -47,8 +47,14 @@ const resolvers = {
 
     //   return User.findOneAndDelete({ _id: userId });
     // },
-    addProject: async (parent, args) => {
-      const project = await Project.create(args);
+    addProject: async (parent, { author, title, description, respitoryLink, liveLink, image }) => {
+      const project = await Project.create({ author, title, description, respitoryLink, liveLink, image });
+
+      await User.findOneAndUpdate(
+        { name: author },
+        { $addToSet: { projects: project._id } }
+      );
+
       return project;
     },
 
