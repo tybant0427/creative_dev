@@ -61,7 +61,7 @@ const SignUp = ()=> {
                 <p className="forgot-password text-right">
                     Already registered <a href="#">sign in?</a>
                 </p>
-            </form>
+            </form>  
         );
     }
 export default SignUp;
