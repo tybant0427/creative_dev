@@ -8,6 +8,7 @@ const typeDefs = gql`
     name: String
     github: String
     password: String
+    projects: [Project]
   }
   type Project {
     _id: ID
@@ -21,7 +22,7 @@ const typeDefs = gql`
  
   type Auth {
     token: ID!
-    user: User
+    users: User
   }
 
   type Query {
@@ -35,7 +36,7 @@ const typeDefs = gql`
     
     addUser(name: String!, github: String!, password: String!): Auth
     login(github: String!, password: String!): Auth
-    removeUser(userId: ID!): User
+    logout(userId: ID!): User
     addProject(title: String!,description: String!, respitoryLink: String!,liveLink: String!,
       image: String!  ): Project
   } 
