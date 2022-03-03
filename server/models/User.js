@@ -20,6 +20,12 @@ const UserSchema = new Schema(
        min_length: 2,
        
       },
+    projects: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'project',
+      },
+    ]
    
   },
   {
