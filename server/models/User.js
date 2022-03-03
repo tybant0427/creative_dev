@@ -18,7 +18,7 @@ const UserSchema = new Schema(
         type: String,
         requried: true,
        min_length: 2,
-       unique: true,
+       
       },
    
   },
