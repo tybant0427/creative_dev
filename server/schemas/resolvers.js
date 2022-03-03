@@ -49,9 +49,9 @@ const resolvers = {
 //         }
 //       );
 //     },
-//     removeProfile: async (parent, { profileId }) => {
-//       return Profile.findOneAndDelete({ _id: profileId });
-//     },
+    removeUser: async (parent, { userId }) => {
+      return User.findOneAndDelete({ _id: userId });
+    },
 //     removeSkill: async (parent, { profileId, skill }) => {
 //       return Profile.findOneAndUpdate(
 //         { _id: profileId },

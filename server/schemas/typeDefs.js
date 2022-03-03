@@ -11,7 +11,7 @@ const typeDefs = gql`
   }
 
 
-  # Set up an Auth type to handle returning data from a profile creating or user login
+ 
   type Auth {
     token: ID!
     user: User
@@ -27,7 +27,7 @@ const typeDefs = gql`
     
     addUser(name: String!, github: String!, password: String!): Auth
     login(github: String!, password: String!): Auth
-
+    removeUser(userId: ID!): User
     
   }
 `;
