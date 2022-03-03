@@ -8,8 +8,8 @@ const resolvers = {
       return User.find();
     },
 
-    singleUser: async (parent, { name }) => {
-      return User.findOne({ name }).populate("projects");
+    singleUser: async (parent, { github }) => {
+      return User.findOne({ github }).populate("projects");
     },
     projects: async () => {
       return Project.find();
