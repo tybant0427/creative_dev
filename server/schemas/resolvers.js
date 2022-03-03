@@ -41,18 +41,7 @@ const resolvers = {
       return { token, user };
     },
 
-//     addSkill: async (parent, { profileId, skill }) => {
-//       return Profile.findOneAndUpdate(
-//         { _id: profileId },
-//         {
-//           $addToSet: { skills: skill },
-//         },
-//         {
-//           new: true,
-//           runValidators: true,
-//         }
-//       );
-//     },
+
     removeUser: async (parent, { userId }) => {
       return User.findOneAndDelete({ _id: userId });
     },
