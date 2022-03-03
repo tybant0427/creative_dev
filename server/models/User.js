@@ -8,20 +8,17 @@ const UserSchema = new Schema(
       required: true,
       max_length: 50,
     },
-    // lastName: {
-    //   type: String,
-    //   required: true,
-    //   max_length: 50,
-    // },
     github: {
       type: String,
       required: true,
       max_length: 50,
+      unique: true,
     },
     password: {
         type: String,
         requried: true,
        min_length: 2,
+       unique: true,
       },
    
   },
