@@ -70,14 +70,40 @@ const Upload = () => {
             <label for="exampleFormControlInput1" class="form-label">Project Name</label>
             <input 
             type="text"
+            name="title"
              class="form-control"
               id="exampleFormControlInput1" 
               placeholder="What is the name of your project?">
             </input>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">URL</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="paste URL here"></input>
+            <label for="exampleFormControlInput1" class="form-label">Live Page</label>
+            <input 
+            type="text"
+            name="liveLink"
+             class="form-control" 
+             id="exampleFormControlInput1"
+              placeholder="paste URL here">
+            </input>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Respitory</label>
+            <input 
+            type="text"
+            name="respitoryLink"
+             class="form-control" 
+             id="exampleFormControlInput1"
+              placeholder="paste URL here">
+            </input>
+        </div> <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Live Page</label>
+            <input 
+            type="text"
+            name="liveLink"
+             class="form-control" 
+             id="exampleFormControlInput1"
+              placeholder="paste URL here">
+            </input>
         </div>
     
   
