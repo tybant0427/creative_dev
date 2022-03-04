@@ -21,6 +21,8 @@ const resolvers = {
       console.log("addUser");
       const users = await User.create({ name, github, password });
       const token = signToken(users);
+      console.log(token);
+      console.log(users);
 
       return { token, users };
     },

@@ -55,7 +55,7 @@ const loggedin = () => {
             <Route exact path='/' component={Home} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
-            {loggedin ? 
+            {loggedin? 
             <Route  path="/blog" component={Blog} />
            :<Route path='/sign-in' component={Login} />  
             }

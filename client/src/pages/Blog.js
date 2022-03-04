@@ -1,5 +1,6 @@
 import React from "react";
 import Auth from "../utils/auth"
+import Nav from "../components/BlogComponents/BlogNav"
 export default function Home() {
   const loggedin = () => {
     Auth.loggedIn();
@@ -8,7 +9,9 @@ export default function Home() {
 
   return (
 
+    
     <div>
+      <Nav />
         <h1>home blog</h1>
         
       
