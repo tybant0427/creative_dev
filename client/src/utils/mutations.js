@@ -13,6 +13,16 @@ mutation addUser($name: String!, $github: String!, $password: String!){
   }
   }
 `;
+
+export const LOGIN_USER = gql`
+  mutation Login($github: String!, $password: String!) {
+    login(github: $github, password: $password) {
+      token
+    
+    }
+  }
+  `;
+  
 export const ADD_PROJECT = gql`
 mutation AddProject($author: String!, $title: String!, $description: String!, $respitoryLink: String!, $liveLink: String!, $image: String!) {
   addProject(author: $author, title: $title, description: $description, respitoryLink: $respitoryLink, liveLink: $liveLink, image: $image) {
