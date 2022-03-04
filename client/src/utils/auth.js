@@ -20,7 +20,7 @@ class AuthService {
       return true;
     }
     // If token hasn't passed its expiration time, return `false`
-    return false;
+    return false;  
   }
 
   getToken() {
@@ -29,12 +29,12 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    window.location.assign("/blog");
   }
 
   logout() {
     localStorage.removeItem('id_token');
-    window.location.reload();
+    window.location.reload("/");
   }
 }
 
