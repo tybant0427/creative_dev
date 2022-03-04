@@ -2,7 +2,7 @@ import React, {  useState } from "react";
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, Router } from 'react-router-dom';
 
 
 const SignUp = ()=> {
@@ -24,7 +24,7 @@ const SignUp = ()=> {
     
       const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(formState);
+        console.log(formState);  
     
         try {
           const { data } = await addUser({
@@ -44,11 +44,11 @@ const SignUp = ()=> {
             <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
             <div className="card-body">
               {data ? (
-                <p>
-                  Success! You may now head{' '}
-                  <Link to="/">back to the homepage.</Link>
-                  {/* change this to send us to the blog component */}
-                </p>
+              
+                  
+                  <Link to={"/"}></Link>
+                  // <Redirect to={Home} />
+                
               ) : (
                 <form onSubmit={handleFormSubmit}>
                   <input
