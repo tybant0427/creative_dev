@@ -56,7 +56,7 @@ const Upload = () => {
         <>
 <form onSubmit={handleFormSubmit}>
 <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <label for="exampleFormControlInput1" class="form-label">Author</label>
             <input
              type="text" 
              name="author"
@@ -73,7 +73,8 @@ const Upload = () => {
             name="title"
              class="form-control"
               id="exampleFormControlInput1" 
-              placeholder="What is the name of your project?">
+              placeholder="What is the name of your project?"
+            onChange={handleChange}>
             </input>
         </div>
         <div class="mb-3">
@@ -83,7 +84,8 @@ const Upload = () => {
             name="liveLink"
              class="form-control" 
              id="exampleFormControlInput1"
-              placeholder="paste URL here">
+              placeholder="Live Link">
+                  onChange={handleChange}
             </input>
         </div>
         <div class="mb-3">
@@ -93,13 +95,24 @@ const Upload = () => {
             name="respitoryLink"
              class="form-control" 
              id="exampleFormControlInput1"
-              placeholder="paste URL here">
+              placeholder="Respitory Link">
+                  onChange={handleChange}
             </input>
         </div> <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Live Page</label>
+            <label for="exampleFormControlInput1" class="form-label">Image</label>
             <input 
             type="text"
-            name="liveLink"
+            name="image"
+             class="form-control" 
+             id="exampleFormControlInput1"
+              placeholder="paste URL here">
+            </input>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Description</label>
+            <input 
+            type="text"
+            name="description"
              class="form-control" 
              id="exampleFormControlInput1"
               placeholder="paste URL here">
@@ -107,17 +120,7 @@ const Upload = () => {
         </div>
     
   
-            <div class="mb-3">
-                <label for="formFile" class="form-label">Upload an image</label>
-                <input class="form-control" type="file" id="formFile"></input>
-              </div>
-        
-    
-         
-         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-         </div>
+            
         
         <button type="button" class="btn btn-primary btn-lg" onClick={back}>Submit</button>
         </form>
