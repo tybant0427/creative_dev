@@ -34,6 +34,7 @@ const SignUp = ()=> {
           Auth.login(data.addUser.token);
         } catch (e) {
           console.error(e);
+          
         }
       };
     return (
@@ -46,11 +47,12 @@ const SignUp = ()=> {
                 <p>
                   Success! You may now head{' '}
                   <Link to="/">back to the homepage.</Link>
+                  {/* change this to send us to the blog component */}
                 </p>
               ) : (
                 <form onSubmit={handleFormSubmit}>
                   <input
-                    className="form-input"
+                    className="form-control"
                     placeholder="Your username"
                     name="name"
                     type="text"
@@ -58,7 +60,7 @@ const SignUp = ()=> {
                     onChange={handleChange}
                   />
                   <input
-                    className="form-input"
+                    className="form-control"
                     placeholder="Your github"
                     name="github"
                     type="text"
@@ -66,7 +68,7 @@ const SignUp = ()=> {
                     onChange={handleChange}
                   />
                   <input
-                    className="form-input"
+                    className="form-control"
                     placeholder="******"
                     name="password"
                     type="password"
