@@ -47,7 +47,7 @@ const SignUp = ()=> {
               
                   
                   <Link to={"/"}></Link>
-                  
+                  // <Redirect to={Home} />
                 
               ) : (
                 <form onSubmit={handleFormSubmit}>

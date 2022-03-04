@@ -9,9 +9,9 @@ export default class Landing extends Component {
             <>
             <Navbar />
 
-            <jumbotron>
+            <div className ="jumbotron">
                 <h1>Welcome to Creative Dev!</h1>
-            </jumbotron>
+            </div>
             
             </>
         );

@@ -4,8 +4,8 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./components/login";
 import SignUp from "./components/signup";
-import Landing from './components/landing';
-import Home from './components/login'
+import Home from './components/Home';
+import Blog from './pages/Blog'
 import {
   ApolloClient,
   InMemoryCache,
@@ -40,8 +40,9 @@ const client = new ApolloClient({
 
 function App() {
 
-  const logout = () => {
-    Auth.logout();
+
+const loggedin = () => {
+  Auth.loggedIn();
 }
   return (
     <ApolloProvider client={client}>
@@ -51,12 +52,13 @@ function App() {
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
-            <Route exact path='/' component={Landing} />
+            <Route exact path='/' component={Home} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
-            {Auth.loggedIn ? 
-            <Route path="/" component={Home} />
-            :<Route exact path='/' component={Landing} /> }
+            {loggedin ? 
+            <Route  path="/blog" component={Blog} />
+           :<Route path='/sign-in' component={Login} />  
+            }
           </Switch>
         </div>
       </div>
