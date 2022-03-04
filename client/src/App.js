@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./components/login";
 import SignUp from "./components/signup";
 import Home from './components/Home';
-import Blog from './pages/Blog'
+import Blog from './pages/Blog';
+import Upload from './components/upload';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -14,6 +16,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Auth from "./utils/auth"
+
 
 
 const httpLink = createHttpLink({
@@ -53,10 +56,12 @@ const loggedin = () => {
         <div className="auth-inner">
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route path="/upload" component={Upload} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             {loggedin? 
             <Route  path="/blog" component={Blog} />
+            
            :<Route path='/sign-in' component={Login} />  
             }
           </Switch>

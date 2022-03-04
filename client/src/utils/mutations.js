@@ -21,5 +21,17 @@ export const LOGIN_USER = gql`
     
     }
   }
-
+  `;
+  
+export const ADD_PROJECT = gql`
+mutation AddProject($author: String!, $title: String!, $description: String!, $respitoryLink: String!, $liveLink: String!, $image: String!) {
+  addProject(author: $author, title: $title, description: $description, respitoryLink: $respitoryLink, liveLink: $liveLink, image: $image) {
+    title
+    description
+    respitoryLink
+    liveLink
+    image
+  }
+}
 `;
+
