@@ -10,6 +10,7 @@ const SignUp = ()=> {
         name: '',
         github: '',
         password: '',
+        _id: ''
       });
       const [addUser, { error, data }] = useMutation(ADD_USER);
     
@@ -30,7 +31,8 @@ const SignUp = ()=> {
           const { data } = await addUser({
             variables: { ...formState },
           });
-    
+          var userid = data.addUser.users._id;
+          localStorage.setItem('userId', userid);
           Auth.login(data.addUser.token);
         } catch (e) {
           console.error(e);
@@ -45,8 +47,9 @@ const SignUp = ()=> {
             <div className="card-body">
               {data ? (
               
+                  console.log(data.addUser.users._id)
                   
-                  <Link to={"/"}></Link>
+                  // <Link to={"/"}></Link>
                   // <Redirect to={Home} />
                 
               ) : (

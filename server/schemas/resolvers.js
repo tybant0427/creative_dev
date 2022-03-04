@@ -50,11 +50,11 @@ const resolvers = {
 
     //   return User.findOneAndDelete({ _id: userId });
     // },
-    addProject: async (parent, { author, title, description, respitoryLink, liveLink, image }) => {
-      const project = await Project.create({ author, title, description, respitoryLink, liveLink, image });
+    addProject: async (parent, { userId, title, description, respitoryLink, liveLink, image }) => {
+      const project = await Project.create({  title, description, respitoryLink, liveLink, image });
 
       await User.findOneAndUpdate(
-        { name: author },
+        { _id: userId },
         { $addToSet: { projects: project._id } }
       );
 

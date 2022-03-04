@@ -23,7 +23,7 @@ const UserSchema = new Schema(
     projects: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'project',
+        ref: 'Project',
       },
     ]
    
