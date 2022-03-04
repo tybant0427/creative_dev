@@ -14,4 +14,12 @@ mutation addUser($name: String!, $github: String!, $password: String!){
   }
 `;
 
+export const LOGIN_USER = gql`
+  mutation Login($github: String!, $password: String!) {
+    login(github: $github, password: $password) {
+      token
+    
+    }
+  }
 
+`;
