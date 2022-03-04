@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Upload = () => {
 
+    const back = () => {
+        window.location.assign("/blog");
+    }
+
     return (
         <>
 <form>
@@ -32,7 +36,7 @@ const Upload = () => {
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
          </div>
         
-        <button type="button" class="btn btn-primary btn-lg">Submit</button>
+        <button type="button" class="btn btn-primary btn-lg" onClick={back}>Submit</button>
         </form>
         
     </>

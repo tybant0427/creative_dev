@@ -1,6 +1,6 @@
 import React from "react";
 import Auth from "../../utils/auth"
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 
@@ -19,6 +19,11 @@ export default function Navbar() {
       
       <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul className="navbar-nav ml-auto">
+
+       
+          <li className="nav-item">
+            <Link className="nav-link" to={"/upload"}>Upload</Link>
+          </li>
           
           {loggedin?
           <li className="nav-item">

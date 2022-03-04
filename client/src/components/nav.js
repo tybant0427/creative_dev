@@ -25,9 +25,7 @@ export default function Navbar() {
           <li className="nav-item">
             <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to={"/upload"}>Upload</Link>
-          </li>
+          
           {loggedin?
           <li className="nav-item">
           <p className='nav-link' onClick={logout}>logout</p>
