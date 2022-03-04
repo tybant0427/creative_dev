@@ -2,6 +2,9 @@ import React, {  useState } from "react";
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { Link } from 'react-router-dom';
+
+
 const SignUp = ()=> {
     const [formState, setFormState] = useState({
         name: '',
@@ -31,10 +34,71 @@ const SignUp = ()=> {
           Auth.login(data.addUser.token);
         } catch (e) {
           console.error(e);
+          
         }
       };
     return (
-            <form onSubmit={handleFormSubmit}>
+        <main className="flex-row justify-center mb-4">
+        <div className="col-12 col-lg-10">
+          <div className="card">
+            <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+            <div className="card-body">
+              {data ? (
+                <p>
+                  Success! You may now head{' '}
+                  <Link to="/">back to the homepage.</Link>
+                  {/* change this to send us to the blog component */}
+                </p>
+              ) : (
+                <form onSubmit={handleFormSubmit}>
+                  <input
+                    className="form-control"
+                    placeholder="Your username"
+                    name="name"
+                    type="text"
+                    value={formState.name}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className="form-control"
+                    placeholder="Your github"
+                    name="github"
+                    type="text"
+                    value={formState.github}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className="form-control"
+                    placeholder="******"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                  />
+                  <button
+                    className="btn btn-block btn-primary"
+                    style={{ cursor: 'pointer' }}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </form>
+              )}
+  
+              {error && (
+                <div className="my-3 p-3 bg-danger text-white">
+                  {error.message}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </main>
+    );
+    };
+export default SignUp;
+
+{/* <form onSubmit={handleFormSubmit}>
                 <h3>Sign Up</h3>
                 <div className="form-group">
                     <label>Name</label>
@@ -62,6 +126,4 @@ const SignUp = ()=> {
                     Already registered <a href="#">sign in?</a>
                 </p>
             </form>  
-        );
-    }
-export default SignUp;
+        ); */}
