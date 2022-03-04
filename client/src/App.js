@@ -42,7 +42,7 @@ function App() {
 
 
 const loggedin = () => {
-  Auth.loggedIn();
+  Auth.loggedIn();   
 }
   return (
     <ApolloProvider client={client}>
