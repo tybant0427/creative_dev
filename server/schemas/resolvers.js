@@ -21,27 +21,27 @@ const resolvers = {
       console.log("addUser");
       const users = await User.create({ name, github, password });
       const token = signToken(users);
-      console.log(token);
-      console.log(users);
+      // console.log(token);
+      // console.log(users);
 
       return { token, users };
     },
-    login: async (parent, { github, password }) => {
-      const user = await User.findOne({ github });
-
-      if (!user) {
+    login: async (parent, {  github, password }) => {
+      const users = await User.findOne({ github });
+console.log(users);
+      if (!users) {
         throw new AuthenticationError('No user with this github found!');
       }
 
-      const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await users.isCorrectPassword(password);
       
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
       }
 
-      const token = signToken(user);
-      return { token, user };
+      const token = signToken(users);
+      return { token, users };
     },
 
 
