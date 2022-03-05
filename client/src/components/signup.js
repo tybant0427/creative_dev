@@ -9,8 +9,8 @@ const SignUp = ()=> {
     const [formState, setFormState] = useState({
         name: '',
         github: '',
-        password: '',
-        _id: ''
+        password: ''
+      
       });
       const [addUser, { error, data }] = useMutation(ADD_USER);
     

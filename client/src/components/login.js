@@ -50,7 +50,8 @@ import { Link, Redirect, Router } from 'react-router-dom';
 const Login = ()=> {
     const [formState, setFormState] = useState({
         github: '',
-        password: '',
+        password: ''
+        
       });
       const [loginUser, { error, data }] = useMutation(LOGIN_USER);
     
@@ -72,7 +73,10 @@ const Login = ()=> {
             variables: { ...formState },
           });
     
+          var userid = data.login.users._id;
+          localStorage.setItem('userId', userid);
           Auth.login(data.login.token);
+          
         } catch (e) {
           console.error(e);
           

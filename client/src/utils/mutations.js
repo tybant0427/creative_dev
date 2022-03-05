@@ -18,7 +18,11 @@ export const LOGIN_USER = gql`
   mutation Login($github: String!, $password: String!) {
     login(github: $github, password: $password) {
       token
-    
+      users{
+        _id
+        name
+
+      }
     }
   }
   `;
