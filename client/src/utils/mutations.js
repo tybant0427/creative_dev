@@ -8,7 +8,7 @@ mutation addUser($name: String!, $github: String!, $password: String!){
       name
       github
       password
-      
+      _id
     }
   }
   }
@@ -24,8 +24,9 @@ export const LOGIN_USER = gql`
   `;
   
 export const ADD_PROJECT = gql`
-mutation AddProject($author: String!, $title: String!, $description: String!, $respitoryLink: String!, $liveLink: String!, $image: String!) {
-  addProject(author: $author, title: $title, description: $description, respitoryLink: $respitoryLink, liveLink: $liveLink, image: $image) {
+mutation AddProject($userId: ID!, $title: String!, $description: String!, $respitoryLink: String!, $liveLink: String!, $image: String!) {
+  addProject(userId: $userId, title: $title, description: $description, respitoryLink: $respitoryLink, liveLink: $liveLink, image: $image) {
+
     title
     description
     respitoryLink

@@ -2,10 +2,10 @@ const { Schema, model } = require('mongoose');
 
 const ProjectSchema = new Schema(
     {
-      author: {
-        type: String,
-        required: true
-      },
+      // author: {
+      //   type: String,
+      //   required: true
+      // },
       title: {
         type: String,
         required: true,
@@ -44,6 +44,6 @@ const ProjectSchema = new Schema(
  
   
   
-  const Project = model('project', ProjectSchema);
+  const Project = model('Project', ProjectSchema);
   
   module.exports = Project;

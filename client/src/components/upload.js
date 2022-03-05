@@ -14,21 +14,22 @@ const Upload = () => {
 
     
         const [formState, setFormState] = useState({
-            author: '',
+            userId: localStorage.getItem('userId'),
             title: '',
             description: '',
             respitoryLink: '',
             liveLink: '',
             image: ''
           });
+          
           const [addProject, { error, data }] = useMutation(ADD_PROJECT);
         
           const handleChange = (event) => {
-            const { author, value } = event.target;
+            const { name, value } = event.target;
         
             setFormState({
               ...formState,
-              [author]: value,
+              [name]: value,
             });
           };
         
@@ -40,8 +41,8 @@ const Upload = () => {
               const { data } = await addProject({
                 variables: { ...formState },
               });
-        
-            //   Auth.login(data.addUser.token);
+        console.log(data);
+            
             } catch (e) {
               console.error(e);
               
@@ -55,45 +56,77 @@ const Upload = () => {
     return (
         <>
 <form onSubmit={handleFormSubmit}>
-<div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Name</label>
-            <input
-             type="text" 
-             name="author"
-             class="form-control" 
-             id="exampleFormControlInput1" 
-             placeholder="name here"
-             onChange={handleChange}>
-            </input>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Project Name</label>
+
+        <div className="mb-3">
+            <label for="exampleFormControlInput1" className="form-label">Project Name</label>
             <input 
             type="text"
-             class="form-control"
+            name="title"
+            value={formState.title}
+             className="form-control"
               id="exampleFormControlInput1" 
-              placeholder="What is the name of your project?">
+              placeholder="What is the name of your project?"
+            onChange={handleChange}>
             </input>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">URL</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="paste URL here"></input>
+        <div className="mb-3">
+            <label for="exampleFormControlInput1" className="form-label">Live Page</label>
+            <input 
+            type="text"
+            name="liveLink"
+            value={formState.liveLink}
+             className="form-control" 
+             id="exampleFormControlInput1"
+              placeholder="Live Link"
+                   onChange={handleChange}
+                  >
+            </input>
+        </div>
+        <div 
+        className="mb-3">
+            <label for="exampleFormControlInput1" className="form-label">Respitory</label>
+            <input 
+            type="text"
+            name="respitoryLink"
+            value={formState.respitoryLink}
+             className="form-control" 
+             id="exampleFormControlInput1"
+              placeholder="Respitory Link"
+                  onChange={handleChange}
+                  >
+            </input>
+        </div>
+         <div className="mb-3">
+            <label for="exampleFormControlInput1" className="form-label">Image</label>
+            <input 
+            type="text"
+            name="image"
+            value={formState.image}
+             className="form-control" 
+             id="exampleFormControlInput1"
+              placeholder=" Image"
+              onChange={handleChange}
+              >
+            </input>
+        </div>
+        <div className="mb-3">
+            <label for="exampleFormControlInput1" className="form-label">Description</label>
+            <input 
+            type="text"
+            name="description"
+            value={formState.description}
+             className="form-control" 
+             id="exampleFormControlInput1"
+              placeholder="Description"
+              onChange={handleChange}
+              >
+            </input>
         </div>
     
   
-            <div class="mb-3">
-                <label for="formFile" class="form-label">Upload an image</label>
-                <input class="form-control" type="file" id="formFile"></input>
-              </div>
+            
         
-    
-         
-         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-         </div>
-        
-        <button type="button" class="btn btn-primary btn-lg" onClick={back}>Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg" onClick={back}>Submit</button>
         </form>
         
     </>
