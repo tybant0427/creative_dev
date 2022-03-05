@@ -10,5 +10,14 @@ query Users {
   }
 }
 `;
-
-
+export const QUERY_PROJECTS =gql`
+query Projects {
+  projects {
+    title
+    description
+    respitoryLink
+    liveLink
+    image
+  }
+}
+`;
