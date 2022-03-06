@@ -7,6 +7,7 @@ import SignUp from "./components/signup";
 import Home from './components/Home';
 import Blog from './pages/Blog';
 import Upload from './components/upload';
+import Profile from "./components/BlogComponents/Profile"
 
 import {
   ApolloClient,
@@ -59,6 +60,7 @@ const loggedin = () => {
             <Route path="/upload" component={Upload} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
+            <Route path="/profile" component={Profile} />
             {loggedin? 
             <Route  path="/blog" component={Blog} />
             

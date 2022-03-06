@@ -24,6 +24,10 @@ export default function Navbar() {
           <li className="nav-item">
             <Link className="nav-link" to={"/upload"}>Upload</Link>
           </li>
+
+          <li className="nav-item">
+            <Link className="nav-link" to={"/profile"}>Profile</Link>
+          </li>
           
           {loggedin?
           <li className="nav-item">

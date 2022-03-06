@@ -21,3 +21,21 @@ query Projects {
   }
 }
 `;
+
+export const QUERY_SINGLEUSER = gql`
+query SingleUser($userId: ID!) {
+  singleUser(userId: $userId) {
+    name
+    github
+    password
+    projects {
+      title
+      _id
+      description
+      respitoryLink
+      liveLink
+      image
+    }
+  }
+}
+`;
