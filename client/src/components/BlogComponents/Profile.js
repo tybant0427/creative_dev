@@ -24,7 +24,7 @@ export default function Tests() {
   console.log(data);
   
   // const test = data
-  // const projects = data?.projects || [];
+  // const projects = data?.projects || [];     
   
   
   // console.log(projects)
