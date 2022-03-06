@@ -100,7 +100,7 @@ const Upload = () => {
          <div className="mb-3">
             <label for="exampleFormControlInput1" className="form-label">Image</label>
             <input 
-            type="text"
+            type="File"
             name="image"
             value={formState.image}
              className="form-control" 

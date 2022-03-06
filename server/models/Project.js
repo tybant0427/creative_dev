@@ -22,7 +22,7 @@ const ProjectSchema = new Schema(
         
         
       },
-      liveLink: {
+      liveLink: {   
           type: String,
           requried: true,
          
