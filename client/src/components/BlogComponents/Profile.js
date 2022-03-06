@@ -6,8 +6,8 @@ import { useQuery } from "@apollo/client";
 
 
 export default function Test() {
-    const { loading, data } = useQuery(QUERY_SINGLEUSER);
-console.log(data);
+    // const { loading, data } = useQuery(QUERY_SINGLEUSER);
+// console.log(data);
 // console.log(data.projects);
 // const test = data
 // const test = data?. || [];

@@ -13,18 +13,14 @@ const Layout = ({ projects }) => {
       {
         projects.map((thought) => (
           <Card style={{ width: '18rem' }} key={thought._id}>
-          {/* <Card.Img variant="top" src="holder.js/100px180?text=Image cap" /> */}
+          <Card.Img variant="top"  />
           <Card.Body>
             <Card.Title>{thought.title}</Card.Title>
             <Card.Text>
               {thought.description}
             </Card.Text>
           </Card.Body>
-          {/* <ListGroup className="list-group-flush">
-            <ListGroupItem>Cras justo odio</ListGroupItem>
-            <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-            <ListGroupItem>Vestibulum at eros</ListGroupItem>
-          </ListGroup> */}
+        
           <Card.Body>
             <Card.Link href="#">{thought.respitoryLink}</Card.Link>
             <Card.Link href="#">{thought.liveLink}</Card.Link>
