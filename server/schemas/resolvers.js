@@ -60,6 +60,23 @@ console.log(users);
 
       return project;
     },
+    deleteProject: async (parent, { userId, projectId}) => {
+      const project = await Project.findOneAndDelete({projectId});
+
+      await User.findOneAndUpdate(
+        { _id: userId },
+        { $pull: { project } }
+      );
+
+      return project;
+    },
+    // deleteProject: async (parent, { userId, projectId }) => {
+    //   return Project.findOneAndDelete(
+    //     { _id: projectId },
+    //     { $pull: {projects: { _id: projectId}}  },
+    //     { new: true }
+    //   );
+    // },
 
   },
 };
