@@ -28,7 +28,7 @@ const typeDefs = gql`
   type Query {
     
     users: [User]
-    singleUser(github: String!): User
+    singleUser(userId: ID!): User
     projects: [Project]
   }
 

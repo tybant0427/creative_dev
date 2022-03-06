@@ -23,14 +23,14 @@ query Projects {
 `;
 
 export const QUERY_SINGLEUSER = gql`
-query SingleUser($github: String!) {
-  singleUser(github: $github) {
+query SingleUser($userId: ID!) {
+  singleUser(userId: $userId) {
     name
     github
     password
     projects {
-      _id
       title
+      _id
       description
       respitoryLink
       liveLink
