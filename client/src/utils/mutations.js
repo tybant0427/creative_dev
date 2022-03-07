@@ -40,10 +40,10 @@ mutation AddProject($userId: ID!, $title: String!, $description: String!, $respi
 }
 `;
 export const DELETE_PROJECT = gql`
-mutation Mutation($userId: ID!, $projectId: ID!) {
-  deleteProject(userId: $userId, projectId: $projectId) {
+mutation DeleteProject($projectId: ID!) {
+  deleteProject(projectId: $projectId) {
     title
-    _id
+    description
   }
 }
 `;

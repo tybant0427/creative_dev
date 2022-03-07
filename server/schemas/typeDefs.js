@@ -39,7 +39,7 @@ const typeDefs = gql`
     logout(userId: ID!): User
     addProject(userId: ID!,title: String!,description: String!, respitoryLink: String!,liveLink: String!,
       image: String!  ): Project
-      deleteProject(userId: ID!, projectId: ID!): Project
+      deleteProject( projectId: ID!): Project
   } 
 `;
 
