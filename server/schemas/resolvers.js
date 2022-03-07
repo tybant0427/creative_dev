@@ -5,7 +5,7 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return User.find().populate('projects');
     },
 
     singleUser: async (parent, { userId }) => {
@@ -64,14 +64,18 @@ console.log(users);
     },
     deleteProject: async (parent, {  projectId}) => {
       const project = await Project.findOneAndDelete({_id:projectId});
-//added _id, if doesnt work remove
-      // await User.findOneAndUpdate(
-      //   { _id: userId },
-      //   { $pull: { project } }
-      
-
       return project;
     },
+    deleteUser: async (parent, {  userId, projectId}) => {
+      const deleteUser = await User.findOneAndDelete({_id:userId});
+      
+      return deleteUser
+    },
+// .findOneAndUpdate(
+//         {_id: userId},
+//         { $pull: projects  },
+//         { new: true }
+//       )
     // deleteProject: async (parent, { userId, projectId }) => {
     //   return Project.findOneAndDelete(
     //     { _id: projectId },
