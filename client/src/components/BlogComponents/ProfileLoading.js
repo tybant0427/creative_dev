@@ -41,6 +41,7 @@ console.log(singleUser);
   return (
     <div>
       {/* <h3>{title}</h3> */}
+      
       {
         singleUser.map((thought) => (
           <Card style={{ width: '18rem' }} key={thought._id}>
