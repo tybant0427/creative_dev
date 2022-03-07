@@ -46,13 +46,14 @@ function App() {
 
 
 const loggedin = () => {
-  Auth.loggedIn();   
+  // console.log(Auth.loggedIn());
+   return Auth.loggedIn(); 
+    
 }
   return (
     <ApolloProvider client={client}>
   <Router>
     <div className="App">
-    
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
@@ -61,11 +62,11 @@ const loggedin = () => {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/profile" component={Profile} />
-            {loggedin? 
+            {loggedin()? 
             <Route  path="/blog" component={Blog} />
             
-           :<Route path='/sign-in' component={Login} />  
-            }
+            :<Route path='/sign-in' component={Login} />  
+          }
           </Switch>
         </div>
       </div>
