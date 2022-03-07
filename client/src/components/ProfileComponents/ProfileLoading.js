@@ -9,34 +9,27 @@ import ProfileNav from './ProfileNav'
 
 
 export default function Profile  ()  {
- 
+  const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
+  );
 
-  const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT , {
-    variables: {projectId: ''}
-  });
-// console.log(test);
 console.log(err);
 
-//   console.log(deletes);
   
   const {error, data} = useQuery(QUERY_SINGLEUSER , {
     variables: {userId:localStorage.getItem('userId')}
   });
-//   console.log(data);
   const singleUser = data?.singleUser.projects || [];
  
 
+const handlebutton =async(test) =>{
 
-// console.log(singleUser);
-
-const handlebutton =async(e) =>{
-e.preventDefault()
 try{
-    // const test = data.singleUser._id
-    console.log(singleUser);
-// const  {data}= await deleteButton({
-//     variables: {projectId:data }
-// })
+const  {data} = await deleteButton({
+    variables: {projectId:test }
+})
+
+  window.location.reload("/");
+
 
 }catch(err){
 console.log(err);
@@ -44,17 +37,9 @@ console.log(err);
 }
 
 
-// const ProfileLayout = ({ singleUser, deleteing }) => {
-//   if (!singleUser.length) {
-//     return <h3>No project Yet</h3>;
-//   }
-
-
-
   return (
     <div>
       <ProfileNav />
-      {/* <h3>{title}</h3> */}
       
       {
         singleUser.map((thought) => (
@@ -74,12 +59,10 @@ console.log(err);
             <Card.Link href="#">{thought.respitoryLink}</Card.Link>
             <Card.Link href="#">{thought.liveLink}</Card.Link>
           </Card.Body>
-          <Button type="submit" onClick={()=>deleteButton} >Delete</Button>
+          <Button type="submit" onClick={()=>handlebutton(thought._id)} >Delete</Button>
         </Card>
         ))}
     </div>
     
   );
 };
-// onSubmit={()=>deleteing({ id: thought._id})}
-// export default ProfileLayout;
