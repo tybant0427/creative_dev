@@ -7,7 +7,7 @@ import SignUp from "./components/signup";
 import Home from './components/Home';
 import Blog from './pages/Blog';
 import Upload from './components/upload';
-import Profile from "./components/BlogComponents/ProfileLoading"
+import Profile from "./components/ProfileComponents/ProfileLoading"
 
 import {
   ApolloClient,
