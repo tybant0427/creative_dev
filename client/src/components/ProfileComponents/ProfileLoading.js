@@ -41,6 +41,7 @@ console.log(singleUser);
   return (
     <div>
       <ProfileNav />
+      <h1>My projects</h1>
       {/* <h3>{title}</h3> */}
       {
         singleUser.map((thought) => (

@@ -4,6 +4,7 @@ import Nav from "../components/BlogComponents/BlogNav"
 import Blog from "../components/BlogComponents/BlogHome"
 
 
+
 export default function Home() {
   const loggedin = () => {
     Auth.loggedIn();
@@ -14,8 +15,9 @@ export default function Home() {
 
     
     <div>
+      
       <Nav />
-        <h1>home blog</h1>
+        <h1>Home Blog</h1>
         
       <Blog />
          
