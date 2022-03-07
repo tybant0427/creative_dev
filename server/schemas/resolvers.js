@@ -9,12 +9,19 @@ const resolvers = {
     },
 
     singleUser: async (parent, { userId }) => {
-      return User.findOne({ userId }).populate("projects");
+      return User.findOne({ _id:userId }).populate('projects');
     },
     projects: async () => {
       return Project.find();
-    }
+    },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return Profile.findOne({ _id: context.user._id });
+      }
+      // throw new AuthenticationError('You need to be logged in!');
+    },
   },
+  
 
   Mutation: {
     addUser: async (parent, { name, github, password }) => {
@@ -61,8 +68,8 @@ console.log(users);
       return project;
     },
     deleteProject: async (parent, { userId, projectId}) => {
-      const project = await Project.findOneAndDelete({projectId});
-
+      const project = await Project.findOneAndDelete({_id:projectId});
+//added _id, if doesnt work remove
       await User.findOneAndUpdate(
         { _id: userId },
         { $pull: { project } }
