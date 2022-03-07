@@ -1,11 +1,28 @@
 import React from "react";
 import Auth from "../../utils/auth"
-import { BrowserRouter as Router, Switch, Route, Link, Prompt } from "react-router-dom";
+import {   Link } from "react-router-dom";
 import { useMutation } from '@apollo/client';
 import { DELETE_USER } from '../../utils/mutations';
 
 
+
 export default function ProfileNav() {
+
+const optionsUser =(userId)=>{
+  // const something = window.confirm("Delete user? yes or no","yes",'no')
+
+  if (window.confirm("Delete User?") === true) {
+     window.alert("See You Soon!")
+     handlebutton(userId)
+  } else {
+     console.log("You canceled!");
+  }
+  
+}
+
+
+
+
   const [deleteUser, { err, dat}] = useMutation(DELETE_USER
     );
 
@@ -13,11 +30,11 @@ export default function ProfileNav() {
 console.log(userId);
 
       try{
-        prompt()
+        
       const  {data} = await deleteUser({
           variables: {userId:userId }
       })
-      
+      console.log("deleted");
         window.location.replace("/");
         Auth.logout()
       
@@ -50,7 +67,7 @@ console.log(userId);
           <Link className='nav-link' onClick={logout}>Logout</Link>
           </li>
           <li className="nav-item">
-          <Link className='nav-link' onClick={()=>handlebutton(localStorage.getItem('userId'))}  >Delete User</Link>
+          <Link className='nav-link' onClick={()=>optionsUser(localStorage.getItem('userId'))}  >Delete User</Link>
           </li>
           
           
