@@ -1,5 +1,5 @@
-import { ListGroup, Card, ListGroupItem,Button } from 'react-bootstrap';
-import React, { useEffect } from "react";
+import { ListGroup, Card, ListGroupItem, Button } from 'react-bootstrap';
+import React from "react";
 import {  QUERY_SINGLEUSER } from "../../utils/queries";
 import { useMutation } from '@apollo/client';
 import { DELETE_PROJECT } from '../../utils/mutations';
@@ -9,39 +9,38 @@ import ProfileNav from './ProfileNav'
 
 
 export default function Profile  ()  {
- 
- function Removing(){
-  const { err, dat} = useMutation(DELETE_PROJECT , {
-    variables: {id: ''}
-  });
-console.log(dat);
-}
-//   console.log(deletes);
+  const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
+  );
+
+console.log(err);
+
   
-  const {loading, error, data} = useQuery(QUERY_SINGLEUSER , {
+  const {error, data} = useQuery(QUERY_SINGLEUSER , {
     variables: {userId:localStorage.getItem('userId')}
   });
-  console.log(data);
   const singleUser = data?.singleUser.projects || [];
  
 
+const handlebutton =async(test) =>{
 
-console.log(singleUser);
+try{
+const  {data} = await deleteButton({
+    variables: {projectId:test }
+})
+
+  window.location.reload("/");
 
 
-
-
-// const ProfileLayout = ({ singleUser, deleteing }) => {
-//   if (!singleUser.length) {
-//     return <h3>No project Yet</h3>;
-//   }
-
+}catch(err){
+console.log(err);
+}
+}
 
 
   return (
     <div>
       <ProfileNav />
-      {/* <h3>{title}</h3> */}
+      
       {
         singleUser.map((thought) => (
           <Card style={{ width: '18rem' }} key={thought._id}>
@@ -60,11 +59,10 @@ console.log(singleUser);
             <Card.Link href="#">{thought.respitoryLink}</Card.Link>
             <Card.Link href="#">{thought.liveLink}</Card.Link>
           </Card.Body>
-          <Button type="submit" onSubmit={()=>Removing(thought._id)} >Delete</Button>
+          <Button type="submit" onClick={()=>handlebutton(thought._id)} >Delete</Button>
         </Card>
         ))}
     </div>
+    
   );
 };
-// onSubmit={()=>deleteing({ id: thought._id})}
-// export default ProfileLayout;
