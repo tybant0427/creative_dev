@@ -22,6 +22,18 @@ query Projects {
 }
 `;
 
+export const QUERY_SINGLE_PROJECTS =gql`
+query getSingleProjects {
+  projects {
+    title
+    description
+    respitoryLink
+    liveLink
+    image
+  }
+}
+`;
+
 export const QUERY_SINGLEUSER = gql`
 query SingleUser($userId: ID!) {
   singleUser(userId: $userId) {

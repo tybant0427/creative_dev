@@ -47,3 +47,27 @@ mutation DeleteProject($projectId: ID!) {
   }
 }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation addComment(
+    $projectId: ID!
+    $commentText: String!
+    $commentAuthor: String!
+  ) {
+    addComment(
+      projectId: $projectId
+      commentText: $commentText
+      commentAuthor: $commentAuthor
+    ) {
+      _id
+      projectText
+      projectAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;
