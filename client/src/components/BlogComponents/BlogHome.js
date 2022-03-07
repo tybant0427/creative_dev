@@ -1,12 +1,20 @@
 import Upload from "../upload";
 import React from "react";
 import CardProjects from './CardProjects'
-
+import { DELETE_PROJECT } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
 import { QUERY_PROJECTS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
 
+
+
 export default function Test() {
+
+
+
+
+
     const { loading, data } = useQuery(QUERY_PROJECTS);
 
 const projects = data?.projects || [];
@@ -24,7 +32,7 @@ console.log(projects)
         ) : (
           <CardProjects
             projects={projects}
-          
+            
           />
         )}
       </div>

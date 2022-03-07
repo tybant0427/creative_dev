@@ -1,12 +1,41 @@
-import React from 'react';
-import { ListGroup, Card, ListGroupItem,  } from 'react-bootstrap';
+import { ListGroup, Card, ListGroupItem,Button } from 'react-bootstrap';
+import React, { useEffect } from "react";
+import {  QUERY_SINGLEUSER } from "../../utils/queries";
+import { useMutation } from '@apollo/client';
+import { DELETE_PROJECT } from '../../utils/mutations';
+import { useQuery } from "@apollo/client";
 
 
-const ProfileLayout = ({ singleUser }) => {
-  if (!singleUser.length) {
-    return <h3>No project Yet</h3>;
-  }
+
+
+export default function Profile  ()  {
  
+ function Removing(){
+  const { err, dat} = useMutation(DELETE_PROJECT , {
+    variables: {id: ''}
+  });
+console.log(dat);
+}
+//   console.log(deletes);
+  
+  const {loading, error, data} = useQuery(QUERY_SINGLEUSER , {
+    variables: {userId:localStorage.getItem('userId')}
+  });
+  console.log(data);
+  const singleUser = data?.singleUser.projects || [];
+ 
+
+
+console.log(singleUser);
+
+
+
+
+// const ProfileLayout = ({ singleUser, deleteing }) => {
+//   if (!singleUser.length) {
+//     return <h3>No project Yet</h3>;
+//   }
+
 
 
   return (
@@ -30,10 +59,11 @@ const ProfileLayout = ({ singleUser }) => {
             <Card.Link href="#">{thought.respitoryLink}</Card.Link>
             <Card.Link href="#">{thought.liveLink}</Card.Link>
           </Card.Body>
+          <Button type="submit" onSubmit={()=>Removing(thought._id)} >Delete</Button>
         </Card>
         ))}
     </div>
   );
 };
-
-export default ProfileLayout;
+// onSubmit={()=>deleteing({ id: thought._id})}
+// export default ProfileLayout;
