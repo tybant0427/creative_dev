@@ -28,7 +28,7 @@ export default function Navbar() {
           
           {loggedin?
           <li className="nav-item">
-          <p className='nav-link' onClick={logout}>logout</p>
+          <p className='nav-link' onClick={logout}>Logout</p>
           </li>
           : console.log("loggedout")}
         </ul>

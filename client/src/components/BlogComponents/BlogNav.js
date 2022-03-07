@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
     <div className="container">
       
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <div >
         <ul className="navbar-nav ml-auto">
 
        
@@ -31,7 +31,7 @@ export default function Navbar() {
           
           {loggedin?
           <li className="nav-item">
-          <p className='nav-link' onClick={logout}>logout</p>
+          <Link className='nav-link' onClick={logout}>Logout</Link>
           </li>
           : console.log("loggedout")}
         </ul>
