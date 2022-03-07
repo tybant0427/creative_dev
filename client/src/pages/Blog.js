@@ -8,7 +8,8 @@ import Blog from "../components/BlogComponents/BlogHome"
 export default function Home() {
   const loggedin = () => {
     Auth.loggedIn();
-  }  
+  } 
+
 
 
   return (
@@ -20,6 +21,8 @@ export default function Home() {
         <h1>Home Blog</h1>
         
       <Blog />
+
+      <a href="/sign-in"> Please login</a>
          
           
     

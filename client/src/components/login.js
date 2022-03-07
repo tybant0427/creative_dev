@@ -88,13 +88,13 @@ const Login = ()=> {
           <div className="card">
             <h4 className="card-header bg-dark text-light p-2">Login</h4>
             <div className="card-body">
-              {data ? (
+              {/* {data ? (
               
                   
                   <Link to={"/"}></Link>
                   // <Redirect to={Home} />
                 
-              ) : (
+              ) : ( */}
                 <form onSubmit={handleFormSubmit}>
                   <input
                     className="form-control"
@@ -120,7 +120,7 @@ const Login = ()=> {
                     Login
                   </button>
                 </form>
-              )}
+              {/* )} */}
   
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">
