@@ -67,8 +67,10 @@ console.log(users);
       return project;
     },
     deleteUser: async (parent, {  userId, projectId}) => {
-      const deleteUser = await User.findOneAndDelete({_id:userId});
-      
+      const deleteUser = await User.findOneAndDelete({_id:userId})
+      // .then(User.deleteMany({Project}))
+      // .then().deleteProject()
+   
       return deleteUser
     },
 // .findOneAndUpdate(
