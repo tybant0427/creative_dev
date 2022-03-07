@@ -40,6 +40,7 @@ const typeDefs = gql`
     addProject(userId: ID!,title: String!,description: String!, respitoryLink: String!,liveLink: String!,
       image: String!  ): Project
       deleteProject( projectId: ID!): Project
+    deleteUser(userId: ID!):User
   } 
 `;
 
