@@ -50,7 +50,25 @@ console.log(users);
       const token = signToken(users);
       return { token, users };
     },
-
+    addComment: async (parent, { projectId, commentText, commentAuthor }) => {
+      return Project.findOneAndUpdate(
+        { _id: projectId },
+        {
+          $addToSet: { comments: { commentText, commentAuthor } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+    removeComment: async (parent, { projectId, commentId }) => {
+      return Project.findOneAndUpdate(
+        { _id: projectId },
+        { $pull: { comments: { _id: commentId } } },
+        { new: true }
+      );
+    },
 
 
     // logout: async (parent, { userId }) => {
