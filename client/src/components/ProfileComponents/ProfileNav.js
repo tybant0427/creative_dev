@@ -15,7 +15,7 @@ export default function ProfileNav() {
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
     <div className="container">
       
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <div >
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link className="nav-link" to={"/blog"}>Home</Link>
