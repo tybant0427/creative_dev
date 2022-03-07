@@ -1,5 +1,5 @@
-import { ListGroup, Card, ListGroupItem,Button } from 'react-bootstrap';
-import React, { useEffect } from "react";
+import { ListGroup, Card, ListGroupItem, Button } from 'react-bootstrap';
+import React from "react";
 import {  QUERY_SINGLEUSER } from "../../utils/queries";
 import { useMutation } from '@apollo/client';
 import { DELETE_PROJECT } from '../../utils/mutations';
@@ -10,25 +10,38 @@ import { useQuery } from "@apollo/client";
 
 export default function Profile  ()  {
  
- function Removing(){
-  const { err, dat} = useMutation(DELETE_PROJECT , {
-    variables: {id: ''}
+
+  const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT , {
+    variables: {projectId: ''}
   });
-console.log(dat);
-}
+// console.log(test);
+console.log(err);
+
 //   console.log(deletes);
   
-  const {loading, error, data} = useQuery(QUERY_SINGLEUSER , {
+  const {error, data} = useQuery(QUERY_SINGLEUSER , {
     variables: {userId:localStorage.getItem('userId')}
   });
-  console.log(data);
+//   console.log(data);
   const singleUser = data?.singleUser.projects || [];
  
 
 
-console.log(singleUser);
+// console.log(singleUser);
 
+const handlebutton =async(e) =>{
+e.preventDefault()
+try{
+    // const test = data.singleUser._id
+    console.log(singleUser);
+// const  {data}= await deleteButton({
+//     variables: {projectId:data }
+// })
 
+}catch(err){
+console.log(err);
+}
+}
 
 
 // const ProfileLayout = ({ singleUser, deleteing }) => {
@@ -60,10 +73,11 @@ console.log(singleUser);
             <Card.Link href="#">{thought.respitoryLink}</Card.Link>
             <Card.Link href="#">{thought.liveLink}</Card.Link>
           </Card.Body>
-          <Button type="submit" onSubmit={()=>Removing(thought._id)} >Delete</Button>
+          <Button type="submit" onClick={()=>deleteButton} >Delete</Button>
         </Card>
         ))}
     </div>
+    
   );
 };
 // onSubmit={()=>deleteing({ id: thought._id})}
