@@ -4,7 +4,7 @@ import {  QUERY_SINGLEUSER } from "../../utils/queries";
 import { useMutation } from '@apollo/client';
 import { DELETE_PROJECT } from '../../utils/mutations';
 import { useQuery } from "@apollo/client";
-
+import ProfileNav from './ProfileNav'
 
 
 
@@ -53,6 +53,7 @@ console.log(err);
 
   return (
     <div>
+      <ProfileNav />
       {/* <h3>{title}</h3> */}
       
       {
