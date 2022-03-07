@@ -50,7 +50,7 @@ const typeDefs = gql`
         commentText: String!
         commentAuthor: String!
       ): Project
-      deleteProject(userId: ID!, projectId: ID!): Project
+      deleteProject(projectId: ID!): Project
       removeComment(projectId: ID!, commentId: ID!): Project
   } 
 `;

@@ -14,12 +14,7 @@ const resolvers = {
     projects: async () => {
       return Project.find();
     },
-    me: async (parent, args, context) => {
-      if (context.user) {
-        return Profile.findOne({ _id: context.user._id });
-      }
-      // throw new AuthenticationError('You need to be logged in!');
-    },
+ 
   },
   
 
@@ -85,13 +80,13 @@ console.log(users);
 
       return project;
     },
-    deleteProject: async (parent, { userId, projectId}) => {
+    deleteProject: async (parent, {  projectId}) => {
       const project = await Project.findOneAndDelete({_id:projectId});
 //added _id, if doesnt work remove
-      await User.findOneAndUpdate(
-        { _id: userId },
-        { $pull: { project } }
-      );
+      // await User.findOneAndUpdate(
+      //   { _id: userId },
+      //   { $pull: { project } }
+      
 
       return project;
     },
