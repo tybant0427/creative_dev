@@ -17,7 +17,7 @@ const typeDefs = gql`
     respitoryLink: String
     liveLink: String
     image: String
-    comments: [Comment]!
+    comments: [Comment]
   }
   type Comment {
     _id: ID

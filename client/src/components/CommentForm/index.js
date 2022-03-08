@@ -27,11 +27,10 @@ const CommentForm = ({ projectId }) => {
         },
 
       });
-      console.log(data);
-      
+      // console.log(data.addComment.comments);
       setCommentText('');
     } catch (err) {
-      console.error(err);
+      console.error(JSON.stringify(err));
     }
   };
 
@@ -67,7 +66,7 @@ const CommentForm = ({ projectId }) => {
               <textarea
                 name="commentText"
                 placeholder="Add your comment..."
-                value={commentText}
+                value={commentText.commentText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}

@@ -13,11 +13,17 @@ query Users {
 export const QUERY_PROJECTS =gql`
 query Projects {
   projects {
+    _id
     title
     description
     respitoryLink
     liveLink
     image
+    comments {
+      createdAt
+      commentAuthor
+      commentText
+    }
   }
 }
 `;
