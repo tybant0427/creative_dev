@@ -7,6 +7,10 @@ import { useQuery } from "@apollo/client";
 import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
 import { Link } from 'react-router-dom';
+import { Popover} from 'bootstrap';
+import { Overlay } from 'react-bootstrap';
+import { useRef } from 'react';
+
 
 export default function Profile  ()  {
   const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
@@ -76,16 +80,16 @@ console.log(data);
 
 
 
-// function Example() {
-//   const [show, setShow] = useState(false);
-//   const [target, setTarget] = useState(null);
-//   const ref = useRef(null);
 
-//   const handleClick = (event) => {
-//     setShow(!show);
-//     setTarget(event.target);
-//   };
-// }
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+
+  const handleClick = (event) => {
+    setShow(!show);
+    setTarget(event.target);
+  };
+
 
   return (
     <div>
@@ -116,7 +120,14 @@ console.log(data);
         </Card>
         ))}
 
+
+
+
 <form onSubmit={handleFormSubmit}>
+
+       
+
+
 
 <div className="mb-3">
 
@@ -191,10 +202,17 @@ className="mb-3">
     
 
 <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-</form>
-    </div>
-     
-  );
+
+    
+   
+</form> 
+   
+    
+
+</div>
+    
+    ); 
+  
 };
 
 
