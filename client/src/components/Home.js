@@ -27,7 +27,7 @@ zIndex: "1"
             <div className ="jumbotron">
                 <h1>Welcome to Creative Dev!</h1>
             </div>
-            <img class="image" src={Icon} width="75%" height="75%"></img>
+            <img className="image" src={Icon} width="75%" height="75%"></img>
             
             </div>
         );
