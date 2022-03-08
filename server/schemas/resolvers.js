@@ -94,7 +94,7 @@ console.log(users);
       console.log(deletedUser);
       return deletedUser
       }catch(err){
-        console.log(err);
+        console.log(err); 
         return; 
       }
 
