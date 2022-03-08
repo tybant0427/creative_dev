@@ -36,17 +36,7 @@ console.log(err);
   });
   console.log(dataM);
 
-//   const updated = data?.singleUser.projects || [];
-// const handlebutton =async(test) =>{
-// try{
-// const  {data} = await deleteButton({
-//     variables: {projectId:test }
-// })
-//   window.location.reload("/");
-// }catch(err){
-// console.log(err);
-// }
-// }
+
 const [formState, setFormState] = useState({
   projectId: '',
   title: '',
@@ -83,6 +73,19 @@ console.log(data);
     
   }
 };
+
+
+
+function Example() {
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+
+  const handleClick = (event) => {
+    setShow(!show);
+    setTarget(event.target);
+  };
+}
 
   return (
     <div>
