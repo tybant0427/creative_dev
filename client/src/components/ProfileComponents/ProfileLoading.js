@@ -6,7 +6,7 @@ import { DELETE_PROJECT } from '../../utils/mutations';
 import { useQuery } from "@apollo/client";
 import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
-
+import { Link } from 'react-router-dom';
 
 export default function Profile  ()  {
   const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
@@ -109,7 +109,7 @@ console.log(data);
           </Card.Body>
           <Button type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
         {/* <div value={()=>setFormState({...formState, projectId: project._id})}  >Update</div> */}
-        <Button type="submit" onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
+        <Link   onClick={()=>setFormState({...formState, projectId: project._id})} to={"/update"}>Update</Link>
         </Card>
         ))}
 

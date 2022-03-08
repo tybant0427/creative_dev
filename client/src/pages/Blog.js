@@ -22,7 +22,7 @@ export default function Home() {
         
       <Blog />
 
-      <a href="/sign-in"> Please login</a>
+      {/* <a href="/sign-in"> Please login</a> */}
          
           
     
