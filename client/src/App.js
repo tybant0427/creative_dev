@@ -43,9 +43,11 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
+
 function App() {
 
-
+  
 
   return (
     <ApolloProvider client={client}>
@@ -62,10 +64,10 @@ function App() {
 
 
             <Route path="/update" component={Update} />
-            
+           
             <Route  path="/blog" component={BlogHome} />
             
-            <Route path='/sign-in' component={Login} />  
+           <Route path='/sign-in' component={Login} />  
           
 
           </Switch>

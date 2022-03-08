@@ -48,7 +48,9 @@ const Upload = () => {
               
             }
           };
-
+function back (){
+  window.location.replace('/blog')
+}
    
 
     return (
@@ -125,7 +127,7 @@ const Upload = () => {
   
             
         
-        <button type="submit" class="btn btn-primary btn-lg" >Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg" onClick={back}>Submit</button>
         </form>
         
     </>

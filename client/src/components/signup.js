@@ -41,6 +41,7 @@ const SignUp = ()=> {
           
         }
       };
+     
     return (
         <main className="flex-row justify-center mb-4">
         <div className="col-12 col-lg-10">
@@ -49,9 +50,9 @@ const SignUp = ()=> {
             <div className="card-body">
               {data ? (
               
-                  console.log(data.addUser.users._id)
+                  // console.log(data.addUser.users._id)
                   
-                  // <Link to={"/"}></Link>
+                  <Link to={"/blog"}>click here</Link>
                   // <Redirect to={Home} />
                 
               ) : (
@@ -84,10 +85,9 @@ const SignUp = ()=> {
                     className="btn btn-block btn-primary"
                     style={{ cursor: 'pointer' }}
                     type="submit"
-                  >
-                    <Link to="/blog">
-                    Submit
-                    </Link>
+                    
+                  >Submit
+                    
                   </button>
                 </form>
               )}
