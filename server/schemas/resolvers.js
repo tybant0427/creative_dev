@@ -88,13 +88,13 @@ console.log(users);
       try{
       const currentUser = await User.findOne({_id:userId})
       console.log(currentUser);
-       await Project.deleteMany(currentUser.projects)
+       await Project.deleteMany({_id:currentUser.projects})
       const deletedUser =  await User.findOneAndDelete({_id: userId})
-      
+      // const deletedUser = User.deleteOne({_id: userId})
       console.log(deletedUser);
       return deletedUser
       }catch(err){
-        console.log(err);
+        console.log(err); 
         return; 
       }
 

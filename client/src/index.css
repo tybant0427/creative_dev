@@ -32,9 +32,18 @@ h1 {
   to {top: 0px;}
 }
 
+
+/* body { 
+  background-image: url('../src/assets/video/icon.mp4');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+} */
+
 h1,h2,h3,h4,h5,h6,label,span {
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
+  /* padding-bottom: 50px; */
 }
 body, html, .App, #root, .auth-wrapper {
   width: 100%;
@@ -76,7 +85,7 @@ body, html, .App, #root, .auth-wrapper {
   padding-bottom: 20px;
 }
 .custom-control-label {
-  font-weight: 400;
+  font-weight: 400;   
 }
 .forgot-password,
 .forgot-password a {
@@ -93,3 +102,10 @@ body, html, .App, #root, .auth-wrapper {
 .edit {
   margin-bottom: 100px;
 }
+
+.padding {
+  padding-bottom: 50px;
+  text-decoration: underline;
+}
+
+

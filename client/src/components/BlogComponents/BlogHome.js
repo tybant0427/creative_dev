@@ -28,6 +28,7 @@ console.log(projects)
        <img className="image2" src={Icon} width="15%" height="15%"></img>
     <main>
       <Nav />
+      <h1 className='padding'>Home Blog</h1>
     <div className="flex-row justify-center">
       <div className="col-12 col-md-8 mb-3">
 
