@@ -8,7 +8,7 @@ import Auth from '../../utils/auth'
 
 
 
-export default function Blog() {
+const Blog = () => {
 
   // if(!Auth.loggedIn()){
   //   window.location.assign('/')
@@ -39,5 +39,6 @@ console.log(projects)
       </div>
     </div>
   </main>
-)
-        }
+);
+        };
+export default Blog;
