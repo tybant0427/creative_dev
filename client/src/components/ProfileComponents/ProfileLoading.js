@@ -29,10 +29,6 @@ console.log(err);
 }
 }
 
-
-
-
-
   const {error:errorM, data:dataM} = useMutation(UPDATE_PROJECT , {
     variables: {userId:localStorage.getItem('userId')}
   });
@@ -75,10 +71,6 @@ console.log(data);
     
   }
 };
-
-
-
-
 
 
   return (
