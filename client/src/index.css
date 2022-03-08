@@ -17,6 +17,16 @@ h1 {
   animation-fill-mode: forwards;
 }
 
+.image2 {
+  background-image: url("../src/assets/video/icon.mp4");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: -3% -45%;
+  position:absolute;
+  width: auto;
+  height: auto;
+}
+
 @keyframes example {
   from {top: -350px;}
   to {top: 0px;}
