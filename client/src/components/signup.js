@@ -2,7 +2,7 @@ import React, {  useState } from "react";
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 const SignUp = ()=> {
@@ -31,9 +31,11 @@ const SignUp = ()=> {
           const { data } = await addUser({
             variables: { ...formState },
           });
+          console.log("handelformsub",data);
           var userid = data.addUser.users._id;
           localStorage.setItem('userId', userid);
           Auth.login(data.addUser.token);
+          
         } catch (e) {
           console.error(e);
           
@@ -83,7 +85,9 @@ const SignUp = ()=> {
                     style={{ cursor: 'pointer' }}
                     type="submit"
                   >
+                    <Link to="/blog">
                     Submit
+                    </Link>
                   </button>
                 </form>
               )}

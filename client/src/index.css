@@ -9,6 +9,26 @@ body {
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
 }
+
+h1 {
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes example {
+  from {top: -350px;}
+  to {top: 0px;}
+}
+
+/* body { 
+  background-image: url('../src/assets/video/icon.mp4');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+} */
+
 h1,h2,h3,h4,h5,h6,label,span {
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
@@ -21,15 +41,19 @@ body, html, .App, #root, .auth-wrapper {
   background-color: #ffffff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
 }
+
+
 .auth-wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
+  
 }
 .auth-inner {
-  width: 450px;
+  width: 400px;
   margin: auto;
+  margin-top: 325px;
   background: #ffffff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 55px 45px 55px;

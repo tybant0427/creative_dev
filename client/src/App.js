@@ -5,10 +5,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./components/login";
 import SignUp from "./components/signup";
 import Home from './components/Home';
-import Blog from './pages/Blog';
+// import Blog from './pages/Blog';
+import BlogHome from "./components/BlogComponents/BlogHome"
 import Upload from './components/upload';
 import Profile from "./components/ProfileComponents/ProfileLoading"
-
+import Update from "./components/ProfileComponents/Update"
 import {
   ApolloClient,
   InMemoryCache,
@@ -25,9 +26,9 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
+ 
   const token = localStorage.getItem('id_token');
-  // return the headers to the context so httpLink can read them
+ 
   return {
     headers: {
       ...headers,
@@ -45,14 +46,11 @@ const client = new ApolloClient({
 function App() {
 
 
-const loggedin = () => {
-  Auth.loggedIn();   
-}
+
   return (
     <ApolloProvider client={client}>
   <Router>
     <div className="App">
-    
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
@@ -61,12 +59,17 @@ const loggedin = () => {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/profile" component={Profile} />
-            {loggedin? 
-            <Route  path="/blog" component={Blog} />
+
+
+            <Route path="/update" component={Update} />
             
-           :<Route path='/sign-in' component={Login} />  
-            }
+            <Route  path="/blog" component={BlogHome} />
+            
+            <Route path='/sign-in' component={Login} />  
+          
+
           </Switch>
+
         </div>
       </div>
       </div>

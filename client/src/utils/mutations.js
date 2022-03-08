@@ -68,3 +68,23 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+export const DELETE_USER = gql`
+mutation DeleteUser($userId: ID!) {
+  deleteUser(userId: $userId) {
+    name
+    _id
+    github
+  }
+}`;
+
+export const UPDATE_PROJECT = gql`
+mutation UpdateProject($projectId: ID, $title: String, $description: String, $respitoryLink: String, $image: String, $liveLink: String) {
+  updateProject(projectId: $projectId, title: $title, description: $description, respitoryLink: $respitoryLink, image: $image, liveLink: $liveLink) {
+    title
+    description
+    _id
+    respitoryLink
+    image
+    liveLink
+  }
+}`;
