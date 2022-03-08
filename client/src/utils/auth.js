@@ -30,14 +30,15 @@ class AuthService {
   login(idToken) {
     console.log("login Auth");
     localStorage.setItem('id_token', idToken);
-    // window.location.replace("/blog");
     
+     window.location.href('/blog')
   }
 
   logout() {
     localStorage.removeItem('id_token');
     localStorage.removeItem('userId');
     window.location.replace('/');
+   
   }
 }
 
