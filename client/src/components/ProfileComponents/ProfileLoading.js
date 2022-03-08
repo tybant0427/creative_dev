@@ -85,7 +85,7 @@ const [show, setShow] = useState(false);
       
       {
         singleUser.map((project) => (
-          <Card style={{ width: '18rem' }} key={project._id}>
+          <Card class="edit"style={{ width: '18rem' }} key={project._id}>
 
           <Card.Img variant="top" src="{}" />
 
