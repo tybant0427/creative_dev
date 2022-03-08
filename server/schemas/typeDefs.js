@@ -17,8 +17,14 @@ const typeDefs = gql`
     respitoryLink: String
     liveLink: String
     image: String
+    comments: [Comment]
   }
-
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String
+  }
  
   type Auth { 
     token: ID!
@@ -30,6 +36,7 @@ const typeDefs = gql`
     users: [User]
     singleUser(userId: ID!): User
     projects: [Project]
+    project(projectId: ID!): Project
     me: User
   }
 
@@ -37,6 +44,12 @@ const typeDefs = gql`
     addUser(name: String!, github: String!, password: String!): Auth
     login(github: String!, password: String!): Auth
     logout(userId: ID!): User
+    addComment(
+      projectId: ID!
+      commentText: String!
+      commentAuthor: String!
+    ): Project
+    removeComment(projectId: ID!, commentId: ID!): Project
     addProject(userId: ID!,title: String!,description: String!, respitoryLink: String!,liveLink: String!,
       image: String!  ): Project
       deleteProject( projectId: ID!): Project
