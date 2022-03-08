@@ -103,7 +103,7 @@ const [show, setShow] = useState(false);
           </Card.Body>
           <Button type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
         {/* <div value={()=>setFormState({...formState, projectId: project._id})}  >Update</div> */}
-        <Link   onClick={()=>setFormState({...formState, projectId: project._id})} to={"/update"}>Update</Link>
+        <Button   onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
         </Card>
         ))}
 
@@ -114,18 +114,11 @@ const [show, setShow] = useState(false);
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Update Form</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+        <Modal.Body>
+
+      
 
 <form onSubmit={handleFormSubmit}>
 
@@ -211,7 +204,14 @@ className="mb-3">
    
 </form> 
    
-    
+</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        
+        </Modal.Footer>
+      </Modal>
 
 </div>
     
