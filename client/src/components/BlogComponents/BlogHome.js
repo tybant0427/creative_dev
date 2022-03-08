@@ -1,8 +1,6 @@
 import Upload from "../upload";
 import React from "react";
 import CardProjects from './CardProjects'
-import { DELETE_PROJECT } from "../../utils/mutations";
-import { useMutation } from "@apollo/client";
 import { QUERY_PROJECTS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 import Auth from '../../utils/auth'
@@ -12,9 +10,9 @@ import Auth from '../../utils/auth'
 
 export default function Test() {
 
-  if(!Auth.loggedIn()){
-    window.location.assign('/')
-      } 
+  // if(!Auth.loggedIn()){
+  //   window.location.assign('/')
+  //     } 
 
 
 
