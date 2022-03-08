@@ -5,6 +5,7 @@ import { QUERY_PROJECTS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 import Auth from '../../utils/auth'
 import Nav from "./BlogNav"
+import Icon from '../../assets/video/icon.mp4'
 
 
 
@@ -23,7 +24,8 @@ const projects = data?.projects || [];
 
 console.log(projects)
   return (
-
+    <div>
+       <img className="image2" src={Icon} width="15%" height="15%"></img>
     <main>
       <Nav />
       <h1 className='padding'>Home Blog</h1>
@@ -41,6 +43,7 @@ console.log(projects)
       </div>
     </div>
   </main>
+  </div>
 );
         };
 export default BlogHome;
