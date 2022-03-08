@@ -19,7 +19,7 @@ const Layout = ({ projects }) => {
       {/* <h3>{title}</h3> */}
       {
         projects.map((project) => (
-          <Card style={{ width: '18rem' }} key={project._id}>
+          <Card className="edit" style={{ width: '18rem' }} key={project._id}>
 
             <Card.Img variant="top" src="{}" />
 
