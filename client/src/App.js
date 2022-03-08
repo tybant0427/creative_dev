@@ -8,7 +8,7 @@ import Home from './components/Home';
 import Blog from './pages/Blog';
 import Upload from './components/upload';
 import Profile from "./components/ProfileComponents/ProfileLoading"
-
+import Update from "./components/ProfileComponents/Update"
 import {
   ApolloClient,
   InMemoryCache,
@@ -45,11 +45,7 @@ const client = new ApolloClient({
 function App() {
 
 
-const loggedin = () => {
-  // console.log(Auth.loggedIn());
-   return Auth.loggedIn(); 
-    
-}
+
   return (
     <ApolloProvider client={client}>
   <Router>
@@ -62,13 +58,17 @@ const loggedin = () => {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/profile" component={Profile} />
-            {/* {loggedin()?  */}
+
+
+            <Route path="/update" component={Update} />
+            
             <Route  path="/blog" component={Blog} />
             
             <Route path='/sign-in' component={Login} />  
-          {/* } */}
-          </Switch>   
-          {/* random comment */}
+          
+
+          </Switch>
+
         </div>
       </div>
       </div>
