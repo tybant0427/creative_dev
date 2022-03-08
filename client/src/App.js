@@ -62,6 +62,7 @@ function App() {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/profile" component={Profile} />
+
             <Route path="/update" component={Update} />
             
             <Route  path="/blog" component={Blog} />
@@ -69,6 +70,7 @@ function App() {
             <Route path='/sign-in' component={Login} />  
           
           </Switch>
+
         </div>
       </div>
       </div>
