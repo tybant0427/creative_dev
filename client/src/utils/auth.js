@@ -28,8 +28,10 @@ class AuthService {
   }
 
   login(idToken) {
+    console.log("login Auth");
     localStorage.setItem('id_token', idToken);
-    window.location.assign("/blog");
+    // window.location.assign("/blog");
+    
   }
 
   logout() {

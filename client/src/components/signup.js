@@ -31,6 +31,7 @@ const SignUp = ()=> {
           const { data } = await addUser({
             variables: { ...formState },
           });
+          console.log("handelformsub",data);
           var userid = data.addUser.users._id;
           localStorage.setItem('userId', userid);
           Auth.login(data.addUser.token);
