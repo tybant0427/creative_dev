@@ -85,7 +85,9 @@ const SignUp = ()=> {
                     style={{ cursor: 'pointer' }}
                     type="submit"
                   >
+                    <Link to="/blog">
                     Submit
+                    </Link>
                   </button>
                 </form>
               )}
