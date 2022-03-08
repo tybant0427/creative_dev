@@ -45,9 +45,7 @@ const client = new ApolloClient({
 function App() {
 
 
-const loggedin = () => {
-  Auth.loggedIn();   
-}
+
   return (
     <ApolloProvider client={client}>
   <Router>
@@ -61,11 +59,11 @@ const loggedin = () => {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/profile" component={Profile} />
-            {loggedin? 
+          
             <Route  path="/blog" component={Blog} />
             
-           :<Route path='/sign-in' component={Login} />  
-            }
+           <Route path='/sign-in' component={Login} />  
+      
           </Switch>
         </div>
       </div>
