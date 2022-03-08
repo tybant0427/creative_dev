@@ -7,7 +7,7 @@ import CommentForm from '../../components/CommentForm/index';
 
 const Layout = ({ projects }) => {
   if (!projects.length) {
-    return <h3>No project Yet</h3>;
+    return <h3>No Projects Yet</h3>;
   }
 
 // const commentData = (comments) => {
