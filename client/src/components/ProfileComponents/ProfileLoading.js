@@ -21,7 +21,7 @@ try{
 const  {data} = await deleteButton({
     variables: {projectId:test }
 })
-  window.location.reload("/");
+  // window.location.reload("/");
 }catch(err){
 console.log(err);
 }
@@ -65,7 +65,7 @@ const handleFormSubmit = async (event) => {
     const { data } = await updateProject({
       variables: { ...formState},
     });
-window.location.reload('/')
+// window.location.reload('/')
 console.log(data);
   
   } catch (e) {
@@ -76,16 +76,16 @@ console.log(data);
 
 
 
-function Example() {
-  const [show, setShow] = useState(false);
-  const [target, setTarget] = useState(null);
-  const ref = useRef(null);
+// function Example() {
+//   const [show, setShow] = useState(false);
+//   const [target, setTarget] = useState(null);
+//   const ref = useRef(null);
 
-  const handleClick = (event) => {
-    setShow(!show);
-    setTarget(event.target);
-  };
-}
+//   const handleClick = (event) => {
+//     setShow(!show);
+//     setTarget(event.target);
+//   };
+// }
 
   return (
     <div>
