@@ -47,13 +47,13 @@ const Login = ()=> {
           <div className="card">
             <h4 className="card-header bg-dark text-light p-2">Login</h4>
             <div className="card-body">
-              {/* {data ? (
+              {data ? (
               
                   
-                  <Link to={"/"}></Link>
-                  // <Redirect to={Home} />
+                  <Link to={"/blog"}>You May Enter</Link>
+                 
                 
-              ) : ( */}
+              ) : (
                 <form onSubmit={handleFormSubmit}>
                   <input
                     className="form-control"
@@ -76,13 +76,13 @@ const Login = ()=> {
                     style={{ cursor: 'pointer' }}
                     type="submit"
                   >
-                    <Link to="/blog">
-                    Login
-                    </Link>
+                    
+                    Login In
+                   
                   </button>
                 </form>
             
-  
+              )}
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">
                   {error.message}
