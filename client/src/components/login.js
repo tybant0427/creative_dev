@@ -76,12 +76,12 @@ const Login = ()=> {
                     style={{ cursor: 'pointer' }}
                     type="submit"
                   >
-                    <a href="/blog">
+                    <Link to="/blog">
                     Login
-                    </a>
+                    </Link>
                   </button>
                 </form>
-              {/* )} */}
+            
   
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">
