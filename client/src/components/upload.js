@@ -48,15 +48,16 @@ const Upload = () => {
               
             }
           };
-function back (){
-  window.location.replace('/blog')
-}
+
    
 
     return (
-        <>
-
+        
+         
+<>
 <form onSubmit={handleFormSubmit}>
+
+
 
         <div className="mb-3">
             <label for="exampleFormControlInput1" className="form-label">Project Name</label>
@@ -123,13 +124,22 @@ function back (){
               >
             </input>
         </div>
-    
-  
+        {data ? (
+              
+              // console.log(data.addUser.users._id)
+              
+              <Link to={"/blog"}>Back to Blog</Link>
+              // <Redirect to={Home} />
+            
+          ) : (
+       
             
         
-        <button type="submit" class="btn btn-primary btn-lg" onClick={back}>Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg" >Submit</button>
+          )} 
+
         </form>
-        
+       
     </>
     )
 }
