@@ -62,11 +62,11 @@ const loggedin = () => {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/profile" component={Profile} />
-            {loggedin()? 
+            {/* {loggedin()?  */}
             <Route  path="/blog" component={Blog} />
             
-            :<Route path='/sign-in' component={Login} />  
-          }
+            <Route path='/sign-in' component={Login} />  
+          {/* } */}
           </Switch>
         </div>
       </div>
