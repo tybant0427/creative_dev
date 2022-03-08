@@ -2,7 +2,7 @@ import React, {  useState } from "react";
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { Link, Redirect, Router } from 'react-router-dom';
+import { Link, Redirect, Route, Router } from 'react-router-dom';
 
 
 const Login = ()=> {
@@ -34,7 +34,8 @@ const Login = ()=> {
           var userid = data.login.users._id;
           localStorage.setItem('userId', userid);
           Auth.login(data.login.token);
-          window.location.replace("/blog");
+          // window.location.replace("/blog");
+          
         } catch (e) {
           console.error(e);
           
@@ -75,7 +76,9 @@ const Login = ()=> {
                     style={{ cursor: 'pointer' }}
                     type="submit"
                   >
+                    <a href="/blog">
                     Login
+                    </a>
                   </button>
                 </form>
               {/* )} */}
