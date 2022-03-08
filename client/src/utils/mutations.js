@@ -60,9 +60,6 @@ export const ADD_COMMENT = gql`
       commentAuthor: $commentAuthor
     ) {
       _id
-      projectText
-      projectAuthor
-      createdAt
       comments {
         _id
         commentText

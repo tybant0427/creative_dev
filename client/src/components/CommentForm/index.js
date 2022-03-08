@@ -14,16 +14,21 @@ const CommentForm = ({ projectId }) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log('handleFormSubmit');
+
 
     try {
+
       const { data } = await addComment({
         variables: {
           projectId,
           commentText,
-          commentAuthor: Auth.getProfile().data.projectAuthor,
+          commentAuthor: Auth.getProfile().data.name,
         },
-      });
 
+      });
+      console.log(data);
+      
       setCommentText('');
     } catch (err) {
       console.error(err);
@@ -31,6 +36,7 @@ const CommentForm = ({ projectId }) => {
   };
 
   const handleChange = (event) => {
+    console.log('handleChange');
     const { name, value } = event.target;
 
     if (name === 'commentText' && value.length <= 280) {

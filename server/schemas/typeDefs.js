@@ -45,13 +45,13 @@ const typeDefs = gql`
     login(github: String!, password: String!): Auth
     logout(userId: ID!): User
     addProject(userId: ID!,title: String!,description: String!, respitoryLink: String!,liveLink: String!,image: String!): Project
-      addComment(
-        projectId: ID!
-        commentText: String!
-        commentAuthor: String!
-      ): Project
-      deleteProject(projectId: ID!): Project
-      removeComment(projectId: ID!, commentId: ID!): Project
+    addComment(
+      projectId: ID!
+      commentText: String!
+      commentAuthor: String!
+    ): Project
+    deleteProject(projectId: ID!): Project
+    removeComment(projectId: ID!, commentId: ID!): Project
   } 
 `;
 
