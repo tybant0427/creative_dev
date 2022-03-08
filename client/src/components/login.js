@@ -1,45 +1,3 @@
-// import React, { Component } from "react";
-// import Auth from "../utils/auth"
-// export default class Login extends Component {
-
-//     render() {
-       
-//         return (
-//             <>
-//                 <form>
-//                     <h3>Sign In</h3>
-//                     <div className="form-group">
-//                         <label>Name</label>
-//                         <input type="text" className="form-control" placeholder="Enter Name" />
-//                     </div>
-//                     <div className="form-group">
-//                         <label>Github Username</label>
-//                         <input type="text" className="form-control" placeholder="Enter Username" />
-//                     </div>
-//                     <div className="form-group">
-//                         <label>Password</label>
-//                         <input type="password" className="form-control" placeholder="Enter password" />
-//                     </div>
-//                     <div className="form-group">
-//                         <div className="custom-control custom-checkbox">
-//                             <input type="checkbox" className="custom-control-input" id="customCheck1" />
-//                             <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-//                         </div>
-//                     </div>
-//                     <button type="submit" className="btn btn-primary btn-block">Submit</button>
-//                     <p className="forgot-password text-right">
-//                         Forgot <a href="#">password?</a>
-//                     </p>
-
-//                 </form>
-                
-//             </>
-//         );
-//     }
-// }
-
-// see SignupForm.js for comments
-
 import React, {  useState } from "react";
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
@@ -88,13 +46,13 @@ const Login = ()=> {
           <div className="card">
             <h4 className="card-header bg-dark text-light p-2">Login</h4>
             <div className="card-body">
-              {data ? (
+              {/* {data ? (
               
                   
                   <Link to={"/"}></Link>
                   // <Redirect to={Home} />
                 
-              ) : (
+              ) : ( */}
                 <form onSubmit={handleFormSubmit}>
                   <input
                     className="form-control"
@@ -120,7 +78,7 @@ const Login = ()=> {
                     Login
                   </button>
                 </form>
-              )}
+              {/* )} */}
   
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">

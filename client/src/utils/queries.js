@@ -39,3 +39,19 @@ query SingleUser($userId: ID!) {
   }
 }
 `;
+export const QUERY_ME = gql`
+query Me {
+  me {
+    name
+    _id
+    github
+    projects {
+      title
+      description
+      respitoryLink
+      liveLink
+      image
+      _id
+    }
+  }
+}`;

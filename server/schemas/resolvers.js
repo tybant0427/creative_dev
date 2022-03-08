@@ -5,16 +5,18 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return User.find().populate('projects');
     },
 
     singleUser: async (parent, { userId }) => {
-      return User.findOne({ userId }).populate("projects");
+      return User.findOne({ _id:userId }).populate('projects');
     },
     projects: async () => {
       return Project.find();
-    }
+    },
+ 
   },
+  
 
   Mutation: {
     addUser: async (parent, { name, github, password }) => {
@@ -60,16 +62,40 @@ console.log(users);
 
       return project;
     },
-    deleteProject: async (parent, { userId, projectId}) => {
-      const project = await Project.findOneAndDelete({projectId});
-
-      await User.findOneAndUpdate(
-        { _id: userId },
-        { $pull: { project } }
-      );
-
+    deleteProject: async (parent, {  projectId}) => {
+      const project = await Project.findOneAndDelete({_id:projectId});
       return project;
     },
+    deleteUser: async (parent, {  userId}) => {
+      try{
+      const currentUser = await User.findOne({_id:userId})
+      console.log(currentUser);
+       await Project.deleteMany(currentUser.projects)
+      const deletedUser =  await User.findOneAndDelete({_id: userId})
+      
+      console.log(deletedUser);
+      return deletedUser
+      }catch(err){
+        console.log(err);
+        return; 
+      }
+
+    },
+
+    updateProject: async (parent, args)=>{
+      try{
+      const updated = await Project.findOneAndUpdate({_id: args.projectId},{$set: args})
+      return updated;
+      }catch(err){
+        console.log(err);
+        return;
+      }
+    }
+// .findOneAndUpdate(
+//         {_id: userId},
+//         { $pull: projects  },
+//         { new: true }
+//       )
     // deleteProject: async (parent, { userId, projectId }) => {
     //   return Project.findOneAndDelete(
     //     { _id: projectId },

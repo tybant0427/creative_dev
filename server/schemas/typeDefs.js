@@ -30,6 +30,7 @@ const typeDefs = gql`
     users: [User]
     singleUser(userId: ID!): User
     projects: [Project]
+    me: User
   }
 
   type Mutation {
@@ -38,7 +39,9 @@ const typeDefs = gql`
     logout(userId: ID!): User
     addProject(userId: ID!,title: String!,description: String!, respitoryLink: String!,liveLink: String!,
       image: String!  ): Project
-      deleteProject(userId: ID!, projectId: ID!): Project
+      deleteProject( projectId: ID!): Project
+    deleteUser(userId: ID!):User
+    updateProject(projectId: ID, title: String, description: String, respitoryLink: String, liveLink: String, image: String): Project
   } 
 `;
 

@@ -7,8 +7,8 @@ import SignUp from "./components/signup";
 import Home from './components/Home';
 import Blog from './pages/Blog';
 import Upload from './components/upload';
-import Profile from "./components/BlogComponents/Profile"
-
+import Profile from "./components/ProfileComponents/ProfileLoading"
+import Update from "./components/ProfileComponents/Update"
 import {
   ApolloClient,
   InMemoryCache,
@@ -50,7 +50,6 @@ function App() {
     <ApolloProvider client={client}>
   <Router>
     <div className="App">
-    
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
@@ -59,12 +58,17 @@ function App() {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/profile" component={Profile} />
-          
+
+
+            <Route path="/update" component={Update} />
+            
             <Route  path="/blog" component={Blog} />
             
-           <Route path='/sign-in' component={Login} />  
-      
+            <Route path='/sign-in' component={Login} />  
+          
+
           </Switch>
+
         </div>
       </div>
       </div>
