@@ -45,11 +45,11 @@ const client = new ApolloClient({
 function App() {
 
 
-const loggedin = () => {
-  // console.log(Auth.loggedIn());
-   return Auth.loggedIn(); 
+// const loggedin = () => {
+//   // console.log(Auth.loggedIn());
+//    return Auth.loggedIn(); 
     
-}
+// }
   return (
     <ApolloProvider client={client}>
   <Router>
