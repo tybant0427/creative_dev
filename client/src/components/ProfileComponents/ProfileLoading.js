@@ -7,9 +7,7 @@ import { useQuery } from "@apollo/client";
 import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
 import { Link } from 'react-router-dom';
-import { Popover} from 'bootstrap';
-import { Overlay } from 'react-bootstrap';
-import { useRef } from 'react';
+
 
 
 export default function Profile  ()  {
@@ -25,7 +23,7 @@ try{
 const  {data} = await deleteButton({
     variables: {projectId:test }
 })
-  // window.location.reload("/");
+
 }catch(err){
 console.log(err);
 }
@@ -69,7 +67,7 @@ const handleFormSubmit = async (event) => {
     const { data } = await updateProject({
       variables: { ...formState},
     });
-// window.location.reload('/')
+
 console.log(data);
   
   } catch (e) {
