@@ -24,10 +24,6 @@ zIndex: "1"
     </video>
             <Navbar />
 
-
-     
-
-
             <div className ="jumbotron">
                 <h1>Welcome to Creative Dev!</h1>
             </div>
