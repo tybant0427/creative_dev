@@ -31,12 +31,12 @@ console.log(userId);
 
       try{
         
-      // const  {data} = await deleteUser({
-      //     variables: {userId:userId }
-      // })
-      // console.log("deleted");
-      //   window.location.replace("/");
-      //   Auth.logout()
+      const  {data} = await deleteUser({
+          variables: {userId:userId }
+      })
+      console.log("deleted");
+      Auth.logout()
+      
       
       }catch(err){
       console.log(err);

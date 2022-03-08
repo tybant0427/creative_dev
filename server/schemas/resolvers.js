@@ -66,13 +66,31 @@ console.log(users);
       const project = await Project.findOneAndDelete({_id:projectId});
       return project;
     },
-    deleteUser: async (parent, {  userId, projectId}) => {
-      const deleteUser = await User.findOneAndDelete({_id:userId})
-      // .then(User.deleteMany({Project}))
-      // .then().deleteProject()
-   
-      return deleteUser
+    deleteUser: async (parent, {  userId}) => {
+      try{
+      const currentUser = await User.findOne({_id:userId})
+      console.log(currentUser);
+       await Project.deleteMany(currentUser.projects)
+      const deletedUser =  await User.findOneAndDelete({_id: userId})
+      
+      console.log(deletedUser);
+      return deletedUser
+      }catch(err){
+        console.log(err);
+        return; 
+      }
+
     },
+
+    updateProject: async (parent, args)=>{
+      try{
+      const updated = await Project.findOneAndUpdate({_id: args.projectId},{$set: args})
+      return updated;
+      }catch(err){
+        console.log(err);
+        return;
+      }
+    }
 // .findOneAndUpdate(
 //         {_id: userId},
 //         { $pull: projects  },
