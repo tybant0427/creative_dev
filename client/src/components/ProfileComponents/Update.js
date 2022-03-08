@@ -95,7 +95,7 @@ className="mb-3">
           >
     </input>
 </div>
- <div className="mb-3">
+ {/* <div className="mb-3">
     <label for="exampleFormControlInput1" className="form-label">Image</label>
     <input 
     type="File"
@@ -107,7 +107,7 @@ className="mb-3">
       onChange={handleChange}
       >
     </input>
-</div>
+</div> */}
 <div className="mb-3">
     <label for="exampleFormControlInput1" className="form-label">Description</label>
     <input 
