@@ -121,22 +121,13 @@ console.log(data);
         ))}
 
 
-<div ref={ref}>
-      <Button onClick={handleClick}>Holy guacamole!</Button>
 
-      <Overlay
-        show={show}
-        target={target}
-        placement="bottom"
-        container={ref}
-        containerPadding={20}
-      >
-        <Popover id="popover-contained">
-          <Popover.Header as="h3">Popover bottom</Popover.Header>
-          <Popover.Body>
-       
 
 <form onSubmit={handleFormSubmit}>
+
+       
+
+
 
 <div className="mb-3">
 
@@ -211,13 +202,13 @@ className="mb-3">
     
 
 <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-</form>
+
     
+   
+</form> 
+   
     
-</Popover.Body>
-        </Popover>
-      </Overlay>
-    </div>
+
 </div>
     
     ); 
