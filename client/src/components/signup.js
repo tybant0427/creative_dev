@@ -35,6 +35,7 @@ const SignUp = ()=> {
           var userid = data.addUser.users._id;
           localStorage.setItem('userId', userid);
           Auth.login(data.addUser.token);
+          window.location.replace("/blog");
         } catch (e) {
           console.error(e);
           

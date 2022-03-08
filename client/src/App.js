@@ -6,7 +6,7 @@ import Login from "./components/login";
 import SignUp from "./components/signup";
 import Home from './components/Home';
 // import Blog from './pages/Blog';
-import Blog from "./components/BlogComponents/BlogHome"
+import BlogHome from "./components/BlogHome"
 import Upload from './components/upload';
 import Profile from "./components/ProfileComponents/ProfileLoading"
 import Update from "./components/ProfileComponents/Update"
@@ -63,7 +63,7 @@ function App() {
 
             <Route path="/update" component={Update} />
             
-            <Route  path="/blog" component={Blog} />
+            <Route  path="/blog" component={BlogHome} />
             
             <Route path='/sign-in' component={Login} />  
           

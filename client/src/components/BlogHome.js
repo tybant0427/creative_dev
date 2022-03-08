@@ -1,14 +1,14 @@
-import Upload from "../upload";
+import Upload from "./upload";
 import React from "react";
-import CardProjects from './CardProjects'
-import { QUERY_PROJECTS } from "../../utils/queries";
+import CardProjects from './BlogComponents/CardProjects'
+import { QUERY_PROJECTS } from "../utils/queries";
 import { useQuery } from "@apollo/client";
-import Auth from '../../utils/auth'
+import Auth from '../utils/auth'
 
 
 
 
-const Blog = () => {
+const BlogHome  = () => {
 
   // if(!Auth.loggedIn()){
   //   window.location.assign('/')
@@ -41,4 +41,4 @@ console.log(projects)
   </main>
 );
         };
-export default Blog;
+export default BlogHome;
