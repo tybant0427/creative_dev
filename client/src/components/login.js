@@ -30,11 +30,11 @@ const Login = ()=> {
           const { data } = await loginUser({
             variables: { ...formState },
           });
-    
+    console.log("logininform",data);
           var userid = data.login.users._id;
           localStorage.setItem('userId', userid);
           Auth.login(data.login.token);
-          
+          window.location.replace("/blog");
         } catch (e) {
           console.error(e);
           

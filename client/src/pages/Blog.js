@@ -6,9 +6,9 @@ import Blog from "../components/BlogComponents/BlogHome"
 
 
 export default function Home() {
-  const loggedin = () => {
-    Auth.loggedIn();
-  } 
+  // const loggedin = () => {
+  //   Auth.loggedIn();
+  // } 
 
 
 
@@ -22,7 +22,7 @@ export default function Home() {
         
       <Blog />
 
-      {/* <a href="/sign-in"> Please login</a> */}
+     
          
           
     
