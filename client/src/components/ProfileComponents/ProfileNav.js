@@ -8,23 +8,22 @@ import { DELETE_USER } from '../../utils/mutations';
 
 export default function ProfileNav() {
 
-const optionsUser =(userId)=>{
+// const optionsUser =(userId)=>{
   // const something = window.confirm("Delete user? yes or no","yes",'no')
 
-  if (window.confirm("Delete User?") === true) {
-     window.alert("See You Soon!")
-     handlebutton(userId)
-  } else {
-     console.log("You canceled!");
-  }
+//   if (window.confirm("Delete User?") === true) {
+    
+//      handlebutton(userId)
+//   } else {
+//      console.log("You canceled!");
+//   }
   
-}
+// }
 
 
 
 
-  const [deleteUser, { err, dat}] = useMutation(DELETE_USER
-    );
+  const [deleteUser, { err, data}] = useMutation(DELETE_USER);
 
     const handlebutton =async(userId) =>{
 console.log(userId);
@@ -60,14 +59,12 @@ console.log(userId);
           <li className="nav-item">
             <Link className="nav-link" to={"/blog"}>Home</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to={"/upload"}>Upload</Link>
-          </li>
+          
           <li className="nav-item">
           <Link className='nav-link' onClick={logout}>Logout</Link>
           </li>
           <li className="nav-item">
-          <Link className='nav-link' onClick={()=>optionsUser(localStorage.getItem('userId'))}  >Delete User</Link>
+          <Link className='nav-link' onClick={()=>handlebutton(localStorage.getItem('userId'))}  >Delete User</Link>
           </li>
           
           

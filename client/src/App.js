@@ -9,7 +9,7 @@ import Home from './components/Home';
 import BlogHome from "./components/BlogComponents/BlogHome"
 import Upload from './components/upload';
 import Profile from "./components/ProfileComponents/ProfileLoading"
-import Update from "./components/ProfileComponents/Update"
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -63,7 +63,7 @@ function App() {
             <Route path="/profile" component={Profile} />
 
 
-            <Route path="/update" component={Update} />
+          
            
             <Route  path="/blog" component={BlogHome} />
             
