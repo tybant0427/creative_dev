@@ -47,6 +47,20 @@ mutation DeleteProject($projectId: ID!) {
   }
 }
 `;
+
+export const ADD_COMMENT = gql`
+mutation addComment($projectId: ID!, $commentText: String!, $commentAuthor: String!) {
+  addComment(projectId: $projectId, commentText: $commentText, commentAuthor: $commentAuthor) {
+    _id
+    comments {
+      _id
+      commentText
+      commentAuthor
+      createdAt    
+    }
+  }
+}
+`;
 export const DELETE_USER = gql`
 mutation DeleteUser($userId: ID!) {
   deleteUser(userId: $userId) {
