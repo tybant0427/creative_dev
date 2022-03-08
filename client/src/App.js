@@ -6,7 +6,7 @@ import Login from "./components/login";
 import SignUp from "./components/signup";
 import Home from './components/Home';
 // import Blog from './pages/Blog';
-import Blog from "../components/BlogComponents/BlogHome"
+import Blog from "./components/BlogComponents/BlogHome"
 import Upload from './components/upload';
 import Profile from "./components/ProfileComponents/ProfileLoading"
 import Update from "./components/ProfileComponents/Update"

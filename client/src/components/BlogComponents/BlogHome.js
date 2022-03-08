@@ -8,7 +8,7 @@ import Auth from '../../utils/auth'
 
 
 
-export default function Test() {
+export default function Blog() {
 
   // if(!Auth.loggedIn()){
   //   window.location.assign('/')
