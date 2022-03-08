@@ -36,7 +36,7 @@ const Upload = () => {
           const handleFormSubmit = async (event) => {
             event.preventDefault();
             console.log(formState);  
-        window.location.reload()
+        
             try {
               const { data } = await addProject({
                 variables: { ...formState },
