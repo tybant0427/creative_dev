@@ -81,14 +81,7 @@ console.log(data);
 
 
 
-  const [show, setShow] = useState(false);
-  const [target, setTarget] = useState(null);
-  const ref = useRef(null);
 
-  const handleClick = (event) => {
-    setShow(!show);
-    setTarget(event.target);
-  };
 
 
   return (
