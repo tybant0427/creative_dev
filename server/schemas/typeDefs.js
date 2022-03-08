@@ -41,6 +41,7 @@ const typeDefs = gql`
       image: String!  ): Project
       deleteProject( projectId: ID!): Project
     deleteUser(userId: ID!):User
+    updateProject(projectId: ID, title: String, description: String, respitoryLink: String, liveLink: String, image: String): Project
   } 
 `;
 

@@ -55,3 +55,15 @@ mutation DeleteUser($userId: ID!) {
     github
   }
 }`;
+
+export const UPDATE_PROJECT = gql`
+mutation UpdateProject($projectId: ID, $title: String, $description: String, $respitoryLink: String, $image: String, $liveLink: String) {
+  updateProject(projectId: $projectId, title: $title, description: $description, respitoryLink: $respitoryLink, image: $image, liveLink: $liveLink) {
+    title
+    description
+    _id
+    respitoryLink
+    image
+    liveLink
+  }
+}`;
