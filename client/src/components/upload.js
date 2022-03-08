@@ -49,9 +49,7 @@ const Upload = () => {
             }
           };
 
-    // const back = () => {
-    //     window.location.assign("/blog");
-    // }
+   
 
     return (
         <>
