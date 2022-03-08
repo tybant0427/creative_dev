@@ -76,11 +76,11 @@ console.log(data);
   return (
     <div>
       <ProfileNav />
-      <h1>My Projects</h1>
+      <h1 className='padding'>My Projects</h1>
       
       {
         singleUser.map((project) => (
-          <Card class="edit"style={{ width: '18rem' }} key={project._id}>
+          <Card className="edit" style={{ width: '18rem' }} key={project._id}>
 
           <Card.Img variant="top" src="{}" />
 

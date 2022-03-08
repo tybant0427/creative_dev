@@ -26,6 +26,7 @@ console.log(projects)
 
     <main>
       <Nav />
+      <h1 className='padding'>Home Blog</h1>
     <div className="flex-row justify-center">
       <div className="col-12 col-md-8 mb-3">
 
