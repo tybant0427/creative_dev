@@ -1,10 +1,10 @@
-import Upload from "./upload";
+import Upload from "../upload";
 import React from "react";
-import CardProjects from './BlogComponents/CardProjects'
-import { QUERY_PROJECTS } from "../utils/queries";
+import CardProjects from './CardProjects'
+import { QUERY_PROJECTS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
-import Auth from '../utils/auth'
-
+import Auth from '../../utils/auth'
+import Nav from "./BlogNav"
 
 
 
@@ -25,6 +25,7 @@ console.log(projects)
   return (
 
     <main>
+      <Nav />
     <div className="flex-row justify-center">
       <div className="col-12 col-md-8 mb-3">
 

@@ -91,18 +91,7 @@ console.log(users);
         return;
       }
     }
-// .findOneAndUpdate(
-//         {_id: userId},
-//         { $pull: projects  },
-//         { new: true }
-//       )
-    // deleteProject: async (parent, { userId, projectId }) => {
-    //   return Project.findOneAndDelete(
-    //     { _id: projectId },
-    //     { $pull: {projects: { _id: projectId}}  },
-    //     { new: true }
-    //   );
-    // },
+
 
   },
 };

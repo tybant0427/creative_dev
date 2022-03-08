@@ -1,7 +1,7 @@
 import React from "react";
 import Auth from "../utils/auth"
 import Nav from "../components/BlogComponents/BlogNav"
-import Blog from "../components/BlogHome"
+import Blog from "../components/BlogComponents/BlogHome"
 
 
 
