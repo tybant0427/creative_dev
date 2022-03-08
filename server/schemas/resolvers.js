@@ -45,11 +45,11 @@ console.log(users);
       const token = signToken(users);
       return { token, users };
     },
-    addComment: async (parent, { projectId, commentText, commentAuthor }) => {
+    addComment: async (parent, { projectId, commentText, commentAuthor, createdAt}) => {
       return Project.findOneAndUpdate(
         { _id: projectId },
         {
-          $addToSet: { comments: { commentText, commentAuthor } },
+          $addToSet: { comments: { commentText, commentAuthor, createdAt } },
         },
         {
           new: true,
