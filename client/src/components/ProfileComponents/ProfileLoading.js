@@ -6,7 +6,6 @@ import { DELETE_PROJECT } from '../../utils/mutations';
 import { useQuery } from "@apollo/client";
 import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
-import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 
 
@@ -123,13 +122,8 @@ const [show, setShow] = useState(false);
 
 <form onSubmit={handleFormSubmit}>
 
-       
-
-
-
 <div className="mb-3">
 
-  
     <label for="exampleFormControlInput1" className="form-label">Project Name</label>
     <input 
     type="text"
