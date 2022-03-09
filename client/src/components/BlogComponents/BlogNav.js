@@ -9,9 +9,7 @@ export default function Navbar() {
         Auth.logout();
     }
     // console.log(Auth.loggedIn() ? "loggedin": "loggedout");
-    const loggedin = () => {
-      Auth.loggedIn();
-    }
+   
   return (
     
     <nav className="navbar navbar-expand-lg navbar-light fixed-top nav">
@@ -29,14 +27,16 @@ export default function Navbar() {
             <Link className="test" to={"/profile"}>Profile</Link>
           </li>
           <li className="nav-item">
-            <Link className="test" to={"/blog"}>Home</Link>
+            <Link className="test" to={"/blog"}>Blog</Link>
           </li>
-          
-          {loggedin?
+          <li className="nav-item">
+            <Link className="test" to={"/"}>Home</Link>
+          </li>
+       
           <li className="nav-item">
           <Link className='test' onClick={logout}>Logout</Link>
           </li>
-          : console.log("loggedout")}
+       
           
         </ul>
       </div>
