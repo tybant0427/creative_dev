@@ -63,8 +63,8 @@ const handleFormSubmit = async (event) => {
     const { data } = await updateProject({
       variables: { ...formState},
       
+      
     });
-window.location.reload(true)
 console.log(data);
   
   } catch (e) {
