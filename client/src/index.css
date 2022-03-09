@@ -3,11 +3,22 @@
   box-sizing: border-box;
 }
 body {
-  background: #1C8EF9 !important;
-  min-height: 100vh;
+  /* background: #9a9692; */
+  /* min-height: 100vh;
   display: flex;
   font-weight: 400;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Fira Sans', sans-serif; */
+    /* background-image: url(./assets/images/space.jpg);
+    background-size:cover;
+    background-repeat: no-repeat; */
+    
+    
+  /* z-index: -2; */
+}
+
+.backImg{
+  background-image: url(./assets/images/space.jpg);
+  
 }
 
 h1 {
@@ -56,9 +67,7 @@ body, html, .App, #root, .auth-wrapper {
 
 
 .auth-wrapper {
-  /* display: flex; */
-  /* justify-content: center;
-  flex-direction: column; */
+ 
   text-align: center;
   margin-top: 100px;
   
@@ -68,11 +77,12 @@ body, html, .App, #root, .auth-wrapper {
   width: 400px;
   margin: auto;
   
-  background: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  background: rgba(34, 35, 58, 0.2);
+  box-shadow: 0px 14px 80px rgba(52, 54, 95, 0.9);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
   transition: all .3s;
+  color: white;
 }
 .auth-wrapper .form-control:focus {
   border-color: #167bff;
@@ -108,4 +118,78 @@ body, html, .App, #root, .auth-wrapper {
   text-decoration: underline;
 }
 
+.nav  {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+.test{
+  color: white;
+}
+.nav a {
+  padding: .5em .8em;
+  color: rgba(255, 255, 255, 0.986);
+  position: relative;
+  text-decoration: none;
+  /* background-color: rgba(10, 6, 6, 0.5); */
+}
 
+.nav a::before,
+.nav a::after {
+  content: '';
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all .35s ease;
+  opacity: 0;
+  /* background-color: black; */
+}
+
+.nav a::before {
+  content: '';
+  right: 0;
+  top: 0;
+  border-top: 3px solid #3E8914;
+  border-right: 3px solid #2E640F;
+  transform: translate(-100%, 50%);
+
+}
+
+.nav a:after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #2E640F;
+  border-left: 3px solid #3E8914;
+  transform: translate(100%, -50%)
+}
+.nav a:hover:before,
+.nav a:hover:after{
+  transform: translate(0,0);
+  opacity: 1;
+}
+
+.nav a:hover {
+  color: #18ec5b;
+  background-color: rgb(0, 0, 0);
+}
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a,
+a:hover {
+  text-decoration: none !important;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  color: yellow;
+}
+
+.nav li{
+  /* border: 1px solid rgb(255, 254, 254); */
+  color: white;
+  
+}

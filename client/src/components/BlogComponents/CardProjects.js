@@ -10,9 +10,6 @@ const Layout = ({ projects }) => {
     return <h3>No Projects Yet</h3>;
   }
 
-// const commentData = (comments) => {
-//   console.log(comments);
-// }
 
   return (
     <div>

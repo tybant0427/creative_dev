@@ -9,7 +9,7 @@ import Home from './components/Home';
 import BlogHome from "./components/BlogComponents/BlogHome"
 import Upload from './components/upload';
 import Profile from "./components/ProfileComponents/ProfileLoading"
-
+import Pic from "./assets/images/space.jpg"
 import {
   ApolloClient,
   InMemoryCache,
@@ -18,6 +18,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Auth from "./utils/auth"
+import { Image } from 'react-bootstrap';
 
 
 
@@ -52,9 +53,10 @@ function App() {
   return (
     <ApolloProvider client={client}>
   <Router>
-    <div className="App">
+    <div className="App backImg">
       <div className="auth-wrapper">
         <div className="auth-inner">
+          
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path="/upload" component={Upload} />

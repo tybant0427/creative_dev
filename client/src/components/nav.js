@@ -14,22 +14,22 @@ export default function Navbar() {
     }
   return (
     
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top nav">
     <div className="container">
       
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <div  id="navbarTogglerDemo02">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link className="nav-link" to={"/sign-in"}>Login</Link>
+            <Link className=" test" to={"/sign-in"}>Login</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
+          <li className="nav-item ">
+            <Link className=" test" to={"/sign-up"}>Sign up</Link>
           </li>
           
           
           {loggedin?
           <li className="nav-item">
-          <p className='nav-link' onClick={logout}>Logout</p>
+          <Link className=' test' onClick={logout}>Logout</Link>
           </li>
           : console.log("loggedout")}
         </ul>
