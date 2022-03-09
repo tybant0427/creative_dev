@@ -82,7 +82,7 @@ const [show, setShow] = useState(false);
   return (
     <div>
       <ProfileNav />
-      <h1 className='padding'>My Projects</h1>
+      <h1 className>My Projects</h1>
       
       {
         singleUser.map((project) => (
@@ -102,9 +102,9 @@ const [show, setShow] = useState(false);
             <Card.Link href="#">{project.respitoryLink}</Card.Link>
             <Card.Link href="#">{project.liveLink}</Card.Link>
           </Card.Body>
-          <Button type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
+          <Button className='padding' type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
         {/* <div value={()=>setFormState({...formState, projectId: project._id})}  >Update</div> */}
-        <Button   onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
+        <Button className="padding"   onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
         </Card>
         ))}
 
