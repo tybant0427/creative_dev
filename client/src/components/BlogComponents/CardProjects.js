@@ -22,6 +22,7 @@ const Layout = ({ projects }) => {
 
             <Card.Body>
               <Card.Title className='title'>Project: {project.title}</Card.Title>
+              {/* <Card.Title className='title'>Author: {project.author}</Card.Title> */}
               <Card.Text className='title'>
                 Description: {project.description}
               </Card.Text>

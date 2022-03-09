@@ -2,6 +2,7 @@ import React, {  useState } from "react";
 import { useMutation } from '@apollo/client';
 import { ADD_PROJECT } from '../utils/mutations';
 import { Link, Redirect, Router } from 'react-router-dom';
+import auth from "../utils/auth";
 
 
 
@@ -15,6 +16,7 @@ const Upload = () => {
     
         const [formState, setFormState] = useState({
             userId: localStorage.getItem('userId'),
+            author: auth.getProfile().data.name,
             title: '',
             description: '',
             respitoryLink: '',
