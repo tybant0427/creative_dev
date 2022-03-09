@@ -31,10 +31,10 @@ const Layout = ({ projects }) => {
 
 
             <Card.Body>
-              <Card.Link href={project.respitoryLink} id='title'>Respitory: {project.respitoryLink}</Card.Link>
+              <Card.Link href={project.respitoryLink} >Respitory: {project.respitoryLink}</Card.Link>
               <br/>
               <br/>
-              <Card.Link href={project.liveLink} id='title'>Live Link: {project.liveLink}</Card.Link>
+              <Card.Link href={project.liveLink} >Live Link: {project.liveLink}</Card.Link>
               <div className="my-5">
                 <CommentList comments={project.comments} />
               </div>
