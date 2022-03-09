@@ -41,6 +41,7 @@ h1 {
 h1,h2,h3,h4,h5,h6,label,span {
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
+ 
   /* padding-bottom: 50px; */
 }
 body, html, .App, #root, .auth-wrapper {
@@ -179,4 +180,12 @@ ul {
   /* border: 1px solid rgb(255, 254, 254); */
   color: rgb(3, 0, 0);
   
+}
+.buttons button {
+  color: rgb(255, 254, 254);
+  background-color: black;
+}
+Card{
+  color: black;
+  background-color: black;
 }
