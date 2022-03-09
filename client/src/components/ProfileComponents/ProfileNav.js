@@ -51,20 +51,20 @@ console.log(userId);
   
   return (
     
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top nav">
     <div className="container">
       
       <div >
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to={"/blog"}>Home</Link>
+          <li className="nav-item ">
+            <Link className="test" to={"/blog"}>Home</Link>
           </li>
           
           <li className="nav-item">
-          <Link className='nav-link' onClick={logout}>Logout</Link>
+          <Link className='test' onClick={logout}>Logout</Link>
           </li>
           <li className="nav-item">
-          <Link className='nav-link' onClick={()=>handlebutton(localStorage.getItem('userId'))}  >Delete User</Link>
+          <Link className='test' onClick={()=>handlebutton(localStorage.getItem('userId'))}  >Delete User</Link>
           </li>
           
           

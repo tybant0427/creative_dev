@@ -53,9 +53,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
   <Router>
-    <div className="App backImg">
-      <div className="auth-wrapper">
-        <div className="auth-inner">
+    
+    <div className="App">
+      <img src={Pic} className='backImg'></img>
+      <div className="auth-wrapper ">
+        <div className="auth-inner ">
           
           <Switch>
             <Route exact path='/' component={Home} />
@@ -77,6 +79,7 @@ function App() {
         </div>
       </div>
       </div>
+     
     </Router>
     </ApolloProvider>
   );
