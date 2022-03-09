@@ -102,9 +102,11 @@ const [show, setShow] = useState(false);
             <Card.Link href="#">{project.respitoryLink}</Card.Link>
             <Card.Link href="#">{project.liveLink}</Card.Link>
           </Card.Body>
+          <div className='buttons'>
           <Button type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
-        {/* <div value={()=>setFormState({...formState, projectId: project._id})}  >Update</div> */}
+        
         <Button   onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
+        </div>
         </Card>
         ))}
 
