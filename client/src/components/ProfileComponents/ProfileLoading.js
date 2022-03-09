@@ -63,7 +63,7 @@ const handleFormSubmit = async (event) => {
       variables: { ...formState},
       
     });
-window.location.reload(true)
+
 console.log(data);
   
   } catch (e) {
