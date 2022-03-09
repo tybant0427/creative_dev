@@ -40,7 +40,7 @@ export default function Navbar() {
           
         </ul>
       </div>
-      <p className="test nav-item">Creative Dev</p>
+      <p id="logo" className="test nav-item">Creative Dev</p>
     </div>
   </nav>
 

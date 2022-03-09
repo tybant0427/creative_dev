@@ -21,16 +21,18 @@ const Layout = ({ projects }) => {
             {/* <Card.Img variant="top" src="{}" /> */}
 
             <Card.Body>
-              <Card.Title className='title'>Project: {project.title}</Card.Title>
+              <Card.Title className='title'>{project.title}</Card.Title>
               <Card.Text className='title'>
-                Description: {project.description}
+                {project.description}
               </Card.Text>
             </Card.Body>
 
 
             <Card.Body>
-              <Card.Link href="#" className='title'>Respitory: {project.respitoryLink}</Card.Link>
-              <Card.Link href="#" className='title'>Live Link: {project.liveLink}</Card.Link>
+              <Card.Link href="#" id='title'>Respitory: {project.respitoryLink}</Card.Link>
+              <br/>
+              <br/>
+              <Card.Link href="#" id='title'>Live Link: {project.liveLink}</Card.Link>
               <div className="my-5">
                 <CommentList comments={project.comments} />
               </div>

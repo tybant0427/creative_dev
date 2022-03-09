@@ -95,15 +95,17 @@ const [show, setShow] = useState(false);
           <Card.Img variant="top" src="{}" />
 
           <Card.Body>
-            <Card.Title>Project: {project.title}</Card.Title>
+            <Card.Title>{project.title}</Card.Title>
             <Card.Text>
-             Description: {project.description}
+             {project.description}
             </Card.Text>
           </Card.Body>
 
 
           <Card.Body>
             <Card.Link href="#">Respitory: {project.respitoryLink}</Card.Link>
+            <br/>
+            <br/>
             <Card.Link href="#">Live Link: {project.liveLink}</Card.Link>
           </Card.Body>
 
