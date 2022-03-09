@@ -15,13 +15,16 @@ GitHub link: https://github.com/tybant0427/creative_dev/
 - [@TylerBantley](https://github.com/tybant0427)
 - [@KeithYang](https://github.com/keithlyang)
 
+## Info
+
+A place where everyone can come to and share their awesome projects!!!
+
 ## Features
 
 - User can create an account, login, and logout
 - Can make a post about users projects and will display on the main page
 - User can view their profile page and see user's projects
 - On profile page user can delete or update the selected project
-- 
 
 
 ## Screenshots
@@ -31,7 +34,7 @@ GitHub link: https://github.com/tybant0427/creative_dev/
 
 ## Roadmap
 
-- Improve functionality of adding and storing favorites.
+- Improve functionality of adding and storing favorites projects.
 - Add notification of login/logout status.
-- Add more SNA's besides the ones we provied.
 - Improve UI/UX
+- Add censorship to comments and username displayed on the page.
