@@ -8,22 +8,15 @@ body {
   display: flex;
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
-  
-    
-    
-    
-  /* z-index: -2; */
+
 }
 
 .backImg{
-  /* background-image: url(./assets/images/space.jpg); */
   background-size:cover;
   background-repeat: no-repeat; 
   position: fixed;
   object-fit: cover;
   margin-top: -20%;
-  
-
 }
 
 h1 {
@@ -36,13 +29,11 @@ h1 {
 }
 
 .image2 {
-  background-image: url("../src/assets/video/icon.mp4");
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  margin: -3% -45%;
+  margin: 15% -12%;
   position:absolute;
-  width: auto;
-  height: auto;
+  /* background-size: 40px; */
+  width: 25%;
 }
 
 @keyframes example {
