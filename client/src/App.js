@@ -52,7 +52,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-  <Router>
+  
     
     <div className="App">
       <img src={Pic} className='backImg'></img>
@@ -60,6 +60,7 @@ function App() {
         <div className="auth-inner ">
           
           {/* <Switch> */}
+          <Router>
             <Route exact path='/' component={Home} />
             <Route path="/upload" component={Upload} />
             <Route path="/sign-in" component={Login} />
@@ -70,7 +71,7 @@ function App() {
           
            
             <Route  path="/blog" component={BlogHome} />
-            
+             </Router>
            {/* <Route path='/sign-in' component={Login} />   */}
           
 
@@ -80,7 +81,7 @@ function App() {
       </div>
       </div>
      
-    </Router>
+   
     </ApolloProvider>
   );
 }
