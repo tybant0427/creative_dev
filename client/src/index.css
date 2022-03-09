@@ -8,6 +8,7 @@ body {
   display: flex;
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
+
 }
 
 .backImg{
@@ -23,6 +24,8 @@ h1 {
   animation-name: example;
   animation-duration: 3s;
   animation-fill-mode: forwards;
+  color: white;
+  
 }
 
 .image2 {
@@ -43,6 +46,7 @@ h1,h2,h3,h4,h5,h6,label,span {
   font-family: 'Fira Sans', sans-serif;
  
   /* padding-bottom: 50px; */
+  /* color: black; */
 }
 body, html, .App, #root, .auth-wrapper {
   width: 100%;
@@ -65,12 +69,12 @@ body, html, .App, #root, .auth-wrapper {
   width: 400px;
   margin: auto;
   
-  background: rgba(34, 35, 58, 0.2);
-  box-shadow: 0px 14px 80px rgba(52, 54, 95, 0.9);
+  
+  /* box-shadow: 0px 14px 80px rgba(52, 54, 95, 0.9); */
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
   transition: all .3s;
-  color: white;
+  color: black;
 }
 .auth-wrapper .form-control:focus {
   border-color: #167bff;
@@ -181,6 +185,7 @@ ul {
   color: rgb(3, 0, 0);
   
 }
+
 .buttons button {
   color: rgb(255, 254, 254);
   background-color: black;
@@ -188,4 +193,16 @@ ul {
 Card{
   color: black;
   background-color: black;
+
+
+.padding {
+  margin: 15px;
+  
+}
+
+
+
+#commentbutton {
+  background: rgb(5, 0, 0);
+
 }
