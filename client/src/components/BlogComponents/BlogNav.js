@@ -14,7 +14,7 @@ export default function Navbar() {
     }
   return (
     
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top nav">
     <div className="container">
       
       <div >
@@ -22,16 +22,16 @@ export default function Navbar() {
 
        
           <li className="nav-item">
-            <Link className="nav-link" to={"/upload"}>Upload</Link>
+            <Link className="test" to={"/upload"}>Upload</Link>
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to={"/profile"}>Profile</Link>
+            <Link className="test" to={"/profile"}>Profile</Link>
           </li>
           
           {loggedin?
           <li className="nav-item">
-          <Link className='nav-link' onClick={logout}>Logout</Link>
+          <Link className='test' onClick={logout}>Logout</Link>
           </li>
           : console.log("loggedout")}
         </ul>
