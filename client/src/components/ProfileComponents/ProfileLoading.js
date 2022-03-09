@@ -22,7 +22,8 @@ try{
 const  {data} = await deleteButton({
     variables: {projectId:test }
 })
-window.location.reload('/profile')
+// window.location.reload('/profile')
+
 }catch(err){
 console.log(err);
 }
