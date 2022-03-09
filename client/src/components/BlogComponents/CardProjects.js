@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListGroup, Card, ListGroupItem, Button, } from 'react-bootstrap';
+import { ListGroup, Card, ListGroupItem, Button, Container, } from 'react-bootstrap';
 
 import CommentList from '../../components/CommentList/index';
 import CommentForm from '../../components/CommentForm/index';
@@ -12,25 +12,25 @@ const Layout = ({ projects }) => {
 
 
   return (
-    <div>
-      {/* <h3>{title}</h3> */}
+    <Container className='d-flex-row'>
+      
       {
         projects.map((project) => (
-          <Card className="edit" style={{ width: '18rem' }} key={project._id}>
+          <Card className="edit spacing" style={{ width: '18rem' }} key={project._id}>
 
-            <Card.Img variant="top" src="{}" />
+            {/* <Card.Img variant="top" src="{}" /> */}
 
             <Card.Body>
-              <Card.Title className='title'>{project.title}</Card.Title>
+              <Card.Title className='title'>Project: {project.title}</Card.Title>
               <Card.Text className='title'>
-                {project.description}
+                Description: {project.description}
               </Card.Text>
             </Card.Body>
 
 
-            <Card.Body className='title'>
-              <Card.Link href="#" className='title'>{project.respitoryLink}</Card.Link>
-              <Card.Link href="#" className='title'>{project.liveLink}</Card.Link>
+            <Card.Body>
+              <Card.Link href="#" className='title'>Respitory: {project.respitoryLink}</Card.Link>
+              <Card.Link href="#" className='title'>Live Link: {project.liveLink}</Card.Link>
               <div className="my-5">
                 <CommentList comments={project.comments} />
               </div>
@@ -41,7 +41,7 @@ const Layout = ({ projects }) => {
 
           </Card>
         ))}
-    </div>
+    </Container>
   );
 };
 

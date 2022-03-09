@@ -34,11 +34,10 @@ export default function Navbar() {
           <Link className='test' onClick={logout}>Logout</Link>
           </li>
           : console.log("loggedout")}
-          <li className="">
-            <p className="test " >Creative Dev</p>
-          </li>
+          
         </ul>
       </div>
+      <p className="test nav-item">Creative Dev</p>
     </div>
   </nav>
 
