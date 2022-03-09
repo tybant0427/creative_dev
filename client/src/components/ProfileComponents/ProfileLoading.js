@@ -82,8 +82,11 @@ const [show, setShow] = useState(false);
   return (
     <div>
       <ProfileNav />
-      <h1 className>My Projects</h1>
-     
+
+      <h1 className='padding'>My Projects</h1>
+
+      
+
       
       {
         singleUser.map((project) => (
@@ -115,7 +118,7 @@ const [show, setShow] = useState(false);
         
 
 
-<Button variant="primary"className='updated' onClick={handleShow}>
+<Button id='buttonBG' variant="primary"className='updated' onClick={handleShow}>
         Update Form
       </Button>
 

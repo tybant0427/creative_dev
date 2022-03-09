@@ -59,6 +59,9 @@ console.log(userId);
           <li className="nav-item ">
             <Link className="test" to={"/blog"}>Home</Link>
           </li>
+          <li className="nav-item ">
+            <Link className="test" to={"/upload"}>Upload</Link>
+          </li>
           
           <li className="nav-item">
           <Link className='test' onClick={logout}>Logout</Link>

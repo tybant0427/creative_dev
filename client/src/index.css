@@ -143,8 +143,8 @@ border: 2px solid black;
   content: '';
   right: 0;
   top: 0;
-  border-top: 3px solid #3E8914;
-  border-right: 3px solid #2E640F;
+  border-top: 3px solid rgb(2, 8, 95);
+  border-right: 3px solid rgb(2, 8, 95);
   transform: translate(-100%, 50%);
 
 }
@@ -153,8 +153,8 @@ border: 2px solid black;
   content: '';
   left: 0;
   bottom: 0;
-  border-bottom: 3px solid #2E640F;
-  border-left: 3px solid #3E8914;
+  border-bottom: 3px solid rgb(2, 8, 95);
+  border-left: 3px solid rgb(2, 8, 95);
   transform: translate(100%, -50%)
 }
 .nav a:hover:before,
@@ -164,11 +164,11 @@ border: 2px solid black;
 }
 
 .nav a:hover {
-  color: #18ec5b;
+  color: lightskyblue;
   background-color: rgb(0, 0, 0);
 }
 a {
-  color: rgb(5, 0, 0);
+  color:rgb(2, 8, 95);
   text-decoration: none;
 }
 
@@ -180,7 +180,7 @@ a:hover {
 
 ul {
   list-style-type: none;
-  color: yellow;
+  color: blue;
 }
 
 .nav li{
@@ -220,6 +220,12 @@ ul {
   
 }
 
+
+#buttonBG {
+  background: black;
+}
+
+
 .spacing:hover {
   background: #ffffff;
 }
@@ -242,3 +248,4 @@ background-color: #c0c4c2;
 box-shadow: 5px 5px 5px black;
 border: 2px solid black;
 }
+
