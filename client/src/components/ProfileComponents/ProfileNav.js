@@ -8,17 +8,6 @@ import { DELETE_USER } from '../../utils/mutations';
 
 export default function ProfileNav() {
 
-// const optionsUser =(userId)=>{
-  // const something = window.confirm("Delete user? yes or no","yes",'no')
-
-//   if (window.confirm("Delete User?") === true) {
-    
-//      handlebutton(userId)
-//   } else {
-//      console.log("You canceled!");
-//   }
-  
-// }
 
 
 
@@ -51,7 +40,7 @@ console.log(userId);
   
   return (
     
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top nav">
+    <nav id="navnav" className="navbar navbar-expand-lg navbar-light fixed-top nav">
     <div className="container">
       
       <div >
@@ -69,9 +58,9 @@ console.log(userId);
           <li className="nav-item">
           <Link className='test' onClick={()=>handlebutton(localStorage.getItem('userId'))}  >Delete User</Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="test" to={"/blog"}>Home</Link>
-          </li>
+          </li> */}
           
           
         </ul>
