@@ -54,7 +54,7 @@ const Upload = () => {
     return (
         
          
-<>
+<div className="UpdateFix">
 <form onSubmit={handleFormSubmit}>
 
 
@@ -140,7 +140,7 @@ const Upload = () => {
 
         </form>
        
-    </>
+    </div>
     )
 }
 

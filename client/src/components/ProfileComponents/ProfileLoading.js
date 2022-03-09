@@ -82,7 +82,11 @@ const [show, setShow] = useState(false);
   return (
     <div>
       <ProfileNav />
+
       <h1 className='padding'>My Projects</h1>
+
+      
+
       
       {
         singleUser.map((project) => (
@@ -91,16 +95,16 @@ const [show, setShow] = useState(false);
           <Card.Img variant="top" src="{}" />
 
           <Card.Body>
-            <Card.Title>{project.title}</Card.Title>
+            <Card.Title>Project: {project.title}</Card.Title>
             <Card.Text>
-              {project.description}
+             Description: {project.description}
             </Card.Text>
           </Card.Body>
 
 
           <Card.Body>
-            <Card.Link href="#">{project.respitoryLink}</Card.Link>
-            <Card.Link href="#">{project.liveLink}</Card.Link>
+            <Card.Link href="#">Respitory: {project.respitoryLink}</Card.Link>
+            <Card.Link href="#">Live Link: {project.liveLink}</Card.Link>
           </Card.Body>
 
           
@@ -111,6 +115,7 @@ const [show, setShow] = useState(false);
 
         </Card>
         ))}
+        
 
 
 <Button id='buttonBG' variant="primary"className='updated' onClick={handleShow}>
