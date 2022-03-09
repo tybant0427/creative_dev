@@ -77,7 +77,7 @@ body, html, .App, #root, .auth-wrapper {
   color: black;
 }
 .auth-wrapper .form-control:focus {
-  border-color: #167bff;
+  /* border-color: #167bff; */
   box-shadow: none;
 }
 .auth-wrapper h3 {
@@ -97,9 +97,7 @@ body, html, .App, #root, .auth-wrapper {
   color: #7f7d7d;
   margin: 0;
 }
-.forgot-password a {
-  color: #167bff;
-}
+
 
 .edit {
   margin-bottom: 100px;
@@ -186,23 +184,12 @@ ul {
   
 }
 
-.buttons button {
+#buttons  {
   color: rgb(255, 254, 254);
-  background-color: black;
-}
-Card{
-  color: black;
-  background-color: black;
-
-
-.padding {
-  margin: 15px;
-  
+  background: black;
+  margin: 10px;
 }
 
 
 
-#commentbutton {
-  background: rgb(5, 0, 0);
 
-}
