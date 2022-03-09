@@ -59,7 +59,7 @@ function App() {
       <div className="auth-wrapper ">
         <div className="auth-inner ">
           
-          <Switch>
+          {/* <Switch> */}
             <Route exact path='/' component={Home} />
             <Route path="/upload" component={Upload} />
             <Route path="/sign-in" component={Login} />
@@ -71,10 +71,10 @@ function App() {
            
             <Route  path="/blog" component={BlogHome} />
             
-           <Route path='/sign-in' component={Login} />  
+           {/* <Route path='/sign-in' component={Login} />   */}
           
 
-          </Switch>
+          {/* </Switch> */}
 
         </div>
       </div>
