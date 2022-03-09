@@ -22,7 +22,7 @@ try{
 const  {data} = await deleteButton({
     variables: {projectId:test }
 })
-
+window.location.reload()
 }catch(err){
 console.log(err);
 }
