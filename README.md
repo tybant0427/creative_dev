@@ -29,7 +29,7 @@ A place where everyone can come to and share their awesome projects!!!
 
 ## Screenshots
 
-![App Screenshot](https://github.com/Huss33/Project_2_uofm/blob/main/public/images/CaptureForReal.JPG)
+![App Screenshot](https://github.com/tybant0427/creative_dev/blob/main/Screenshot/Capture1.JPG)
 
 
 ## Roadmap
