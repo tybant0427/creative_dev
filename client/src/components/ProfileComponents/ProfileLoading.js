@@ -62,8 +62,9 @@ const handleFormSubmit = async (event) => {
   try {
     const { data } = await updateProject({
       variables: { ...formState},
+      
     });
-
+window.location.reload(true)
 console.log(data);
   
   } catch (e) {
@@ -109,7 +110,7 @@ const [show, setShow] = useState(false);
 
 
 <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        Update Form
       </Button>
 
       <Modal show={show} onHide={handleClose}>
