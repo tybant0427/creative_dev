@@ -69,6 +69,9 @@ console.log(userId);
           <li className="nav-item">
           <Link className='test' onClick={()=>handlebutton(localStorage.getItem('userId'))}  >Delete User</Link>
           </li>
+          <li className="nav-item">
+            <Link className="test" to={"/blog"}>Home</Link>
+          </li>
           
           
         </ul>
