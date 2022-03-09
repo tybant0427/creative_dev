@@ -34,6 +34,9 @@ export default function Navbar() {
           <Link className='test' onClick={logout}>Logout</Link>
           </li>
           : console.log("loggedout")}
+          <li className="nav-item">
+            <Link className="test" style={{float:"right"}}>Creative Dev</Link>
+          </li>
         </ul>
       </div>
     </div>
