@@ -41,17 +41,10 @@ h1 {
   to {top: 0px;}
 }
 
-
-/* body { 
-  background-image: url('../src/assets/video/icon.mp4');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center; 
-} */
-
 h1,h2,h3,h4,h5,h6,label,span {
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
+ 
   /* padding-bottom: 50px; */
   /* color: black; */
 }
@@ -193,6 +186,15 @@ ul {
   
 }
 
+.buttons button {
+  color: rgb(255, 254, 254);
+  background-color: black;
+}
+Card{
+  color: black;
+  background-color: black;
+
+
 .padding {
   margin: 15px;
   
@@ -202,4 +204,5 @@ ul {
 
 #commentbutton {
   background: rgb(5, 0, 0);
+
 }

@@ -11,10 +11,6 @@ import Icon from '../../assets/video/icon.mp4'
 
 const BlogHome  = () => {
 
-  // if(!Auth.loggedIn()){
-  //   window.location.assign('/')
-  //     } 
-
 
 
     const { loading, data } = useQuery(QUERY_PROJECTS);

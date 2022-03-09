@@ -13,7 +13,7 @@ export default class Landing extends Component {
             <div className ="jumbotron">
                 <h1>Welcome to Creative Dev!</h1>
             </div>
-            <img className="image" src={Icon} width="75%" height="75%"></img>
+            {/* <img className="image2" src={Icon} width="75%" height="75%"></img> */}
             
             </div>
         );
