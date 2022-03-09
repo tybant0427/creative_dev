@@ -16,7 +16,7 @@ const Upload = () => {
     
         const [formState, setFormState] = useState({
             userId: localStorage.getItem('userId'),
-            author: auth.getProfile().data.name,
+            
             title: '',
             description: '',
             respitoryLink: '',

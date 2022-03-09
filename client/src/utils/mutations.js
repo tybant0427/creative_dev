@@ -28,9 +28,9 @@ export const LOGIN_USER = gql`
   `;
   
 export const ADD_PROJECT = gql`
-mutation AddProject($author: String!, $userId: ID!, $title: String!, $description: String!, $respitoryLink: String!, $liveLink: String!, $image: String!) {
-  addProject(author: $author, userId: $userId, title: $title, description: $description, respitoryLink: $respitoryLink, liveLink: $liveLink, image: $image) {
-    author
+mutation AddProject( $userId: ID!, $title: String!, $description: String!, $respitoryLink: String!, $liveLink: String!, $image: String!) {
+  addProject( userId: $userId, title: $title, description: $description, respitoryLink: $respitoryLink, liveLink: $liveLink, image: $image) {
+    
     title
     description
     respitoryLink
