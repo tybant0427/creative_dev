@@ -1,9 +1,9 @@
-import Upload from "./upload";
+// import Upload from "./upload";
 import React from "react";
 import CardProjects from '../components/BlogComponents/CardProjects'
 import { QUERY_PROJECTS } from "../utils/queries";
 import { useQuery } from "@apollo/client";
-import Auth from '../utils/auth'
+// import Auth from '../utils/auth'
 import Nav from "../components/BlogComponents/BlogNav"
 // import Icon from '../../assets/video/icon.mp4'
 
