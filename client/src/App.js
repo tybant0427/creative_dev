@@ -2,12 +2,12 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Login from "./pages/login";
-import SignUp from "./pages/signup";
+import Login from "./components/login";
+import SignUp from "./components/signup";
 import Home from './components/Home';
 // import Blog from './pages/Blog';
-import BlogHome from "./pages/BlogHome"
-import Upload from './pages/upload';
+import BlogHome from "./components/BlogComponents/BlogHome"
+import Upload from './components/upload';
 import Profile from "./components/ProfileComponents/ProfileLoading"
 import Pic from "./assets/images/space.jpg"
 import {
@@ -17,7 +17,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
+import Auth from "./utils/auth"
+import { Image } from 'react-bootstrap';
 
 
 
@@ -58,30 +59,23 @@ function App() {
       <div className="auth-wrapper ">
         <div className="auth-inner ">
           
-          
+          <Switch>
           <Router>
             <Route exact path='/' component={Home} />
-            <Switch>/
-            <Route exact path="/upload" component={Upload} />
-            <Route exact path="/sign-in" component={Login} />
-            <Route exact path="/sign-up" component={SignUp} />
+            <Route path="/upload" component={Upload} />
+            <Route path="/sign-in" component={Login} />
+            <Route path="/sign-up" component={SignUp} />
+            <Route path="/profile" component={Profile} />
 
-            <Route exact path="/profile">
-              <Profile />
-              </Route> 
 
-          <Route exact path="/blog" >
-            <BlogHome />
-            </Route>
-            
-           </Switch>
+          
            
-            
+            <Route  path="/blog" component={BlogHome} />
              </Router>
            {/* <Route path='/sign-in' component={Login} />   */}
           
 
-         
+          </Switch>
 
         </div>
       </div>
