@@ -59,23 +59,24 @@ function App() {
       <div className="auth-wrapper ">
         <div className="auth-inner ">
           
-          <Switch>
+          
           <Router>
             <Route exact path='/' component={Home} />
+            <Switch>
             <Route path="/upload" component={Upload} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/profile" component={Profile} />
 
 
-          
+           </Switch>
            
             <Route  path="/blog" component={BlogHome} />
              </Router>
            {/* <Route path='/sign-in' component={Login} />   */}
           
 
-          </Switch>
+         
 
         </div>
       </div>
