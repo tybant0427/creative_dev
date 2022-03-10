@@ -61,14 +61,20 @@ function App() {
           
           <Router>
             <Route exact path='/' component={Home} />
-            {/* <Switch> */}
+            <Switch>/
             <Route exact path="/upload" component={Upload} />
             <Route exact path="/sign-in" component={Login} />
             <Route exact path="/sign-up" component={SignUp} />
-            <Route exact path="/profile" component={Profile} />
 
-          <Route exact path="/blog" component={BlogHome} />
-           {/* </Switch> */}
+            <Route exact path="/profile">
+              <Profile />
+              </Route> 
+
+          <Route exact path="/blog" >
+            <BlogHome />
+            </Route>
+            
+           </Switch>
            
             
              </Router>
