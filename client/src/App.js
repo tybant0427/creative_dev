@@ -61,7 +61,7 @@ function App() {
           
           
           <Router>
-            <Route exact path='/' component={Home} />
+            <Route  path='/' component={Home} />
             <Switch>
             <Route path="/upload" component={Upload} />
             <Route path="/sign-in" component={Login} />
