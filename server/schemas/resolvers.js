@@ -12,6 +12,7 @@ const resolvers = {
       return User.findOne({ _id:userId }).populate('projects');
     },
     projects: async () => {
+    
       return Project.find();
     },
  
