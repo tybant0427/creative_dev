@@ -35,7 +35,7 @@ const Login = ()=> {
           
           localStorage.setItem('userId', userid);
           Auth.login(data.login.token);
-          // window.location.replace("/blog");
+          window.location.replace("/blog");
           
         } catch (e) {
           console.error(e);

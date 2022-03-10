@@ -1,6 +1,6 @@
 import React from "react";
 import Auth from "../utils/auth"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as  Route, Link } from "react-router-dom";
 
 
 

@@ -29,9 +29,9 @@ export default function Navbar() {
           <li className="nav-item">
             <Link className="test" to={"/blog"}>Blog</Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="test" to={"/"}>Home</Link>
-          </li>
+          </li> */}
        
           <li className="nav-item">
           <Link className='test' onClick={logout}>Logout</Link>
