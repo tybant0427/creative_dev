@@ -46,7 +46,7 @@ console.log(userId);
       <div >
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
-            <Link className="test" to={"/blog"}>Home</Link>
+            <Link className="test" to={"/blog"}>Blog</Link>
           </li>
           <li className="nav-item ">
             <Link className="test" to={"/upload"}>Upload</Link>

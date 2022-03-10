@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListGroup, Card, ListGroupItem, Button, Container, } from 'react-bootstrap';
+import {  Card,  Container, } from 'react-bootstrap';
 
 import CommentList from '../../components/CommentList/index';
 import CommentForm from '../../components/CommentForm/index';
@@ -18,7 +18,7 @@ const Layout = ({ projects }) => {
         projects.map((project) => (
           <Card className="edit spacing" style={{ width: '18rem' }} key={project._id}>
 
-            <Card.Img variant="top" src="{}" />
+            {/* <Card.Img variant="top" src="{}" /> */}
 
             <Card.Body>
 
@@ -31,10 +31,10 @@ const Layout = ({ projects }) => {
 
 
             <Card.Body>
-              <Card.Link href={project.respitoryLink} >Respitory: {project.respitoryLink}</Card.Link>
+              <Card.Link href={project.respitoryLink} >Respitory Link</Card.Link>
               <br/>
               <br/>
-              <Card.Link href={project.liveLink} >Live Link: {project.liveLink}</Card.Link>
+              <Card.Link href={project.liveLink} >Live Link </Card.Link>
               <div className="my-5">
                 <CommentList comments={project.comments} />
               </div>

@@ -1,8 +1,8 @@
 import React, {  useState } from "react";
 import { useMutation } from '@apollo/client';
 import { ADD_PROJECT } from '../utils/mutations';
-import { Link, Redirect, Router } from 'react-router-dom';
-import auth from "../utils/auth";
+import { Link } from 'react-router-dom';
+
 
 
 
