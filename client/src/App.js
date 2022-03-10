@@ -2,12 +2,12 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Login from "./components/login";
-import SignUp from "./components/signup";
+import Login from "./pages/login";
+import SignUp from "./pages/signup";
 import Home from './components/Home';
 // import Blog from './pages/Blog';
-import BlogHome from "./components/BlogComponents/BlogHome"
-import Upload from './components/upload';
+import BlogHome from "./pages/BlogHome"
+import Upload from './pages/upload';
 import Profile from "./components/ProfileComponents/ProfileLoading"
 import Pic from "./assets/images/space.jpg"
 import {
