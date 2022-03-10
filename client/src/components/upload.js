@@ -43,6 +43,7 @@ const Upload = () => {
               const { data } = await addProject({
                 variables: { ...formState },
               });
+              window.location.replace("/blog")
         console.log(data);
             
             } catch (e) {
