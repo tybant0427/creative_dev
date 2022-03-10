@@ -32,7 +32,7 @@ export default function Update ()  {
           const { data } = await updateProject({
             variables: { ...formState},
           });
-      
+      window.location.replace('/blog')
       console.log(data);
         
         } catch (e) {
