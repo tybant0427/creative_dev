@@ -68,10 +68,10 @@ function App() {
             <Route path="/sign-up" component={SignUp} />
             <Route path="/profile" component={Profile} />
 
-
+          <Route  path="/blog" component={BlogHome} />
            </Switch>
            
-            <Route  path="/blog" component={BlogHome} />
+            
              </Router>
            {/* <Route path='/sign-in' component={Login} />   */}
           
