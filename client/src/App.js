@@ -61,15 +61,15 @@ function App() {
           
           
           <Router>
-            <Route  path='/' component={Home} />
-            <Switch>
-            <Route path="/upload" component={Upload} />
-            <Route path="/sign-in" component={Login} />
-            <Route path="/sign-up" component={SignUp} />
-            <Route path="/profile" component={Profile} />
+            <Route exact path='/' component={Home} />
+            {/* <Switch> */}
+            <Route exact path="/upload" component={Upload} />
+            <Route exact path="/sign-in" component={Login} />
+            <Route exact path="/sign-up" component={SignUp} />
+            <Route exact path="/profile" component={Profile} />
 
-          <Route  path="/blog" component={BlogHome} />
-           </Switch>
+          <Route exact path="/blog" component={BlogHome} />
+           {/* </Switch> */}
            
             
              </Router>
