@@ -31,7 +31,7 @@ class AuthService {
     console.log("login Auth");
     localStorage.setItem('id_token', idToken);
     
-    //  window.location.href('/blog')
+     window.location.href('/blog')
   }
 
   logout() {
