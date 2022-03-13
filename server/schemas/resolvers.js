@@ -73,8 +73,8 @@ console.log("Logged In");
 
     //   return User.findOneAndDelete({ _id: userId });
     // },
-    addProject: async (parent, { userId, title, description, respitoryLink, liveLink, image }) => {
-      const project = await Project.create({  title, description, respitoryLink, liveLink, image });
+    addProject: async (parent, { userId, userOfProject, title, description, respitoryLink, liveLink, image }) => {
+      const project = await Project.create({ userOfProject, title, description, respitoryLink, liveLink, image });
 
       await User.findOneAndUpdate(
         { _id: userId },

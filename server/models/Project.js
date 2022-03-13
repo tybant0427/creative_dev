@@ -3,6 +3,9 @@ const dateFormat = require('../utils/dateFormat');
 
 const ProjectSchema = new Schema(
     {
+      userOfProject:{
+        type: String,
+      },
       
       title: {
         type: String,
