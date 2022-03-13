@@ -14,6 +14,7 @@ export const QUERY_PROJECTS =gql`
 query Projects {
   projects {
     _id
+    userOfProject
     title
     description
     respitoryLink

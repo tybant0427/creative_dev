@@ -1,6 +1,6 @@
 import React from 'react';
 import {  Card,  Container, } from 'react-bootstrap';
-
+import "../../Styles/card.scss"
 import CommentList from '../../components/CommentList/index';
 import CommentForm from '../../components/CommentForm/index';
 
@@ -12,20 +12,21 @@ const Layout = ({ projects }) => {
 
 
   return (
-    <Container className='d-flex-row'>
+    <Container >
       
       {
         projects.map((project) => (
-          <Card className="edit spacing" style={{ width: '18rem' }} key={project._id}>
+          <Card className="edit spacing scrolled" style={{ width: '18rem' }} key={project._id}>
 
             {/* <Card.Img variant="top" src="{}" /> */}
 
             <Card.Body>
-              
-              <Card.Title className='title'>{project.title}</Card.Title>
+            <Card.Title className='title'>Created by:<br /> {project.userOfProject}</Card.Title>
+            <br />
+              <Card.Title className='title'>Project title:<br /> {project.title}</Card.Title>
 
               <Card.Text className='title'>
-                {project.description}
+                Project description:<br /> {project.description}
               </Card.Text>
             </Card.Body>
 
