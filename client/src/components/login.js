@@ -8,7 +8,7 @@ import { Link, Redirect, Route, Router } from 'react-router-dom';
 const Login = ()=> {
     const [formState, setFormState] = useState({
         github: '',
-        password: ''
+        name: ''
         
       });
       const [loginUser, { error, data }] = useMutation(LOGIN_USER);
@@ -59,9 +59,9 @@ const Login = ()=> {
                   <input
                     className="form-control"
                     placeholder="Your github"
-                    name="github"
+                    name="name"
                     type="text"
-                    value={formState.github}
+                    value={formState.name}
                     onChange={handleChange}
                   />
                   <input

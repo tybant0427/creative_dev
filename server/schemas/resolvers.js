@@ -29,8 +29,8 @@ const resolvers = {
 
       return { token, users };
     },
-    login: async (parent, {  github, password }) => {
-      const users = await User.findOne({ github });
+    login: async (parent, {  name, password }) => {
+      const users = await User.findOne({ name });
 console.log(users);
       if (!users) {
         throw new AuthenticationError('No user with this github found!');
@@ -42,7 +42,7 @@ console.log(users);
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
       }
-
+console.log("Logged In");
       const token = signToken(users);
       return { token, users };
     },

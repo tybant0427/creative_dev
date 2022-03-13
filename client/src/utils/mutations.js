@@ -5,8 +5,8 @@ mutation addUser($name: String!, $github: String!, $password: String!){
   addUser(name: $name, github:$github, password:$password){
     token
     users {
-      name
       github
+      name
       password
       _id
     }
@@ -15,8 +15,8 @@ mutation addUser($name: String!, $github: String!, $password: String!){
 `;
 
 export const LOGIN_USER = gql`
-  mutation Login($github: String!, $password: String!) {
-    login(github: $github, password: $password) {
+  mutation Login($name: String!, $password: String!) {
+    login(name: $name, password: $password) {
       token
       users{
         _id
@@ -66,7 +66,6 @@ mutation DeleteUser($userId: ID!) {
   deleteUser(userId: $userId) {
     name
     _id
-    github
   }
 }`;
 

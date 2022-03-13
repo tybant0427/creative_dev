@@ -7,6 +7,7 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       max_length: 50,
+      unique: true,
     },
     github: {
       type: String,
