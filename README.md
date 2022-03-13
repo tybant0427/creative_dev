@@ -34,7 +34,11 @@ A place where everyone can come to and share their awesome projects!!!
 
 ## Roadmap
 
-- Improve functionality of adding and storing favorites projects.
 - Add notification of login/logout status.
 - Improve UI/UX
 - Add censorship to comments and username displayed on the page.
+
+## Forked Roadmap
+
+- add checkbox to update button
+- add current comments on profile page
