@@ -28,14 +28,15 @@ export const LOGIN_USER = gql`
   `;
   
 export const ADD_PROJECT = gql`
-mutation AddProject( $userId: ID!, $title: String!, $description: String!, $respitoryLink: String!, $liveLink: String!, $image: String!) {
-  addProject( userId: $userId, title: $title, description: $description, respitoryLink: $respitoryLink, liveLink: $liveLink, image: $image) {
-    
+mutation Mutation($image: String!, $liveLink: String!, $respitoryLink: String!, $description: String!, $title: String!, $userOfProject: String!, $userId: ID!) {
+  addProject(image: $image, liveLink: $liveLink, respitoryLink: $respitoryLink, description: $description, title: $title, userOfProject: $userOfProject, userId: $userId) {
+    userOfProject
     title
     description
     respitoryLink
     liveLink
     image
+   
   }
 }
 `;

@@ -21,7 +21,7 @@ const Layout = ({ projects }) => {
             {/* <Card.Img variant="top" src="{}" /> */}
 
             <Card.Body>
-
+              
               <Card.Title className='title'>{project.title}</Card.Title>
 
               <Card.Text className='title'>

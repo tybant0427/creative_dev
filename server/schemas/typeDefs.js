@@ -12,6 +12,7 @@ const typeDefs = gql`
   }
   type Project {
     _id: ID
+    userOfProject: String
     title: String
     description: String
     respitoryLink: String
@@ -50,7 +51,7 @@ const typeDefs = gql`
       commentAuthor: String!
     ): Project
     removeComment(projectId: ID!, commentId: ID!): Project
-    addProject( userId: ID!,title: String!,description: String!, respitoryLink: String!,liveLink: String!,
+    addProject( userId: ID!, userOfProject: String!, title: String!,description: String!, respitoryLink: String!,liveLink: String!,
       image: String!  ): Project
       deleteProject( projectId: ID!): Project
     deleteUser(userId: ID!):User
