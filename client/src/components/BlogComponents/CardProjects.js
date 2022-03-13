@@ -12,7 +12,7 @@ const Layout = ({ projects }) => {
 
 
   return (
-    <Container >
+    <div >
       
       {
         projects.map((project) => (
@@ -46,7 +46,7 @@ const Layout = ({ projects }) => {
 
           </Card>
         ))}
-    </Container>
+    </div>
   );
 };
 
