@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 // Schema to create Student model
 const UserSchema = new Schema(
   {
-    name: {
+    userName: {
       type: String,
       required: true,
       max_length: 50,

@@ -7,8 +7,8 @@ import { Link, Redirect, Route, Router } from 'react-router-dom';
 
 const Login = ()=> {
     const [formState, setFormState] = useState({
-        github: '',
-        name: ''
+        password: '',
+        userName: ''
         
       });
       const [loginUser, { error, data }] = useMutation(LOGIN_USER);
@@ -58,10 +58,10 @@ const Login = ()=> {
                 <form onSubmit={handleFormSubmit}>
                   <input
                     className="form-control"
-                    placeholder="Your github"
-                    name="name"
+                    placeholder="Your User Name"
+                    name="userName"
                     type="text"
-                    value={formState.name}
+                    value={formState.userName}
                     onChange={handleChange}
                   />
                   <input
@@ -87,6 +87,7 @@ const Login = ()=> {
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">
                   {error.message}
+                  
                 </div>
               )}
             </div>

@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 export const QUERY_TECH = gql`
 query Users {
   users {
-  name
+  userName
   github
   password  
   _id
@@ -43,7 +43,7 @@ query getSingleProjects {
 export const QUERY_SINGLEUSER = gql`
 query SingleUser($userId: ID!) {
   singleUser(userId: $userId) {
-    name
+    userName
     github
     password
     projects {
@@ -60,7 +60,7 @@ query SingleUser($userId: ID!) {
 export const QUERY_ME = gql`
 query Me {
   me {
-    name
+    userName
     _id
     github
     projects {

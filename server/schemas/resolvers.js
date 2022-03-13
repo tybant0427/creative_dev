@@ -20,20 +20,20 @@ const resolvers = {
   
 
   Mutation: {
-    addUser: async (parent, { name, github, password }) => {
+    addUser: async (parent, { userName, github, password }) => {
       console.log("addUser");
-      const users = await User.create({ name, github, password });
+      const users = await User.create({ userName, github, password });
       const token = signToken(users);
       // console.log(token);
       // console.log(users);
 
       return { token, users };
     },
-    login: async (parent, {  name, password }) => {
-      const users = await User.findOne({ name });
+    login: async (parent, {  userName, password }) => {
+      const users = await User.findOne({ userName });
 console.log(users);
       if (!users) {
-        throw new AuthenticationError('No user with this github found!');
+        throw new AuthenticationError('No user with this user name found!');
       }
 
       const correctPw = await users.isCorrectPassword(password);
@@ -47,6 +47,7 @@ console.log("Logged In");
       return { token, users };
     },
     addComment: async (parent, { projectId, commentText, commentAuthor, createdAt}) => {
+      console.log("comment added");
       return Project.findOneAndUpdate(
         { _id: projectId },
         {
@@ -56,7 +57,8 @@ console.log("Logged In");
           new: true,
           runValidators: true,
         }
-      );
+        );
+        
     },
     removeComment: async (parent, { projectId, commentId }) => {
       return Project.findOneAndUpdate(

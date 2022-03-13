@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const SignUp = ()=> {
     const [formState, setFormState] = useState({
-        name: '',
+        userName: '',
         github: '',
         password: ''
       
@@ -58,9 +58,9 @@ const SignUp = ()=> {
                   <input
                     className="form-control"
                     placeholder="Your username"
-                    name="name"
+                    name="userName"
                     type="text"
-                    value={formState.name}
+                    value={formState.userName}
                     onChange={handleChange}
                   />
                   <input
