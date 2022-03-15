@@ -1,0 +1,33 @@
+// @import url(./variables.scss);  
+
+.userName{
+    padding-bottom: 10%;
+
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.scrolled {
+    // width: 252px;
+    height: 650px;
+    overflow-y: scroll;
+
+}

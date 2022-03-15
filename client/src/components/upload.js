@@ -2,7 +2,7 @@ import React, {  useState } from "react";
 import { useMutation } from '@apollo/client';
 import { ADD_PROJECT } from '../utils/mutations';
 import { Link } from 'react-router-dom';
-
+import Auth from '../utils/auth';
 
 
 
@@ -13,10 +13,10 @@ import { Link } from 'react-router-dom';
 const Upload = () => {
 
 
-    
+    console.log(Auth.getProfile().data.userName);
         const [formState, setFormState] = useState({
             userId: localStorage.getItem('userId'),
-            
+            userOfProject: Auth.getProfile().data.userName,
             title: '',
             description: '',
             respitoryLink: '',
@@ -127,6 +127,7 @@ const Upload = () => {
               >
             </input>
         </div>
+        
         {data ? (
               
               // console.log(data.addUser.users._id)

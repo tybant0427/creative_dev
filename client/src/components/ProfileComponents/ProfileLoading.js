@@ -7,7 +7,7 @@ import { useQuery } from "@apollo/client";
 import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
 import { Modal } from 'react-bootstrap';
-
+import "../../Styles/card.scss"
 
 export default function Profile  ()  {
   const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
@@ -17,14 +17,17 @@ console.log(err);
     variables: {userId:localStorage.getItem('userId')}
   });
   const singleUser = data?.singleUser.projects || [];
-const handlebutton =async(test) =>{
-try{
-const  {data} = await deleteButton({
-    variables: {projectId:test }
-})
-window.location.reload('/profile')
-
-}catch(err){
+  // console.log(data.singleUser.userName);
+  const userName = data?.singleUser.userName || [];
+  const handlebutton =async(test) =>{
+    try{
+      const  {data} = await deleteButton({
+        variables: {projectId:test }
+      })
+      
+      window.location.reload('/profile')
+    }catch(err){
+  JSON.stringify(err)
 console.log(err);
 }
 }
@@ -83,16 +86,17 @@ const [show, setShow] = useState(false);
 
   return (
     <div>
+      
       <ProfileNav />
+      {/* <p className="userName">{userName}</p> */}
 
-      <h1 className='padding'>My Projects</h1>
-
+      <h1 className='userName'>{userName}'s Projects</h1>
       
 
       
       {
         singleUser.map((project) => (
-          <Card className="edit" style={{ width: '18rem' }} key={project._id}>
+          <Card className="edit"  key={project._id}>
 
           <Card.Img variant="top" src="{}" />
 
