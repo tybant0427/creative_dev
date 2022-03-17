@@ -56,6 +56,7 @@ const typeDefs = gql`
       deleteProject( projectId: ID!): Project
     deleteUser(userId: ID!):User
     updateProject( projectId: ID, title: String, description: String, respitoryLink: String, liveLink: String, image: String): Project
+    updateUser(userId: ID, userName: String, github: String, password: String): User
   } 
 `;
 
