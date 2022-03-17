@@ -97,7 +97,7 @@ const [show, setShow] = useState(false);
       <SingleUserLoading />
 
 
-      <h1 className='userName'>{userName}'s Projects</h1>
+      <h1 className='overhead'>{userName}'s Projects</h1>
 
       
       {

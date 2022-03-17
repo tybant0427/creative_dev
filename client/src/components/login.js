@@ -78,7 +78,7 @@ const Login = ()=> {
                     type="submit"
                   >
                     
-                    Login In
+                    Sign In
                    
                   </button>
                 </form>
