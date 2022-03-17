@@ -10,7 +10,7 @@ import Home from './components/Home';
 import BlogHome from "./components/BlogComponents/BlogHome"
 import Upload from './components/upload';
 import Profile from "./components/ProfileComponents/ProfileLoading"
-import Pic from "./assets/images/space.jpg"
+import Pic from "./assets/images/pexels-peter-fazekas-1170576.jpg"
 import {
   ApolloClient,
   InMemoryCache,
