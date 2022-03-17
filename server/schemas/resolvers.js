@@ -111,8 +111,16 @@ console.log("Logged In");
         console.log(err);
         return;
       }
+    },
+    updateUser: async (parent, args)=>{
+      try{
+      const updatedUser = await User.findOneAndUpdate({_id: args.userId},{$set: args})
+      return updatedUser;
+      }catch(err){
+        console.log(err);
+        return;
+      }
     }
-
 
   },
 };

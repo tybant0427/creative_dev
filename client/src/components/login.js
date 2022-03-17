@@ -43,11 +43,11 @@ const Login = ()=> {
         }
       };
     return (
-        <main className="flex-row justify-center mb-4">
+        <main className="cardTest ">
         <div className="col-12 col-lg-10">
           <div className="card">
             <h4 className="card-header bg-dark text-light p-2">Login</h4>
-            <div className="card-body">
+            <div className="card-body ">
               {data ? (
               
                   

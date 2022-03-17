@@ -56,13 +56,13 @@ const Upload = () => {
 
     return (
         
-         
-<div className="UpdateFix">
+      
+<div className="UpdateFix ">
 <form onSubmit={handleFormSubmit}>
 
 
 
-        <div className="mb-3">
+        <div className="">
             <label for="exampleFormControlInput1" className="form-label">Project Name</label>
             <input 
             type="text"
@@ -145,6 +145,7 @@ const Upload = () => {
         </form>
        
     </div>
+     
     )
 }
 

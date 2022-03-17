@@ -251,11 +251,12 @@ transform: rotateY(15deg);
  text-shadow: 1px 1px 1px black;
 }
 .UpdateFix{
-position: absolute;
+position: relative;
 display: flex;
 flex-direction: column;
 background-color: #c0c4c2;
 box-shadow: 5px 5px 5px black;
 border: 2px solid black;
+text-align-last: center;
 }
 
