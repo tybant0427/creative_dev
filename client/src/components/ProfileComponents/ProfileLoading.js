@@ -1,4 +1,4 @@
-import { ListGroup, Card, ListGroupItem, Button } from 'react-bootstrap';
+import { ListGroup, Card, ListGroupItem, Button, Container } from 'react-bootstrap';
 import React , {useState} from "react";
 import {  QUERY_SINGLEUSER } from "../../utils/queries";
 import { useMutation } from '@apollo/client';
@@ -8,6 +8,7 @@ import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
 import { Modal } from 'react-bootstrap';
 import "../../Styles/card.scss"
+import SingleUserLoading from './SingleUser';
 
 export default function Profile  ()  {
   const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
@@ -78,6 +79,11 @@ console.log(data);
   }
 };
 
+
+
+
+
+
 const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -85,18 +91,18 @@ const [show, setShow] = useState(false);
 
 
   return (
-    <div>
+    <Container className='cardTest'>
       
       <ProfileNav />
-      {/* <p className="userName">{userName}</p> */}
+      <SingleUserLoading />
+
 
       <h1 className='userName'>{userName}'s Projects</h1>
-      
 
       
       {
         singleUser.map((project) => (
-          <Card className="edit"  key={project._id}>
+          <Card className="edit spacing"  key={project._id}>
 
           <Card.Img variant="top" src="{}" />
 
@@ -123,7 +129,7 @@ const [show, setShow] = useState(false);
 
         </Card>
         ))}
-        
+       
 
 
 <Button id='buttonBG' variant="primary"className='updated' onClick={handleShow}>
@@ -181,19 +187,7 @@ className="mb-3">
           >
     </input>
 </div>
- {/* <div className="mb-3">
-    <label for="exampleFormControlInput1" className="form-label">Image</label>
-    <input 
-    type="File"
-    name="image"
-    value={formState.image}
-     className="form-control" 
-     id="exampleFormControlInput1"
-      placeholder=" Image"
-      onChange={handleChange}
-      >
-    </input>
-</div> */}
+
 <div className="mb-3">
     <label for="exampleFormControlInput1" className="form-label">Description</label>
     <input 
@@ -225,8 +219,8 @@ className="mb-3">
         
         </Modal.Footer>
       </Modal>
-
-</div>
+{/* </div>  */}
+</Container>
     
     ); 
   

@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/client";
 import Auth from '../../utils/auth'
 import Nav from "./BlogNav"
 import Icon from '../../assets/video/icon.mp4'
+import { Container } from "react-bootstrap";
 
 
 
@@ -25,8 +26,8 @@ console.log(projects)
     <main>
       <Nav />
       <h1 className='padding'>Home Blog</h1>
-    <div className="flex-row justify-center">
-      <div className="col-12 col-md-8 mb-3">
+    <div className="">
+      <Container className="">
 
         {loading ? (
           <div>Loading...</div>
@@ -36,7 +37,7 @@ console.log(projects)
             
           />
         )}
-      </div>
+      </Container>
     </div>
   </main>
   </div>
