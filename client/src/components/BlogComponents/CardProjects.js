@@ -31,11 +31,11 @@ const Layout = ({ projects }) => {
             </Card.Body>
 
 
-            <Card.Body>
-              <Card.Link href={project.respitoryLink} >Respitory Link</Card.Link>
+            <Card.Body >
+              <Card.Link className='title' href={project.respitoryLink} >Respitory Link</Card.Link>
               <br/>
               <br/>
-              <Card.Link href={project.liveLink} >Live Link </Card.Link>
+              <Card.Link className='title' href={project.liveLink} >Live Link </Card.Link>
               <div className="my-5">
                 <CommentList comments={project.comments} />
               </div>
