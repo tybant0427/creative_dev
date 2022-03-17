@@ -33,7 +33,7 @@ body {
 
 .image2 {
   background-repeat: no-repeat;
-  margin: 15% -12%;
+  margin: 15% -12%;      
   position:absolute;
   width: 25%;
 }
@@ -67,45 +67,18 @@ body, html, .App, #root, .auth-wrapper {
   
   
 }
-.auth-inner {
-  // width: 400px;
-  margin: auto;
-  
-  
-  /* box-shadow: 0px 14px 80px rgba(52, 54, 95, 0.9); */
-  padding: 40px 55px 45px 55px;
-  border-radius: 15px;
-  transition: all .3s;
-  color: black;
-}
-.auth-wrapper .form-control:focus {
-  /* border-color: #167bff; */
-  box-shadow: none;
-}
-.auth-wrapper h3 {
-  text-align: center;
-  margin: 0;
-  line-height: 1;
-  padding-bottom: 20px;
-}
-.custom-control-label {
-  font-weight: 400;   
-}
-.forgot-password,
-.forgot-password a {
-  text-align: right;
-  font-size: 13px;
-  padding-top: 10px;
-  color: #7f7d7d;
-  margin: 0;
-}
 
+#radius {
+  border-radius: 25px;
+  background-color: #0672f5;
+}
 
 .edit {
   margin-bottom: 100px;
+  // border-radius: 100px;
   /* background-color: rgba(34, 35, 58, 0.2); */
-  box-shadow: 5px 5px 5px black;
-border: 2px solid black;
+  // box-shadow: 5px 5px 5px rgb(198, 211, 13);
+// border: 2px solid black;
 }
 
 
@@ -198,10 +171,12 @@ ul {
   /* background-color: black; */
 }
 
-#title{
-  color: black;
+.title{
+  // color: black;
   /* background-color: rgba(5, 5, 5, 0.4); */
-  text-align: center;
+  // text-align: center;
+  color: #fff;
+ 
 }
 
 
@@ -231,10 +206,11 @@ ul {
 }
 
 .spacing:hover {
-  background: #ffffff;
+  background: #fff;
 }
 .spacing {
    transform: rotateX(15deg);
+   
   
  
 }
@@ -253,5 +229,10 @@ background-color: #c0c4c2;
 box-shadow: 5px 5px 5px black;
 border: 2px solid black;
 text-align-last: center;
+}
+
+#blog-creator{
+  font-size: 50px;
+  font-family: 'Fredoka', sans-serif;
 }
 
