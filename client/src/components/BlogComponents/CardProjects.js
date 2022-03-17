@@ -16,17 +16,17 @@ const Layout = ({ projects }) => {
       
       {
         projects.map((project) => (
-          <Card className="edit spacing scrolled"  key={project._id}>
+          <Card id="radius" className="edit spacing scrolled"  key={project._id}>
 
             {/* <Card.Img variant="top" src="{}" /> */}
 
             <Card.Body>
-            <Card.Title className='title'>Created by:<br /> {project.userOfProject}</Card.Title>
+            <Card.Title id='blog-creator' className='title'>Creator: {project.userOfProject}</Card.Title>
             <br />
-              <Card.Title className='title'>Project title:<br /> {project.title}</Card.Title>
+              <Card.Title className='title'>{project.title}</Card.Title>
 
               <Card.Text className='title'>
-                Project description:<br /> {project.description}
+                Description:<br /> {project.description}
               </Card.Text>
             </Card.Body>
 
