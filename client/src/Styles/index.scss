@@ -70,7 +70,7 @@ text-decoration: underline;
   
 }
 .auth-inner {
-  width: 400px;
+  // width: 400px;
   margin: auto;
   
   
@@ -229,15 +229,19 @@ ul {
 #buttonBG {
   background: black;
 }
-
+.cardTest{
+  text-align: -webkit-center;
+  margin: auto;
+  
+}
 
 .spacing:hover {
   background: #ffffff;
 }
 .spacing {
    transform: rotateX(15deg);
-   text-align: center;
-   
+  
+ 
 }
 .spacing:hover{
 transition: all 0.65s;

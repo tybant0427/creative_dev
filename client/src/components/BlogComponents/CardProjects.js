@@ -12,11 +12,11 @@ const Layout = ({ projects }) => {
 
 
   return (
-    <div >
+    <div className='cardTest'>
       
       {
         projects.map((project) => (
-          <Card className="edit spacing scrolled" style={{ width: '18rem' }} key={project._id}>
+          <Card className="edit spacing scrolled"  key={project._id}>
 
             {/* <Card.Img variant="top" src="{}" /> */}
 
