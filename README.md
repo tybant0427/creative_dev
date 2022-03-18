@@ -5,8 +5,9 @@
 
 ## Demo
 
-Project Live Link: https://glacial-ravine-72346.herokuapp.com/
-GitHub link: https://github.com/tybant0427/creative_dev/
+Personal Touches On The Project Live Link: https://mysterious-cliffs-92833.herokuapp.com/
+
+Original GitHub link: https://github.com/tybant0427/creative_dev/
 
 ## Authors
 
