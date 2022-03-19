@@ -21,25 +21,27 @@ const Layout = ({ projects }) => {
             {/* <Card.Img variant="top" src="{}" /> */}
 
             <Card.Body>
-            <Card.Title id='blog-creator' className='title'>Creator: {project.userOfProject}</Card.Title>
+            <Card.Title id='blog-creator'>Creator: {project.userOfProject}</Card.Title>
             <br />
-              <Card.Title className='title'>{project.title}</Card.Title>
-
-              <Card.Text className='title'>
+              <Card.Title id='title'>{project.title}</Card.Title>
+<br/><br/>
+              <Card.Text id='description'>
                 Description:<br /> {project.description}
               </Card.Text>
             </Card.Body>
 
+            <br/>
+
 
             <Card.Body >
-              <Card.Link className='title' href={project.respitoryLink} >Respitory Link</Card.Link>
+              <Card.Link className='links' href={project.respitoryLink} >Respitory Link</Card.Link>
               <br/>
               <br/>
-              <Card.Link className='title' href={project.liveLink} >Live Link </Card.Link>
+              <Card.Link className='links' href={project.liveLink} >Live Link </Card.Link>
               <div className="my-5">
                 <CommentList comments={project.comments} />
               </div>
-              <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+              <div id='comment-border' className="m-3 p-4" style={{ border: '2px solid #fff' }}>
                 <CommentForm projectId={project._id} />
               </div>
             </Card.Body>

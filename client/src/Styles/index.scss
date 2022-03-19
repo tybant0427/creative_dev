@@ -49,7 +49,7 @@ body, html, .App, #root, .auth-wrapper {
   height: 100%;
 }
 .navbar-light {
-  background-color: #ff0606;
+ 
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
 }
 
@@ -70,7 +70,11 @@ body, html, .App, #root, .auth-wrapper {
 
 #radius {
   border-radius: 25px;
-  background-color: #0672f5;
+  background-color: rgba(6,114,245, 0.9);
+  border-color:#fff;
+  border-width: 5px;
+  
+  
 }
 
 .edit {
@@ -153,7 +157,7 @@ a:hover {
 
 ul {
   list-style-type: none;
-  color: blue;
+  // color: blue;
 }
 
 .nav li{
@@ -171,12 +175,35 @@ ul {
   /* background-color: black; */
 }
 
-.title{
+#title{
   // color: black;
   /* background-color: rgba(5, 5, 5, 0.4); */
   // text-align: center;
+  font-family: 'Fredoka', sans-serif;
   color: #fff;
+  font-size: 36px;
  
+}
+
+#description {
+  color: white;
+  font-size: x-large;
+}
+
+.links {
+  transition: all 0.3s ease;
+  color: white;
+  font-size: xx-large;
+  font-family: 'Fredoka', sans-serif;
+  
+  
+  
+}
+
+.links:hover {
+  // transition: transform 300ms; 
+        // transform: translateY(-5px);
+   color: rgb(255, 217, 0);
 }
 
 
@@ -195,10 +222,12 @@ ul {
   
 }
 
-
-#buttonBG {
-  background: black;
+h3 {
+  color:#fff;
+  
 }
+
+
 .cardTest{
   text-align: -webkit-center;
   margin: auto;
@@ -210,10 +239,8 @@ ul {
 }
 .spacing {
    transform: rotateX(15deg);
-   
-  
- 
-}
+  }
+
 .spacing:hover{
 transition: all 0.65s;
 transform: rotateY(15deg);
@@ -234,5 +261,33 @@ text-align-last: center;
 #blog-creator{
   font-size: 50px;
   font-family: 'Fredoka', sans-serif;
+  color: white;
+  text-decoration:underline;
 }
 
+#comment-card {
+  background: #fff;
+  color:  #0672f5;
+  border-radius: 20px;
+}
+
+#comment-border {
+  border-radius: 20px;
+}
+
+h4 {
+  color:#fff;
+}
+
+#count {
+  color:#fff;
+}
+
+#comment-button {
+  background: #fff;
+  color :#0672f5
+}
+ #comment-button:hover {
+   background-color:rgb(255, 217, 0);
+   transition: .3s;
+ }
