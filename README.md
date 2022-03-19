@@ -5,8 +5,9 @@
 
 ## Demo
 
-Project Live Link: https://glacial-ravine-72346.herokuapp.com/
-GitHub link: https://github.com/tybant0427/creative_dev/
+Personal Touches On The Project Live Link: https://mysterious-cliffs-92833.herokuapp.com/
+
+Original GitHub link: https://github.com/tybant0427/creative_dev/
 
 ## Authors
 
@@ -29,7 +30,7 @@ A place where everyone can come to and share their awesome projects!!!
 
 ## Screenshots
 
-![App Screenshot](https://github.com/tybant0427/creative_dev/blob/main/Screenshot/Capture1.JPG)
+![Screenshot (60)](https://user-images.githubusercontent.com/90479839/159046634-e611be23-a5d3-4e95-a082-4d15d4c68f7f.png)
 
 
 ## Roadmap
@@ -42,3 +43,4 @@ A place where everyone can come to and share their awesome projects!!!
 
 - add checkbox to update button
 - add current comments on profile page
+
