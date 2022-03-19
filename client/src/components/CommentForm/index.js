@@ -50,12 +50,12 @@ const CommentForm = ({ projectId }) => {
 
       {Auth.loggedIn() ? (
         <>
-          <p
+          <p id='count'
             className={`m-0 ${
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
           >
-            Character Count: {characterCount}/280
+            Character Count: {characterCount}/380
             {error && <span className="ml-2">{error.message}</span>}
           </p>
           <form
@@ -74,7 +74,7 @@ const CommentForm = ({ projectId }) => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button id='commentbutton' className="btn btn-primary btn-block py-3" type="submit">
+              <button id='comment-button' className="btn btn-block py-3" type="submit">
                 Add Comment
               </button>
             </div>
