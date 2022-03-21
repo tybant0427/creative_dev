@@ -122,7 +122,7 @@ const [show, setShow] = useState(false);
           </Card.Body>
 
           
-          <Button id='buttons' type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
+          <Button id='buttons'  type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
         
         <Button id='buttons'  onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
         

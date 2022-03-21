@@ -18,6 +18,8 @@ body {
 }
 
 .overhead {
+  justify-content: center;
+  display: flex;
   position: relative;
   animation-name: example;
   animation-duration: .5s;
@@ -25,11 +27,13 @@ body {
   color: white;
   font-family: 'Fredoka', sans-serif;
   padding-bottom: 50px;
-  font-size: 90px;
+  font-size: 60px;
   
 
   
 }
+
+
 
 .image2 {
   background-repeat: no-repeat;
@@ -62,7 +66,7 @@ body, html, .App, #root, .auth-wrapper {
 
 .auth-wrapper {
  
-  text-align: center;
+  // text-align: center;
   margin-top: 100px;
   
   
@@ -73,6 +77,11 @@ body, html, .App, #root, .auth-wrapper {
   background-color: rgba(6,114,245, 0.9);
   border-color:#fff;
   border-width: 10px;
+  // display: flex;
+  // justify-content: center;
+  // text-align: -webkit-center;
+  align-items: center;
+  
   
   
 }
@@ -167,13 +176,28 @@ ul {
 }
 
 #buttons  {
+  // display: flex;
   color: rgb(255, 254, 254);
-background-color: rgb(254, 92, 33);
+background-color: rgb(254, 100, 5);
   /* background: black; */
-  margin: 10px;
+  margin: 10px 0px;
+  width: 20%;
+  // transition: 0.8s ease-in;
+  
+  @media only screen and (max-width: 400px) {
+    width: 35%
+  }
   
 
   /* background-color: black; */
+}
+
+#buttons:hover {
+  filter: brightness(80%);
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
+  transition: 0.2s ease-in;
+  
+  
 }
 
 #title{
@@ -182,7 +206,7 @@ background-color: rgb(254, 92, 33);
   // text-align: center;
   font-family: 'Fredoka', sans-serif;
   color: #fff;
-  font-size: 36px;
+  font-size: 2em ;
  
 }
 
@@ -233,6 +257,7 @@ h3 {
   text-align: -webkit-center;
   margin: auto;
   
+  
 }
 
 .spacing:hover {
@@ -258,16 +283,21 @@ text-align-last: center;
 }
 
 #blog-creator{
-  font-size: 50px;
+  
+  font-size: xx-large;
   font-family: 'Fredoka', sans-serif;
   color: white;
   text-decoration:underline;
 }
 
+
+
+
 #comment-card {
   background: #fff;
   color:  #0672f5;
   border-radius: 20px;
+  
 
 }
 
@@ -290,4 +320,8 @@ h4 {
  #comment-button:hover {
    background-color:rgb(255, 217, 0);
    transition: .3s;
+ }
+
+ #comments {
+   width:50vw;
  }
