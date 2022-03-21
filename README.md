@@ -5,9 +5,9 @@
 
 ## Demo
 
-Personal Touches On The Project Live Link: https://mysterious-cliffs-92833.herokuapp.com/
+ Live Link: https://mysterious-cliffs-92833.herokuapp.com/
 
-Original GitHub link: https://github.com/tybant0427/creative_dev/
+ GitHub link: https://github.com/tybant0427/creative_dev/
 
 ## Authors
 
@@ -39,8 +39,5 @@ A place where everyone can come to and share their awesome projects!!!
 - Improve UI/UX
 - Add censorship to comments and username displayed on the page.
 
-## Forked Roadmap
 
-- add checkbox to update button
-- add current comments on profile page
 
