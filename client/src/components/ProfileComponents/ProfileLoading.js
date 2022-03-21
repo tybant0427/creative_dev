@@ -8,18 +8,22 @@ import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
 import { Modal } from 'react-bootstrap';
 import "../../Styles/card.scss"
-import SingleUserLoading from './SingleUser';
+import { DELETE_COMMENT } from '../../utils/mutations';
+import CommentListProfile from '../CommentList/profileList';
 
 export default function Profile  ()  {
   const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
   );
 console.log(err);
+
   const {error, data} = useQuery(QUERY_SINGLEUSER , {
     variables: {userId:localStorage.getItem('userId')}
   });
   const singleUser = data?.singleUser.projects || [];
-  // console.log(data.singleUser.userName);
+ 
+  // console.log(data.singleUser.projects);
   const userName = data?.singleUser.userName || [];
+
   const handlebutton =async(test) =>{
     try{
       const  {data} = await deleteButton({
@@ -80,6 +84,23 @@ console.log(data);
 };
 
 
+
+// const [deleteComment, { err3, data3}] = useMutation(DELETE_COMMENT 
+//   );
+// console.log(err3, data3);
+
+// const handleComment =async(test) =>{
+//   try{
+//     const  {data} = await deleteComment({
+//       // variables: {projectId:test}
+//     })
+    
+//     window.location.reload('/profile')
+//   }catch(err){
+// JSON.stringify(err)
+// console.log(err);
+// }
+// }
 
 
 
@@ -225,6 +246,3 @@ className="mb-3">
     ); 
   
 };
-
-
-//make an input

@@ -54,6 +54,12 @@ query SingleUser($userId: ID!) {
       respitoryLink
       liveLink
       image
+      comments {
+        createdAt
+        commentAuthor
+        commentText
+        _id
+      }
     }
   }
 }
