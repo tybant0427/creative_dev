@@ -8,18 +8,22 @@ import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
 import { Modal } from 'react-bootstrap';
 import "../../Styles/card.scss"
-import SingleUserLoading from './SingleUser';
+import { DELETE_COMMENT } from '../../utils/mutations';
+import CommentListProfile from '../CommentList/profileList';
 
 export default function Profile  ()  {
   const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
   );
 console.log(err);
+
   const {error, data} = useQuery(QUERY_SINGLEUSER , {
     variables: {userId:localStorage.getItem('userId')}
   });
   const singleUser = data?.singleUser.projects || [];
-  // console.log(data.singleUser.userName);
+ 
+  // console.log(data.singleUser.projects);
   const userName = data?.singleUser.userName || [];
+
   const handlebutton =async(test) =>{
     try{
       const  {data} = await deleteButton({
@@ -81,6 +85,23 @@ console.log(data);
 
 
 
+// const [deleteComment, { err3, data3}] = useMutation(DELETE_COMMENT 
+//   );
+// console.log(err3, data3);
+
+// const handleComment =async(test) =>{
+//   try{
+//     const  {data} = await deleteComment({
+//       // variables: {projectId:test}
+//     })
+    
+//     window.location.reload('/profile')
+//   }catch(err){
+// JSON.stringify(err)
+// console.log(err);
+// }
+// }
+
 
 
 
@@ -94,7 +115,7 @@ const [show, setShow] = useState(false);
     <Container className='cardTest'>
       
       <ProfileNav />
-      <SingleUserLoading />
+      {/* <SingleUserLoading /> */}
 
 
       <h1 className='overhead'>{userName}'s Projects</h1>
@@ -107,23 +128,28 @@ const [show, setShow] = useState(false);
           {/* <Card.Img variant="top" src="{}" /> */}
 
           <Card.Body>
-            <Card.Title>{project.title}</Card.Title>
-            <Card.Text>
-             {project.description}
-            </Card.Text>
-          </Card.Body>
+            
+              <Card.Title id='title'>{project.title}</Card.Title>
+<br/><br/>
+              <Card.Text id='description'>
+                Description:<br /> {project.description}
+              </Card.Text>
+            </Card.Body>
 
 
           <Card.Body>
-            <Card.Link href="#">Respitory: {project.respitoryLink}</Card.Link>
+            <Card.Link href="#" className='links'>Respitory: {project.respitoryLink}</Card.Link>
             <br/>
             <br/>
-            <Card.Link href="#">Live Link: {project.liveLink}</Card.Link>
+            <Card.Link href="#" className='links'>Live Link: {project.liveLink}</Card.Link>
+            <div className="my-5">
+                <CommentListProfile comments={project.comments}  />
+              </div>
           </Card.Body>
 
           
           <Button id='buttons' type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
-        
+         
         <Button id='buttons'  onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
         
 
@@ -225,6 +251,3 @@ className="mb-3">
     ); 
   
 };
-
-
-//make an input

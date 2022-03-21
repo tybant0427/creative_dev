@@ -81,3 +81,10 @@ mutation UpdateProject($projectId: ID, $title: String, $description: String, $re
     liveLink
   }
 }`;
+
+export const DELETE_COMMENT = gql `
+mutation Mutation($projectId: ID!, $commentId: ID!) {
+  removeComment(projectId: $projectId, commentId: $commentId) {
+    userOfProject
+  }
+}`;
