@@ -1,6 +1,12 @@
 import React from 'react';
 
-const CommentList = ({ comments = [] }) => {
+const CommentListProfile = ({ comments = [] }) => {
+
+
+ 
+
+
+
   if (!comments.length) {
     
     return <h3>No Comments Yet</h3>;
@@ -28,6 +34,7 @@ const CommentList = ({ comments = [] }) => {
                 </h5>
                 <p className="card-body">{comment.commentText}</p>
               </div>
+               
             </div>
           ))}
       </div>
@@ -35,4 +42,4 @@ const CommentList = ({ comments = [] }) => {
   );
 };
 
-export default CommentList;
+export default CommentListProfile;

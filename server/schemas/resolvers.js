@@ -67,6 +67,11 @@ console.log("Logged In");
         { new: true }
       );
     },
+    // removeComment: async (parent, {  commentId}) => {
+    //   const projectComment = await Project.deleteOne({ comments: { _id: commentId } });
+    //   console.log(projectComment);
+    //   return projectComment;
+    // },
 
 
     // logout: async (parent, { userId }) => {
