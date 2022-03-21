@@ -94,10 +94,10 @@ const [show, setShow] = useState(false);
     <Container className='cardTest'>
       
       <ProfileNav />
-      <SingleUserLoading />
+      {/* <SingleUserLoading /> */}
 
 
-      <h1 className='overhead'>{userName}'s Projects</h1>
+      <h1 className='overhead'>~{userName}'s Projects</h1>
 
       
       {
@@ -107,18 +107,18 @@ const [show, setShow] = useState(false);
           {/* <Card.Img variant="top" src="{}" /> */}
 
           <Card.Body>
-            <Card.Title>{project.title}</Card.Title>
-            <Card.Text>
+            <Card.Title id='blog-creator'>{project.title}</Card.Title>
+            <Card.Text id='description'>
              {project.description}
             </Card.Text>
           </Card.Body>
 
 
           <Card.Body>
-            <Card.Link href="#">Respitory: {project.respitoryLink}</Card.Link>
+            <Card.Link className='links' href={project.respitoryLink} >Respitory Link</Card.Link>
             <br/>
             <br/>
-            <Card.Link href="#">Live Link: {project.liveLink}</Card.Link>
+            <Card.Link className='links' href={project.liveLink} >Live Link</Card.Link>
           </Card.Body>
 
           
