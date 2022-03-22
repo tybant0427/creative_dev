@@ -50,15 +50,12 @@ mutation DeleteProject($projectId: ID!) {
 `;
 
 export const ADD_COMMENT = gql`
-mutation addComment($projectId: ID!, $commentText: String!, $commentAuthor: String!) {
+mutation Mutation($projectId: ID!, $commentText: String!, $commentAuthor: String!) {
   addComment(projectId: $projectId, commentText: $commentText, commentAuthor: $commentAuthor) {
+    commentText
     _id
-    comments {
-      _id
-      commentText
-      commentAuthor
-      createdAt    
-    }
+    commentAuthor
+    createdAt
   }
 }
 `;
@@ -83,8 +80,9 @@ mutation UpdateProject($projectId: ID, $title: String, $description: String, $re
 }`;
 
 export const DELETE_COMMENT = gql `
-mutation Mutation($projectId: ID!, $commentId: ID!) {
-  removeComment(projectId: $projectId, commentId: $commentId) {
-    userOfProject
+mutation Mutation($commentId: ID!) {
+  removeComment(commentId: $commentId) {
+    _id
+    commentText
   }
 }`;

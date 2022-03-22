@@ -2,10 +2,7 @@ import React from 'react';
 import {Button} from "react-bootstrap"
 import { DELETE_COMMENT } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
-// export function commentId(commentId){
-// console.log(commentId);
 
-//  }
 
 
 
@@ -21,9 +18,9 @@ const CommentListProfile = ({ comments = [] }) => {
             const  {data} = await deleteComment({
               variables: {commentId:commentId}
             })
-            console.log( commentId);
+            console.log( data);
             
-            // window.location.reload('/profile')
+            window.location.reload('/profile')
           }catch(err){
         JSON.stringify(err)
         console.log(err);
@@ -31,7 +28,7 @@ const CommentListProfile = ({ comments = [] }) => {
         }
 
 
-console.log(comments);
+// console.log(comments);
 
 
   if (!comments.length) {
@@ -41,6 +38,7 @@ console.log(comments);
 
   return (
     <>
+      
    
       <h3 
         className="p-5 display-inline-block"
@@ -55,18 +53,20 @@ console.log(comments);
               
               <div id='comment-card' className="p-3">
                 <h5 className="card-header">
-                  {comment.commentAuthor} commented{' '}
+                  {comment.commentAuthor} <br />
                   <span style={{ fontSize: '0.825rem' }}>
-                    on {comment.createdAt}
+                   commented on {comment.createdAt}
                   </span>
                 </h5>
                 <p className="card-body">{comment.commentText}</p>
-                <p>{comment._id}</p>
-              <Button id='buttons' type="submit" onClick={()=>commentId(comment._id)}  >push</Button>
+                
+              <Button  type="submit" onClick={()=>commentId(comment._id)}  >Delete Comment</Button>
               </div>
             </div>
           ))}
       </div>
+     
+          
     </>
   );
 };

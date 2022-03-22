@@ -8,9 +8,9 @@ import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
 import { Modal } from 'react-bootstrap';
 import "../../Styles/card.scss"
-import { DELETE_COMMENT } from '../../utils/mutations';
+// import { DELETE_COMMENT } from '../../utils/mutations';
 import CommentListProfile from '../CommentList/profileList';
-import { commentId } from '../CommentList/profileList';
+// import { commentId } from '../CommentList/profileList';
 
 
 export default function Profile  ()  {
@@ -42,7 +42,7 @@ console.log(err);
   const {error:errorM, data:dataM} = useMutation(UPDATE_PROJECT , {
     variables: {userId:localStorage.getItem('userId')}
   });
-  console.log(dataM);
+  // console.log(dataM);
 
 
 const [formState, setFormState] = useState({
@@ -87,26 +87,6 @@ console.log(data);
 
 
 
-// const [deleteComment, { err3, data3}] = useMutation(DELETE_COMMENT 
-//   );
-// console.log(err3, data3);
-
-const handleComment =async(projectId, commentId) =>{
-  try{
-    // const  {data} = await deleteComment({
-    //   variables: {projectId:test}
-    // })
-    console.log( commentId);
-    
-    // window.location.reload('/profile')
-  }catch(err){
-JSON.stringify(err)
-console.log(err);
-}
-}
-
- 
-
 
 const [show, setShow] = useState(false);
 
@@ -139,7 +119,7 @@ const [show, setShow] = useState(false);
              {project.description}     
             </Card.Text>
           </Card.Body>
-
+          <CommentListProfile comments={project.comments} />
 
 
           <Card.Body>

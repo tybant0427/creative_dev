@@ -24,7 +24,9 @@ console.log(projects)
     <div>
        
     <main>
+      <div className="blogNav">
       <Nav />
+      </div>
       <h1 className="overhead">~Blog~</h1>
     <div className="">
       <Container className="">

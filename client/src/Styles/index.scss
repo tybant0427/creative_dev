@@ -28,7 +28,7 @@ body {
   font-family: 'Fredoka', sans-serif;
   padding-bottom: 50px;
   font-size: 60px;
-  padding-top: 50px;
+  padding-top: 80px;
   
 
   
@@ -65,13 +65,13 @@ body, html, .App, #root, .auth-wrapper {
 // }
 
 
-.auth-wrapper {
+// .auth-wrapper {
  
   //  text-align: center;
   // margin-top: 100px;
   
   
-}
+// }
 
 #radius {
   border-radius: 25px;
@@ -96,7 +96,13 @@ body, html, .App, #root, .auth-wrapper {
   // box-shadow: 5px 5px 5px rgb(198, 211, 13);
 // border: 2px solid black;
 }
-
+.blogNav{
+  position: fixed;
+  width: 100%;
+  // height: 20vh;
+  z-index: 1;
+  border: black solid 2px;
+}
 
 
 

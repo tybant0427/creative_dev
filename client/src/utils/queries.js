@@ -21,9 +21,10 @@ query Projects {
     liveLink
     image
     comments {
-      createdAt
-      commentAuthor
+      _id
       commentText
+      commentAuthor
+      createdAt
     }
   }
 }

@@ -25,10 +25,12 @@ const CommentForm = ({ projectId }) => {
           commentText,
           commentAuthor: Auth.getProfile().data.userName,
         },
-
+        
       });
+      console.log(data);
       // console.log(data.addComment.comments);
       setCommentText('');
+      window.location.reload()
     } catch (err) {
       console.error(JSON.stringify(err));
     }
@@ -41,6 +43,7 @@ const CommentForm = ({ projectId }) => {
     if (name === 'commentText' && value.length <= 280) {
       setCommentText(value);
       setCharacterCount(value.length);
+      
     }
   };
 
@@ -66,7 +69,7 @@ const CommentForm = ({ projectId }) => {
               <textarea
                 name="commentText"
                 placeholder="Add your comment..."
-                value={commentText.commentText}
+                value={setCommentText.commentText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
