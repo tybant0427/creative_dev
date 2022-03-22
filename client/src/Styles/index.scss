@@ -38,9 +38,17 @@ body {
 
 .image2 {
   background-repeat: no-repeat;
-  margin: 15% -12%;      
+  // margin: 15% -12%; 
+       
   position:absolute;
   width: 25%;
+  position: relative;
+  right: -40%;
+  @media only screen and (max-width: 400px) {
+    width: 60%;
+    right: -20%;
+
+  }
 }
 
 @keyframes example {
@@ -83,18 +91,11 @@ body, html, .App, #root, .auth-wrapper {
   text-align: -webkit-center;
   align-items: center;
   // justify-content: center;
-  
-  
-  
-  
 }
 
 .edit {
   margin-bottom: 100px;
-  // border-radius: 100px;
-  /* background-color: rgba(34, 35, 58, 0.2); */
-  // box-shadow: 5px 5px 5px rgb(198, 211, 13);
-// border: 2px solid black;
+
 }
 .blogNav{
   position: fixed;
@@ -104,82 +105,6 @@ body, html, .App, #root, .auth-wrapper {
   border: black solid 2px;
 }
 
-
-
-// .nav  {
-//   background-color: rgb(0, 0, 0);
-//   color: rgb(218, 207, 207);
-  
-// }
-
-// .nav a {
-//   padding: .5em .8em;
-//   color: rgba(251, 251, 251, 0.986);
-//   position: relative;
-//   text-decoration: none;
-//   /* background-color: rgba(10, 6, 6, 0  .5); */
-// }
-
-// .nav a::before,
-// .nav a::after {
-//   content: '';
-//   height: 14px;
-//   width: 14px;
-//   position: absolute;
-//   transition: all .35s ease;
-//   opacity: 0;
-//   /* background-color: black; */
-// }
-
-// .nav a::before {
-//   content: '';
-//   right: 0;
-//   top: 0;
-//   border-top: 3px solid rgb(2, 8, 95);
-//   border-right: 3px solid rgb(2, 8, 95);
-//   transform: translate(-100%, 50%);
-
-// }
-
-// .nav a:after {
-//   content: '';
-//   left: 0;
-//   bottom: 0;
-//   border-bottom: 3px solid rgb(2, 8, 95);
-//   border-left: 3px solid rgb(2, 8, 95);
-//   transform: translate(100%, -50%)
-// }
-// .nav a:hover:before,
-// .nav a:hover:after{
-//   transform: translate(0,0);
-//   opacity: 1;
-// }
-
-// .nav a:hover {
-//   color: lightskyblue;
-//   background-color: rgb(0, 0, 0);
-// }
-// a {
-//   color:rgb(0, 0, 0);
-//   text-decoration: none;
-// }
-
-// a,
-// a:hover {
-//   text-decoration: none !important;
-//   color: white;
-// }
-
-// ul {
-//   list-style-type: none;
-//   // color: blue;
-// }
-
-// .nav li{
-//   /* border: 1px solid rgb(255, 254, 254); */
-//   color: rgb(3, 0, 0);
-  
-// }
 
 #buttons  {
   // display: flex;

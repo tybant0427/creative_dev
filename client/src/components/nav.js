@@ -1,39 +1,42 @@
-import React from "react";
+import React,{useState} from "react";
 import Auth from "../utils/auth"
 import { BrowserRouter as  Route, Link } from "react-router-dom";
-
+import "../Styles/Navigation/nav.scss"
 
 
 export default function Navbar() {
-    const logout = () => {
-        Auth.logout();
-    }
-    // console.log(Auth.loggedIn() ? "loggedin": "loggedout");
+  const [click, setClick] = useState(false)
+
+  const handleClick = () => setClick(!click)
+  const closeMobileMenu = () => setClick(false);
+
     
   return (
-    
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top nav">
-    <div className="container">
-      
-      <div  id="navbarTogglerDemo02">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link className=" test" to={"/sign-in"}>Login</Link>
-          </li>
-          <li className="nav-item ">
-            <Link className=" test" to={"/sign-up"}>Sign up</Link>
-          </li>
-          
-          
-     
-          <li className="nav-item">
-          <Link className=' test' onClick={logout}>Logout</Link>
-          </li>
-         
+
+    <nav className='navbar'>
+        <Link to='/' className='navbar-logo'>
+            Creative Dev
+        </Link>
+        <div className='menu-icon' onClick={handleClick}>
+            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+            <li className='nav-item'>
+                <Link to="/sign-in" className='nav-links' onClick={closeMobileMenu}>
+                    Login
+                </Link>
+            </li>
+            <li className='nav-item'>
+                <Link to="/sign-up" className='nav-links' onClick={closeMobileMenu}>
+                    Sign-Up
+                </Link>
+            </li>
+             
+           
+           
         </ul>
-      </div>
-    </div>
-  </nav>
+        
+    </nav>
 
   );
 }

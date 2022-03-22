@@ -8,11 +8,11 @@ export default class Landing extends Component {
         return (
             <div>
             <Navbar />
-<Image src={Icon} className="image2"></Image>
 
             <div className ="jumbotron">
                 <h1 className="overhead">Welcome to Creative Dev!</h1>
             </div>
+<Image src={Icon} className="image2"></Image>
             {/* <img className="image2" src={Icon} width="75%" height="75%"></img> */}
             
             </div>
