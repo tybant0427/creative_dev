@@ -10,6 +10,8 @@ import { Modal } from 'react-bootstrap';
 import "../../Styles/card.scss"
 import { DELETE_COMMENT } from '../../utils/mutations';
 import CommentListProfile from '../CommentList/profileList';
+import { commentId } from '../CommentList/profileList';
+
 
 export default function Profile  ()  {
   const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
@@ -89,20 +91,21 @@ console.log(data);
 //   );
 // console.log(err3, data3);
 
-// const handleComment =async(test) =>{
-//   try{
-//     const  {data} = await deleteComment({
-//       // variables: {projectId:test}
-//     })
+const handleComment =async(projectId, commentId) =>{
+  try{
+    // const  {data} = await deleteComment({
+    //   variables: {projectId:test}
+    // })
+    console.log( commentId);
     
-//     window.location.reload('/profile')
-//   }catch(err){
-// JSON.stringify(err)
-// console.log(err);
-// }
-// }
+    // window.location.reload('/profile')
+  }catch(err){
+JSON.stringify(err)
+console.log(err);
+}
+}
 
-
+ 
 
 
 const [show, setShow] = useState(false);
@@ -130,6 +133,7 @@ const [show, setShow] = useState(false);
           <Card.Body>
             
               <Card.Title id='title'>{project.title}</Card.Title>
+              
 <br/><br/>
               <Card.Text id='description'>
                 Description:<br /> {project.description}
@@ -146,10 +150,10 @@ const [show, setShow] = useState(false);
                 <CommentListProfile comments={project.comments}  />
               </div>
           </Card.Body>
-
+{/* <h1>{project.comments._id} cum testt</h1> */}
           
           <Button id='buttons' type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
-         
+        
         <Button id='buttons'  onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
         
 
