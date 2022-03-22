@@ -45,7 +45,7 @@ const CommentForm = ({ projectId }) => {
   };
 
   return (
-    <div>
+    <div id='comments'>
       <h4>Add a comment to this project!</h4>
 
       {Auth.loggedIn() ? (

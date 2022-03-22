@@ -115,10 +115,12 @@ const [show, setShow] = useState(false);
 
 
   return (
+    <main>
+      <ProfileNav />
     <Container className='cardTest'>
       
-      <ProfileNav />
-      {/* <SingleUserLoading /> */}
+      
+      
 
 
       <h1 className='overhead'>{userName}'s Projects</h1>
@@ -131,28 +133,26 @@ const [show, setShow] = useState(false);
           {/* <Card.Img variant="top" src="{}" /> */}
 
           <Card.Body>
-            
-              <Card.Title id='title'>{project.title}</Card.Title>
-              
-<br/><br/>
-              <Card.Text id='description'>
-                Description:<br /> {project.description}
-              </Card.Text>
-            </Card.Body>
+
+            <Card.Title id='blog-creator'>{project.title}</Card.Title>
+            <Card.Text id='description'>
+             {project.description}     
+            </Card.Text>
+          </Card.Body>
+
 
 
           <Card.Body>
-            <Card.Link href="#" className='links'>Respitory: {project.respitoryLink}</Card.Link>
+            <Card.Link className='links' href={project.respitoryLink} >Respitory Link</Card.Link>
             <br/>
             <br/>
-            <Card.Link href="#" className='links'>Live Link: {project.liveLink}</Card.Link>
-            <div className="my-5">
-                <CommentListProfile comments={project.comments}  />
-              </div>
+            <Card.Link className='links' href={project.liveLink} >Live Link</Card.Link>
           </Card.Body>
 {/* <h1>{project.comments._id} cum testt</h1> */}
           
-          <Button id='buttons' type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
+
+          <Button id='buttons'  type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
+
         
         <Button id='buttons'  onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
         
@@ -251,6 +251,7 @@ className="mb-3">
       </Modal>
 {/* </div>  */}
 </Container>
+</main>
     
     ); 
   
