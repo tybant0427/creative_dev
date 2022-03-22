@@ -132,7 +132,7 @@ const [show, setShow] = useState(false);
           <Card.Body>
             <Card.Title id='blog-creator'>{project.title}</Card.Title>
             <Card.Text id='description'>
-             {project.description}
+             {project.description}     
             </Card.Text>
           </Card.Body>
 
