@@ -112,13 +112,15 @@ const [show, setShow] = useState(false);
 
 
   return (
+    <main>
+      <ProfileNav />
     <Container className='cardTest'>
       
-      <ProfileNav />
-      {/* <SingleUserLoading /> */}
+      
+      
 
 
-      <h1 className='overhead'>~{userName}'s Projects</h1>
+      <h1 className='overhead'>{userName}'s Projects</h1>
 
       
       {
@@ -242,6 +244,7 @@ className="mb-3">
       </Modal>
 {/* </div>  */}
 </Container>
+</main>
     
     ); 
   
