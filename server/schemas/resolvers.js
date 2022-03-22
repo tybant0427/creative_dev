@@ -1,19 +1,29 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Project } = require('../models');
+const { User, Project, Comments } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('projects');
+      return User.find().populate('projects').populate({
+        path: 'projects',
+        populate: 'comments'
+      });;
     },
 
     singleUser: async (parent, { userId }) => {
-      return User.findOne({ _id:userId }).populate('projects');
+      return User.findOne({ _id:userId }).populate('projects').populate({
+        path: 'projects',
+        populate: 'comments'
+      });
     },
     projects: async () => {
     
-      return Project.find();
+      return Project.find().populate('comments');
+    },
+    comments: async () => {
+    
+      return Comments.find();
     },
  
   },
@@ -46,26 +56,41 @@ console.log("Logged In");
       const token = signToken(users);
       return { token, users };
     },
-    addComment: async (parent, { projectId, commentText, commentAuthor, createdAt}) => {
-      console.log("comment added");
-      return Project.findOneAndUpdate(
-        { _id: projectId },
-        {
-          $addToSet: { comments: { commentText, commentAuthor, createdAt } },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-        );
+    // addComment: async (parent, { projectId, commentText, commentAuthor, createdAt}) => {
+    //   console.log("comment added");
+    //   return Project.findOneAndUpdate(
+    //     { _id: projectId },
+    //     {
+    //       $addToSet: { comments: { commentText, commentAuthor, createdAt } },
+    //     },
+    //     {
+    //       new: true,
+    //       runValidators: true,
+    //     }
+    //     );
         
-    },
-    removeComment: async (parent, { projectId, commentId }) => {
-      return Project.findOneAndUpdate(
+    // },
+    addComment: async (parent, { projectId, commentText, commentAuthor, createdAt }) => {
+      const comment = await Comments.create({  commentText, commentAuthor, createdAt });
+
+      await Project.findOneAndUpdate(
         { _id: projectId },
-        { $pull: { comments: { _id: commentId } } },
-        { new: true }
+        { $addToSet: { comments: comment._id } }
       );
+
+      return comment;
+    },
+    // removeComment: async (parent, { projectId, commentId }) => {
+    //   return Project.findOneAndUpdate(
+    //     { _id: projectId },
+    //     { $pull: { comments: { _id: commentId } } },
+    //     { new: true }
+    //   );
+    // },
+    removeComment: async (parent, {commentId}) => {
+      const project = await Comments.findOneAndDelete({_id:commentId});
+      console.log(project);
+      return project;
     },
     // removeComment: async (parent, {  commentId}) => {
     //   const projectComment = await Project.deleteOne({ comments: { _id: commentId } });

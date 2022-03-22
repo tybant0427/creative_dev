@@ -8,8 +8,10 @@ import ProfileNav from './ProfileNav'
 import { UPDATE_PROJECT } from '../../utils/mutations';
 import { Modal } from 'react-bootstrap';
 import "../../Styles/card.scss"
-import { DELETE_COMMENT } from '../../utils/mutations';
+// import { DELETE_COMMENT } from '../../utils/mutations';
 import CommentListProfile from '../CommentList/profileList';
+// import { commentId } from '../CommentList/profileList';
+
 
 export default function Profile  ()  {
   const [deleteButton, { err, dat}] = useMutation(DELETE_PROJECT 
@@ -40,7 +42,7 @@ console.log(err);
   const {error:errorM, data:dataM} = useMutation(UPDATE_PROJECT , {
     variables: {userId:localStorage.getItem('userId')}
   });
-  console.log(dataM);
+  // console.log(dataM);
 
 
 const [formState, setFormState] = useState({
@@ -85,25 +87,6 @@ console.log(data);
 
 
 
-// const [deleteComment, { err3, data3}] = useMutation(DELETE_COMMENT 
-//   );
-// console.log(err3, data3);
-
-// const handleComment =async(test) =>{
-//   try{
-//     const  {data} = await deleteComment({
-//       // variables: {projectId:test}
-//     })
-    
-//     window.location.reload('/profile')
-//   }catch(err){
-// JSON.stringify(err)
-// console.log(err);
-// }
-// }
-
-
-
 
 const [show, setShow] = useState(false);
 
@@ -130,11 +113,13 @@ const [show, setShow] = useState(false);
           {/* <Card.Img variant="top" src="{}" /> */}
 
           <Card.Body>
+
             <Card.Title id='blog-creator'>{project.title}</Card.Title>
             <Card.Text id='description'>
              {project.description}     
             </Card.Text>
           </Card.Body>
+          <CommentListProfile comments={project.comments} />
 
 
           <Card.Body>
@@ -143,9 +128,11 @@ const [show, setShow] = useState(false);
             <br/>
             <Card.Link className='links' href={project.liveLink} >Live Link</Card.Link>
           </Card.Body>
-
+{/* <h1>{project.comments._id} cum testt</h1> */}
           
+
           <Button id='buttons'  type="submit" onClick={()=>handlebutton(project._id)}  >Delete</Button>
+
         
         <Button id='buttons'  onClick={()=>setFormState({...formState, projectId: project._id})}  >Update</Button>
         
