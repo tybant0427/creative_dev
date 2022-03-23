@@ -56,7 +56,7 @@ mutation Mutation($userId: ID!,$projectId: ID!, $commentText: String!, $commentA
     _id
     commentAuthor
     createdAt
-    userId
+    
   }
 }
 `;
