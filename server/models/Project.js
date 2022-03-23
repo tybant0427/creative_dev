@@ -10,7 +10,7 @@ const ProjectSchema = new Schema(
       title: {
         type: String,
         required: true,
-        maxlength: 20,
+        maxlength: 40,
       },
       description:{
         type: String,
