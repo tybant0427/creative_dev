@@ -142,9 +142,9 @@ export default function Profile() {
 
               <Card.Body>
 
-                <Card.Title id='blog-creator'>{project.title}</Card.Title>
+                <Card.Title id='blog-creator'>Project: {project.title}</Card.Title>
                 <Card.Text id='description'>
-                  {project.description}
+                 Description: {project.description}
                 </Card.Text>
               </Card.Body>
               <CommentListProfile comments={project.comments} />
@@ -257,10 +257,11 @@ export default function Profile() {
 
           </Modal.Footer>
         </Modal>
-        {/* </div>  */}
+      
       </Container>
-{/* <Col> */}
-      <div className='commentStyle'>
+
+      <div className='container'>
+      <h1 className='overhead'>{userName}'s Comments</h1>
       {userComment.map((comment) => (
            <Card id="radius" className="edit spacing" key={comment._id}>
 
@@ -281,7 +282,7 @@ export default function Profile() {
          </Card>
       ))}
       </div>
-      {/* </Col> */}
+     
     </main>
     
 
