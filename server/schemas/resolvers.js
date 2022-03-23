@@ -94,10 +94,15 @@ console.log("Logged In");
     //     { new: true }
     //   );
     // },
-    removeComment: async (parent, {commentId}) => {
-      const project = await Comments.findOneAndDelete({_id:commentId});
-      console.log(project);
-      return project;
+    removeComment: async (parent, {commentId, projectId}) => {
+      const comment = await Comments.findOneAndDelete({_id:commentId});
+      console.log(comment);
+
+      await Project.findOneAndUpdate(
+        { _id: projectId },
+        { $pull: { comments: comment._id }}
+      );
+      return comment;
     },
     // removeComment: async (parent, {  commentId}) => {
     //   const projectComment = await Project.deleteOne({ comments: { _id: commentId } });

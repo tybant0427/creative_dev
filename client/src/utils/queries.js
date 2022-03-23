@@ -89,6 +89,7 @@ query UserComments($userId: ID!) {
       commentText
       commentAuthor
       createdAt
+      _id
     }
   }
 }`
