@@ -21,6 +21,7 @@ const CommentForm = ({ projectId }) => {
 
       const { data } = await addComment({
         variables: {
+          userId: localStorage.getItem('userId'),
           projectId,
           commentText,
           commentAuthor: Auth.getProfile().data.userName,

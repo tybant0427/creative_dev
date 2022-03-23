@@ -10,6 +10,9 @@ const resolvers = {
         populate: 'comments'
       });;
     },
+    userComments: async (parent, { userId }) => {
+      return User.findOne({ _id:userId }).populate('comments')
+      },
 
     singleUser: async (parent, { userId }) => {
       return User.findOne({ _id:userId }).populate('projects').populate({
@@ -70,12 +73,16 @@ console.log("Logged In");
     //     );
         
     // },
-    addComment: async (parent, { projectId, commentText, commentAuthor, createdAt }) => {
-      const comment = await Comments.create({  commentText, commentAuthor, createdAt });
-
+    addComment: async (parent, {userId, projectId, commentText, commentAuthor, createdAt }) => {
+      const comment = await Comments.create({ commentText, commentAuthor, createdAt });
+     
       await Project.findOneAndUpdate(
         { _id: projectId },
-        { $addToSet: { comments: comment._id } }
+        { $addToSet: { comments: comment._id }}
+      );
+      await User.findOneAndUpdate(
+        { _id: userId },
+        { $addToSet: { comments: comment._id }}
       );
 
       return comment;

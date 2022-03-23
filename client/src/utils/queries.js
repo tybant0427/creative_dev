@@ -81,3 +81,14 @@ query Me {
     }
   }
 }`;
+
+export const QUERY_UserComments = gql`
+query UserComments($userId: ID!) {
+  userComments(userId: $userId) {
+    comments {
+      commentText
+      commentAuthor
+      createdAt
+    }
+  }
+}`
