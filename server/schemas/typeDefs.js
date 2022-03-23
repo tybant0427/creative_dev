@@ -9,6 +9,7 @@ const typeDefs = gql`
     github: String
     password: String
     projects: [Project]!
+    comments: [Comment]
   }
   type Project {
     _id: ID
@@ -40,6 +41,7 @@ const typeDefs = gql`
     project(projectId: ID!): Project
     me: User
     comments: [Comment]
+    userComments(userId: ID!): User
   }
 
   type Mutation {
@@ -47,6 +49,7 @@ const typeDefs = gql`
     login(userName: String!, password: String!): Auth
     logout(userId: ID!): User
     addComment(
+      userId: ID!
       projectId: ID!
       commentText: String!
       commentAuthor: String!

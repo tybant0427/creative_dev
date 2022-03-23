@@ -10,7 +10,7 @@ import { Modal } from 'react-bootstrap';
 import "../../Styles/card.scss"
 // import { DELETE_COMMENT } from '../../utils/mutations';
 import CommentListProfile from '../CommentList/profileList';
-// import { commentId } from '../CommentList/profileList';
+import { QUERY_UserComments } from '../../utils/queries';
 
 
 export default function Profile  ()  {
@@ -85,7 +85,10 @@ console.log(data);
   }
 };
 
-
+const {error:err2, data:data4} = useQuery(QUERY_UserComments , {
+  variables: {userId:localStorage.getItem('userId')}
+});
+console.log(data4);
 
 
 const [show, setShow] = useState(false);
@@ -120,7 +123,7 @@ const [show, setShow] = useState(false);
             </Card.Text>
           </Card.Body>
           <CommentListProfile comments={project.comments} />
-
+          
 
           <Card.Body>
             <Card.Link className='links' href={project.respitoryLink} >Respitory Link</Card.Link>

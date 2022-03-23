@@ -50,12 +50,13 @@ mutation DeleteProject($projectId: ID!) {
 `;
 
 export const ADD_COMMENT = gql`
-mutation Mutation($projectId: ID!, $commentText: String!, $commentAuthor: String!) {
-  addComment(projectId: $projectId, commentText: $commentText, commentAuthor: $commentAuthor) {
+mutation Mutation($userId: ID!,$projectId: ID!, $commentText: String!, $commentAuthor: String!) {
+  addComment(userId: $userId, projectId: $projectId, commentText: $commentText, commentAuthor: $commentAuthor) {
     commentText
     _id
     commentAuthor
     createdAt
+    userId
   }
 }
 `;
