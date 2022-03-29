@@ -17,7 +17,7 @@ export default function Nav() {
   return (
     <>
     <nav className='navbar'>
-        <Link to='/' className='navbar-logo'>
+        <Link to='/blog' className='navbar-logo'>
             Creative Dev
         </Link>
         <div className='menu-icon' onClick={handleClick}>
