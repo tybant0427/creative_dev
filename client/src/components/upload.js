@@ -52,7 +52,25 @@ const Upload = () => {
             }
           };
 
-   
+
+          // state = {
+          //   selectedFile: null
+          // }
+
+          const [fileState, setFileState] = useState({
+            selectedFile: null
+          })
+            console.log(fileState);
+//look up fire base cloud
+         const fileSelectHandler = event => {
+            setFileState({
+              selectedFile: event.target.files[0]
+            })
+          // console.log(event.target.files[0]);
+          }
+          //   const fileUploaderHandler = () => {
+
+          // }
 
     return (
         
@@ -106,13 +124,15 @@ const Upload = () => {
             <input 
             type="File"
             name="image"
-            value={formState.image}
+            // value={formState.image}
              className="form-control" 
              id="exampleFormControlInput1"
               placeholder=" Image"
-              onChange={handleChange}
+              // onChange={handleChange}
+              onChange={fileSelectHandler}
               >
             </input>
+            {/* <button></button> */}
         </div>
         <div className="mb-3">
             <label for="exampleFormControlInput1" className="form-label">Description</label>
